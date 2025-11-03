@@ -63,44 +63,64 @@ const Portfolio = () => {
 
   // Comprehensive skills data
   const allSkills = [
-    { name: 'SQL', category: 'data' },
-    { name: 'Python', category: 'programming' },
-    { name: 'R-studio | R GUI', category: 'programming' },
-    { name: 'Tableau | PowerBI', category: 'visualization' },
-    { name: 'Excel', category: 'data' },
-    { name: 'Seaborn | Matplotlib', category: 'data' },
-    { name: 'Pandas | Numpy', category: 'data' },
-    { name: 'scikit-learn', category: 'data' },
-    { name: 'Spark', category: 'data' },
-    { name: 'Hadoop', category: 'data' },
+    // Data Engineering
+    { name: 'SQL', category: 'data-engineering' },
+    { name: 'Python', category: 'data-engineering' },
+    { name: 'Snowflake', category: 'data-engineering' },
+    { name: 'Fivetran', category: 'data-engineering' },
+    { name: 'Pandas | Numpy', category: 'data-engineering' },
+    { name: 'ETL Pipelines', category: 'data-engineering' },
+    { name: 'PostgreSQL', category: 'data-engineering' },
+    { name: 'MongoDB', category: 'data-engineering' },
+    { name: 'Spark', category: 'data-engineering' },
+    { name: 'Hadoop', category: 'data-engineering' },
+    { name: 'AWS', category: 'data-engineering' },
+    { name: 'Azure', category: 'data-engineering' },
+    { name: 'GCP', category: 'data-engineering' },
+
+    // Machine Learning
+    { name: 'XGBoost', category: 'ML' },
+    { name: 'LightGBM', category: 'ML' },
     { name: 'Tensorflow', category: 'ML' },
     { name: 'Pytorch', category: 'ML' },
     { name: 'Keras', category: 'ML' },
-    { name: 'XGBoost', category: 'ML' },
-    { name: 'Decision Trees', category: 'ML' },
+    { name: 'scikit-learn', category: 'ML' },
     { name: 'Neural Networks', category: 'ML' },
     { name: 'Feature Engineering', category: 'ML' },
+    { name: 'Decision Trees', category: 'ML' },
+
+    // Data Analytics
+    { name: 'R-studio | R-GUI', category: 'data-analytics' },
+    { name: 'Tableau', category: 'data-analytics' },
+    { name: 'PowerBI', category: 'data-analytics' },
+    { name: 'Looker', category: 'data-analytics' },
+    { name: 'Excel', category: 'data-analytics' },
+    { name: 'Seaborn | Matplotlib', category: 'data-analytics' },
+    { name: 'Statistical Analysis', category: 'data-analytics' },
+    { name: 'A/B Testing', category: 'data-analytics' },
+
+    // Frontend
     { name: 'React', category: 'frontend' },
     { name: 'JavaScript', category: 'frontend' },
     { name: 'HTML5', category: 'frontend' },
     { name: 'CSS3', category: 'frontend' },
+    { name: 'Redux', category: 'frontend' },
+
+    // Backend
     { name: 'Node.js', category: 'backend' },
-    { name: 'MongoDB', category: 'database' },
     { name: 'Express', category: 'backend' },
     { name: 'Firebase', category: 'backend' },
-    { name: 'Redux', category: 'frontend' },
+
+    // Other Tools
     { name: 'Git', category: 'tools' },
     { name: 'Bash', category: 'tools' },
-    { name: 'AWS', category: 'tools' },
-    { name: 'PostgreSQL', category: 'tools' },
-    { name: 'PowerBI', category: 'tools' },
     { name: 'Jupyter', category: 'tools' },
     { name: 'G-suite', category: 'tools' },
     { name: 'MS Office', category: 'tools' },
     { name: 'Adobe Premiere Pro', category: 'tools' },
     { name: 'Blender 3D', category: 'tools' },
-    
-    
+
+
   ];
 
   const [filter, setFilter] = useState('all');
@@ -244,17 +264,17 @@ const Portfolio = () => {
           <h2>My Complete Skill Set</h2>
         </motion.div>
         
-        <motion.div 
+        <motion.div
           className="skills-categories"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
         >
           <div className="skills-category">
-            <h3>Data Science & Analytics</h3>
+            <h3>Data Engineering</h3>
             <div className="skills-grid">
               {allSkills
-                .filter(skill => skill.category === 'data' || skill.category === 'programming' || skill.category === 'visualization')
+                .filter(skill => skill.category === 'data-engineering')
                 .map((skill, index) => (
                   <div key={index} className="skill-item">
                     {skill.name}
@@ -279,10 +299,10 @@ const Portfolio = () => {
           </div>
 
           <div className="skills-category">
-            <h3>Other Tools</h3>
+            <h3>Data Analytics & Visualization</h3>
             <div className="skills-grid">
               {allSkills
-                .filter(skill => skill.category === 'tools' || skill.category === 'design')
+                .filter(skill => skill.category === 'data-analytics')
                 .map((skill, index) => (
                   <div key={index} className="skill-item">
                     {skill.name}
@@ -290,8 +310,8 @@ const Portfolio = () => {
                 ))
               }
             </div>
-          </div>          
-          
+          </div>
+
           <div className="skills-category">
             <h3>Frontend</h3>
             <div className="skills-grid">
@@ -305,12 +325,12 @@ const Portfolio = () => {
               }
             </div>
           </div>
-          
+
           <div className="skills-category">
             <h3>Backend</h3>
             <div className="skills-grid">
               {allSkills
-                .filter(skill => skill.category === 'backend' || skill.category === 'database')
+                .filter(skill => skill.category === 'backend')
                 .map((skill, index) => (
                   <div key={index} className="skill-item">
                     {skill.name}
@@ -319,9 +339,23 @@ const Portfolio = () => {
               }
             </div>
           </div>
-          
-        
-          
+
+          <div className="skills-category">
+            <h3>Other Tools</h3>
+            <div className="skills-grid">
+              {allSkills
+                .filter(skill => skill.category === 'tools')
+                .map((skill, index) => (
+                  <div key={index} className="skill-item">
+                    {skill.name}
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+
+
         </motion.div>
       </motion.div>
     </motion.div>

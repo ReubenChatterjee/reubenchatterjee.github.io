@@ -68,12 +68,12 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.4 }}
         >
-          <div className="skill-card">SQL</div>
           <div className="skill-card">Python</div>
+          <div className="skill-card">SQL</div>
+          <div className="skill-card">Snowflake</div>
+          <div className="skill-card">Looker</div>
           <div className="skill-card">R Programming</div>
-          <div className="skill-card">Tableau</div>
-          <div className="skill-card">Excel</div>
-          <div className="skill-card">React</div>
+          <div className="skill-card">AWS</div>
         </motion.div>
         
         <motion.div

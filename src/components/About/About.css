@@ -92,65 +92,102 @@
   /* Timeline CSS */
   .timeline-container {
     margin: 2rem 0 4rem;
+    width: 100%;
   }
-  
-  .timeline-content {
-    display: flex;
-    gap: 3rem;
+
+  .journey-text {
+    margin-bottom: 3rem;
+    line-height: 1.8;
   }
-  
-  .timeline-text {
-    flex: 3;
+
+  .journey-text p {
+    margin-bottom: 1.5rem;
   }
-  
+
   .timeline {
-    flex: 2;
     position: relative;
-    padding: 0 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0 2rem 60px;
   }
-  
+
   .timeline::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 18px;
-    width: 2px;
-    background-color: #61dafb;
+    left: 29px;
+    width: 3px;
+    background: linear-gradient(to bottom, #61dafb, rgba(97, 218, 251, 0.3));
   }
-  
+
   .timeline-item {
     position: relative;
-    margin-bottom: 40px;
-    padding-left: 45px;
+    margin-bottom: 50px;
+    padding-left: 40px;
+    transition: all 0.3s ease;
   }
-  
+
+  .timeline-item:hover {
+    transform: translateX(5px);
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
   .timeline-dot {
     position: absolute;
-    left: 0;
-    width: 18px;
-    height: 18px;
+    left: -30px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background-color: #61dafb;
-    border: 3px solid #121212;
+    border: 4px solid #121212;
+    box-shadow: 0 0 0 4px rgba(97, 218, 251, 0.2);
     z-index: 1;
+    transition: all 0.3s ease;
   }
-  
+
+  .timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 8px rgba(97, 218, 251, 0.3);
+  }
+
   .timeline-date {
-    font-weight: 600;
+    font-weight: 700;
     color: #61dafb;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
   }
-  
+
+  .timeline-content {
+    background-color: rgba(26, 26, 26, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid #61dafb;
+    transition: all 0.3s ease;
+  }
+
+  .timeline-item:hover .timeline-content {
+    background-color: rgba(26, 26, 26, 0.8);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
   .timeline-content h4 {
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.75rem;
     color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
   }
-  
+
   .timeline-content p {
-    margin: 0.25rem 0;
-    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
     color: #ccc;
+    line-height: 1.6;
   }
   
   .inline-link {
@@ -185,88 +222,33 @@
       flex-direction: column;
       align-items: center;
     }
-    
+
     .about-image {
       order: -1;
       margin-bottom: 2rem;
     }
-    
-    .timeline-content {
-      flex-direction: column;
-    }
-    
+
     .timeline {
-      margin-top: 2rem;
+      padding: 1rem 0 1rem 40px;
     }
-    
+
+    .timeline::before {
+      left: 19px;
+    }
+
+    .timeline-dot {
+      left: -20px;
+    }
+
+    .timeline-content {
+      padding: 1rem;
+    }
+
+    .timeline-date {
+      font-size: 1rem;
+    }
+
     .strength-cards {
       flex-direction: column;
-    }
-  }
-
-  /* Add these updated styles to your About.css file */
-
-/* Add or update these styles in your About.css file */
-
-/* Improve overall container */
-.timeline-container {
-    margin: 2rem 0 4rem;
-    width: 100%;
-  }
-  
-  /* Create better spacing in the timeline layout */
-  .timeline-content {
-    display: flex;
-    gap: 4rem; /* Good spacing between text and timeline */
-  }
-  
-  /* Give the text much more room */
-  .timeline-text {
-    flex: 7; /* Much larger ratio - was 4, now 7 */
-    max-width: 75%; /* Increased from 65% to 75% */
-    padding-right: 30px; /* More padding */
-  }
-  
-  /* Make timeline narrower */
-  .timeline {
-    flex: 3; /* Keep at 3 */
-    position: relative;
-    padding: 0 10px 0 30px; /* Reduced horizontal padding */
-    border-left: 1px solid rgba(97, 218, 251, 0.3);
-    margin-left: 20px;
-    max-width: 25%; /* Limit the maximum width */
-  }
-  
-  .timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 18px;
-    width: 2px;
-    background-color: #61dafb;
-  }
-  
-  .timeline-item {
-    position: relative;
-    margin-bottom: 70px;
-    padding-left: 45px;
-  }
-  
-  /* Improve responsive behavior */
-  @media (max-width: 1200px) {
-    .timeline-content {
-      flex-direction: column;
-      gap: 3rem;
-    }
-    
-    .timeline-text {
-      max-width: 100%;
-      padding-right: 0;
-    }
-    
-    .timeline {
-      max-width: 100%;
-      margin-left: 0;
     }
   }
