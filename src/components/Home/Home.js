@@ -34,10 +34,60 @@ const AnimatedCounter = ({ end, duration = 2, suffix = '', decimals = 0 }) => {
   return <span ref={ref}>{count}{suffix}</span>;
 };
 
+const Particles = () => {
+  const particleCount = 100;
+  const particles = Array.from({ length: particleCount }, (_, i) => {
+    // Create a more evenly distributed grid-like starting position
+    const gridSize = Math.ceil(Math.sqrt(particleCount));
+    const row = Math.floor(i / gridSize);
+    const col = i % gridSize;
+
+    const baseX = (col / gridSize) * 100 + Math.random() * (100 / gridSize);
+    const baseY = (row / gridSize) * 100 + Math.random() * (100 / gridSize);
+
+    return {
+      id: i,
+      x: baseX,
+      y: baseY,
+      scale: Math.random() * 0.5 + 0.5,
+      duration: Math.random() * 15 + 15,
+      offsetX: (Math.random() - 0.5) * 20,
+      offsetY: (Math.random() - 0.5) * 20,
+    };
+  });
+
+  return (
+    <div className="particles-container" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0, pointerEvents: 'none' }}>
+      {particles.map((particle) => (
+        <motion.div
+          key={particle.id}
+          className="particle"
+          animate={{
+            x: [`${particle.x}vw`, `${particle.x + particle.offsetX}vw`, `${particle.x}vw`],
+            y: [`${particle.y}vh`, `${particle.y + particle.offsetY}vh`, `${particle.y}vh`],
+            scale: [particle.scale, particle.scale * 1.3, particle.scale],
+          }}
+          transition={{
+            duration: particle.duration,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{
+            position: 'absolute',
+            left: 0,
+            top: 0,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
 const Home = () => {
   return (
     <div className="home-container">
-      <motion.div 
+      <Particles />
+      <motion.div
         className="hero-section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

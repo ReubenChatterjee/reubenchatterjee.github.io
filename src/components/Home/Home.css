@@ -3,8 +3,22 @@
     flex-direction: column;
     gap: 6rem;
     padding: 2rem;
+    position: relative;
   }
-  
+
+  /* Particle Background */
+  .particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+  }
+
   /* Hero Section */
   .hero-section {
     display: flex;
@@ -14,6 +28,21 @@
     min-height: 70vh;
     justify-content: center;
     padding: 2rem 0;
+    position: relative;
+  }
+
+  .particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: radial-gradient(circle, rgba(97, 218, 251, 0.8) 0%, rgba(97, 218, 251, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .home-container > * {
+    position: relative;
+    z-index: 1;
   }
   
   .hero-section h1 {
