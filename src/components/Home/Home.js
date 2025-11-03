@@ -252,18 +252,28 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 2 }}
         >
-<div className="project-card">
-    <div 
+  <div className="project-card">
+    <div
+      className="project-image"
+      style={{ backgroundImage: "url(/images/afterpay-churn.jpg)", backgroundSize: 'cover', backgroundPosition: 'center' }}
+    ></div>
+    <h4>Afterpay Customer Churn Prediction</h4>
+    <p>Developed a production-ready churn prediction model that identified $2.1M+ in at-risk revenue for Afterpay. Built comprehensive customer segmentation pipeline with feature engineering on transaction patterns, achieving high precision with XGBoost classifier.</p>
+    <span className="project-link" style={{ cursor: 'default', opacity: 0.7 }}>Proprietary Work</span>
+  </div>
+
+  <div className="project-card">
+    <div
       className="project-image"
       style={{ backgroundImage: "url(/images/gender-study.png)", backgroundSize: 'cover', backgroundPosition: 'center' }}
     ></div>
     <h4>Gender & Group Dynamics Research Study</h4>
-    <p>Ongoing research where I am analyzing demographic data from 500+ students to investigate the effects of gender composition on team dynamics in COGS108. I am currently conducting ANOVA tests for balanced experimental groupings across various demographics. Findings include significant gender-based differences in programming comfort.</p>
+    <p>Analyzed demographic data from 500+ students to investigate gender composition effects on team dynamics in COGS108. Found statistically significant gender-based differences in programming comfort using ANOVA and created visualizations to support findings.</p>
     <a href="https://github.com/ReubenChatterjee/gender_groupwork" target="_blank" rel="noopener noreferrer" className="project-link">View Project</a>
   </div>
 
-          <div className="project-card">
-    <div 
+  <div className="project-card">
+    <div
       className="project-image"
       style={{ backgroundImage: "url(/images/fraud-detection.jpg)", backgroundSize: 'cover', backgroundPosition: 'center' }}
     ></div>
@@ -271,23 +281,15 @@ const Home = () => {
     <p>Built a fraud detection model on 97K+ credit card transactions using LightGBM, CNN, XGBoost, and more.</p>
     <a href="https://github.com/ReubenChatterjee/credit-card-fraud-detection" target="_blank" rel="noopener noreferrer" className="project-link">View on GitHub</a>
   </div>
+
   <div className="project-card">
-    <div 
+    <div
       className="project-image"
       style={{ backgroundImage: "url(/images/sas.png)", backgroundSize: 'cover', backgroundPosition: 'center' }}
     ></div>
     <h4>Student Accommodation Service</h4>
     <p>Designed a mobile application that matches students with compatible roommates using the K-Means clustering algorithm and OCEAN personality model.</p>
     <a href="https://github.com/ReubenChatterjee/student-accommodation-app" target="_blank" rel="noopener noreferrer" className="project-link">View Project</a>
-  </div>
-  <div className="project-card">
-    <div 
-      className="project-image"
-      style={{ backgroundImage: "url(/images/climate-change.jpg)", backgroundSize: 'cover', backgroundPosition: 'center' }}
-    ></div>
-    <h4>Climate Change Analysis</h4>
-    <p>Built and evaluated a NorESM2 linear regression model to predict global warming based on CO2 emissions from the ClimateBench Dataset, extending the analysis to regional temperature variations by country.</p>
-    <a href="https://github.com/ReubenChatterjee/Climate-Data-Analysis" target="_blank" rel="noopener noreferrer" className="project-link">View Project</a>
   </div>
   
         </motion.div>
