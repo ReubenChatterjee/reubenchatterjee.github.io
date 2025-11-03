@@ -35,23 +35,51 @@
     position: relative;
   }
   
-  .highlight::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #61dafb;
-    animation: widthGrow 1.5s ease-out;
-  }
-  
-  .hero-section p {
+  .hero-section > p {
     font-size: 1.2rem;
     max-width: 600px;
     margin-bottom: 2rem;
     color: #aaa;
     animation: fadeIn 2s ease-in;
+  }
+
+  .hero-description {
+    max-width: 700px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-tagline {
+    margin-bottom: 2rem;
+  }
+
+  .hero-description .tagline-main {
+    font-size: 1.5rem;
+    color: #ffffff !important;
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .hero-description .tagline-main strong {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff !important;
+  }
+
+  .hero-description .tagline-detail {
+    font-size: 1.2rem;
+    color: #ffffff !important;
+    margin: 0.4rem 0;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .hero-credentials {
+    font-size: 1rem;
+    color: #aaa;
+    font-style: italic;
+    margin-bottom: 0;
+    margin-top: 1.5rem;
   }
   
   .cta-buttons {
@@ -84,6 +112,77 @@
     box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
   }
   
+  /* Impact by Numbers Section */
+  .impact-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  .impact-section h3 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+  }
+
+  .impact-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #61dafb;
+  }
+
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .impact-card {
+    background: linear-gradient(135deg, rgba(97, 218, 251, 0.05) 0%, rgba(97, 218, 251, 0.02) 100%);
+    border: 1px solid rgba(97, 218, 251, 0.2);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .impact-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(97, 218, 251, 0.5);
+    box-shadow: 0 10px 30px rgba(97, 218, 251, 0.15);
+    background: linear-gradient(135deg, rgba(97, 218, 251, 0.08) 0%, rgba(97, 218, 251, 0.03) 100%);
+  }
+
+  .impact-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #61dafb;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+  }
+
+  .impact-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .impact-description {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.4;
+  }
+
   /* Skills Section */
   .skills-section {
     width: 100%;
@@ -291,17 +390,30 @@
     .hero-section h1 {
       font-size: 2.5rem;
     }
-    
+
     .hero-section h2 {
       font-size: 1.5rem;
     }
-    
+
     .cta-buttons {
       flex-direction: column;
       width: 100%;
       max-width: 300px;
     }
-    
+
+    .impact-section h3 {
+      font-size: 2rem;
+    }
+
+    .impact-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .impact-number {
+      font-size: 2.5rem;
+    }
+
     .featured-projects {
       flex-direction: column;
       align-items: center;

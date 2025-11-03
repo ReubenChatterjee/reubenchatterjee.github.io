@@ -1,7 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import './Home.css';
+
+const AnimatedCounter = ({ end, duration = 2, suffix = '', decimals = 0 }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let startTime;
+    let animationFrame;
+
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = (timestamp - startTime) / (duration * 1000);
+
+      if (progress < 1) {
+        const currentValue = end * progress;
+        setCount(decimals > 0 ? currentValue.toFixed(decimals) : Math.floor(currentValue));
+        animationFrame = requestAnimationFrame(animate);
+      } else {
+        setCount(decimals > 0 ? end.toFixed(decimals) : end);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isInView, end, duration, decimals]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+};
 
 const Home = () => {
   return (
@@ -17,7 +48,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Hello, I'm <span className="highlight">Reuben</span>
+          Hi, I'm <span className="highlight">Reuben</span>
         </motion.h1>
         
         <motion.h2
@@ -28,14 +59,22 @@ const Home = () => {
           Data Scientist | Machine Learning & Analytics Specialist
         </motion.h2>
         
-        <motion.p
+        <motion.div
+          className="hero-description"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          I specialize in building intelligent, scalable data solutions and telling compelling stories through data. Currently completing my Master’s in Data Science at UC San Diego.
-
-        </motion.p>
+          <div className="hero-tagline">
+            <p className="tagline-main">Building <strong>END-TO-END DATA SYSTEMS</strong></p>
+            <p className="tagline-detail">From automated data pulls</p>
+            <p className="tagline-detail">to fine-tuned ML models</p>
+            <p className="tagline-detail">to executive-ready dashboards.</p>
+          </div>
+          <p className="hero-credentials">
+            Master's in Data Science, UC San Diego (3.82 GPA)
+          </p>
+        </motion.div>
         
         <motion.div 
           className="cta-buttons"
@@ -47,8 +86,66 @@ const Home = () => {
           <Link to="/contact" className="secondary-btn">Get In Touch</Link>
         </motion.div>
       </motion.div>
-      
-      <motion.div 
+
+      {/* Impact by Numbers Section */}
+      <motion.div
+        className="impact-section"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+        >
+          Impact by Numbers
+        </motion.h3>
+
+        <motion.div
+          className="impact-grid"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <div className="impact-card">
+            <div className="impact-number">
+              <AnimatedCounter end={60} suffix="%" />
+            </div>
+            <div className="impact-label">Cost Reduction</div>
+            <div className="impact-description">Infrastructure migration savings</div>
+          </div>
+
+          <div className="impact-card">
+            <div className="impact-number">
+              $<AnimatedCounter end={2.1} suffix="M+" duration={2.5} decimals={1} />
+            </div>
+            <div className="impact-label">Revenue Protected</div>
+            <div className="impact-description">At-risk revenue identified</div>
+          </div>
+
+          <div className="impact-card">
+            <div className="impact-number">
+              <AnimatedCounter end={15} suffix="+" />
+            </div>
+            <div className="impact-label">Production Pipelines</div>
+            <div className="impact-description">Processing 50GB+ daily data</div>
+          </div>
+
+          <div className="impact-card">
+            <div className="impact-number">
+              <AnimatedCounter end={800} suffix="+" />
+            </div>
+            <div className="impact-label">Students Mentored</div>
+            <div className="impact-description">As Lead TA at UCSD</div>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
         className="skills-section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
