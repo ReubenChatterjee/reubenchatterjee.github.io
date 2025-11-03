@@ -118,13 +118,24 @@
     background-color: #61dafb;
     color: #121212;
   }
-  
+
   .view-code {
     background-color: transparent;
     color: #61dafb;
     border: 1px solid #61dafb;
   }
-  
+
+  .confidential-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: rgba(97, 218, 251, 0.1);
+    color: #61dafb;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 1px solid rgba(97, 218, 251, 0.3);
+  }
+
   .project-links a:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
