@@ -106,7 +106,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Data Scientist | Machine Learning & Analytics Specialist
+          Data Scientist | ML/AI & Production Systems Specialist
         </motion.h2>
         
         <motion.div
@@ -209,7 +209,7 @@ const Home = () => {
           My Skills
         </motion.h3>
         
-        <motion.div 
+        <motion.div
           className="skills-container"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -217,10 +217,10 @@ const Home = () => {
         >
           <div className="skill-card">Python</div>
           <div className="skill-card">SQL</div>
+          <div className="skill-card">PyTorch</div>
+          <div className="skill-card">Databricks</div>
           <div className="skill-card">Snowflake</div>
-          <div className="skill-card">Looker</div>
-          <div className="skill-card">R Programming</div>
-          <div className="skill-card">AWS</div>
+          <div className="skill-card">Hugging Face</div>
         </motion.div>
         
         <motion.div
@@ -246,7 +246,7 @@ const Home = () => {
         >
           Featured Projects
         </motion.h3>
-        <motion.div 
+        <motion.div
           className="featured-projects"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -255,10 +255,20 @@ const Home = () => {
   <div className="project-card">
     <div
       className="project-image"
+      style={{ backgroundImage: "url(/images/part-serialization.png)", backgroundSize: 'cover', backgroundPosition: 'center' }}
+    ></div>
+    <h4>Multi-Model OCR Pipeline for Industrial Labels</h4>
+    <p>Architected production-grade OCR pipeline using vision-language models (Claude Sonnet 4.5, Qwen VL, PaddleOCR), achieving 85.7% precision on 500+ industrial labels. Trained RT-DETR object detection achieving 97.8% precision and improved inference efficiency by 3–5x through GPU optimization.</p>
+    <span className="project-link" style={{ cursor: 'default', opacity: 0.7 }}>Proprietary Work</span>
+  </div>
+
+  <div className="project-card">
+    <div
+      className="project-image"
       style={{ backgroundImage: "url(/images/afterpay-churn.jpg)", backgroundSize: 'cover', backgroundPosition: 'center' }}
     ></div>
-    <h4>Afterpay Customer Churn Prediction</h4>
-    <p>Developed a production-ready churn prediction model that identified $2.1M+ in at-risk revenue for Afterpay. Built comprehensive customer segmentation pipeline with feature engineering on transaction patterns, achieving high precision with XGBoost classifier.</p>
+    <h4>Afterpay Customer Retention Prediction</h4>
+    <p>Built gradient boosting churn prediction model achieving 89% accuracy and 0.92 ROC-AUC. Identified $2.1M in at-risk revenue through 4-tier risk segmentation, enabling targeted retention campaigns that improved customer lifetime value by 18%.</p>
     <span className="project-link" style={{ cursor: 'default', opacity: 0.7 }}>Proprietary Work</span>
   </div>
 

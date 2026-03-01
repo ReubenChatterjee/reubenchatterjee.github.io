@@ -36,7 +36,7 @@ const About = () => {
             </p>
 
             <p>
-            Most recently at Alcamo Marketing, I delivered measurable results: reduced operational costs by 60% through data infrastructure migration, built 15 production ETL pipelines processing 50GB+ daily data, and developed a churn prediction model that identified $2.1M in at-risk revenue for Afterpay. I work with modern data stacks including Snowflake, Fivetran, Python, SQL, and ML frameworks like XGBoost and LightGBM.
+            Currently at Applied Materials, I architect production-grade ML systems combining vision-language models (Claude Sonnet 4.5, Qwen VL) with custom object detection (RT-DETR), achieving 85.7% precision on industrial OCR tasks while optimizing inference efficiency by 3–5x through GPU optimization on Databricks. Previously at Alcamo Marketing, I reduced operational costs by 60% through infrastructure migration, built 15 production ETL pipelines processing 50GB+ daily data, and developed a churn prediction model identifying $2.1M in at-risk revenue.
             </p>
 
             <p>
@@ -79,6 +79,7 @@ const About = () => {
             <p>During my time at UCSD, I was appointed Teaching Assistant for COGS 108: Data Science in Practice — one of UCSD's largest undergraduate courses. I served as lead grader for 800+ students, wrote deployable Python scripts to improve grading efficiency, and mentored project groups throughout multiple quarters.</p>
             <p>In Winter 2025, I was promoted to Lead TA, managing a team of 16 TAs and IAs while overseeing student groups. During this time, I joined a research study at Ellis Lab focused on identifying gender-based patterns in data science education. I led the data analysis using NLP and statistical methods in R, contributing to research on educational equity.</p>
             <p>After graduating in June 2025, I joined Alcamo Marketing as a Data Scientist, where I made immediate impact: migrating data infrastructure to reduce costs by 60%, building 15 production ETL pipelines processing 50GB+ daily data using Snowflake and Fivetran, and developing a churn prediction model that identified $2.1M in at-risk revenue for Afterpay.</p>
+            <p>In December 2025, I joined Applied Materials as a Data Scientist in the AI/ML team of the Data Insights and Apps (DIA) department. Here, I've been architecting production-grade computer vision systems, deploying multi-model OCR pipelines using vision-language models like Claude Sonnet 4.5 and Qwen VL, training custom RT-DETR object detection models, and optimizing ML inference performance on Databricks. I'm working at the intersection of cutting-edge AI research and practical industrial applications, solving complex problems in semiconductor manufacturing.</p>
             <p>Today, I continue to combine technical expertise with business acumen, building production ML systems and scalable data solutions that drive measurable results.</p>
           </motion.div>
 
@@ -90,9 +91,20 @@ const About = () => {
           >
             <div className="timeline-item">
               <div className="timeline-dot"></div>
+              <div className="timeline-date">2025 - Present</div>
+              <div className="timeline-content">
+                <h4>Data Scientist at Applied Materials (Dec 2025 - Present)</h4>
+                <p>Architected multi-model OCR pipeline using vision-language models achieving 85.7% precision on 500+ industrial labels</p>
+                <p>Trained RT-DETR object detection system achieving 97.8% precision on printed labels</p>
+                <p>Improved inference efficiency by 3–5x through GPU optimization and NVMe caching on Databricks</p>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
               <div className="timeline-date">2025</div>
               <div className="timeline-content">
-                <h4>Data Scientist at Alcamo Marketing (Jul - Oct)</h4>
+                <h4>Data Scientist at Alcamo Marketing (Jul 2025 - Oct 2025)</h4>
                 <p>Built 15 production ETL pipelines processing 50GB+ daily data using SQL, Fivetran, Snowflake, Looker</p>
                 <p>Reduced operational costs by 60% through infrastructure migration from Adverity to Snowflake</p>
                 <p>Developed churn prediction model using XGBoost, identifying $2.1M in at-risk revenue</p>

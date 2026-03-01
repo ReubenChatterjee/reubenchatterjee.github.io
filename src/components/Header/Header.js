@@ -45,7 +45,7 @@ const Header = () => {
         <Link to="/about" className={location.pathname === '/about' ? 'active' : ''} onClick={closeMenu}>About</Link>
         <Link to="/portfolio" className={location.pathname === '/portfolio' ? 'active' : ''} onClick={closeMenu}>Portfolio</Link>
         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={closeMenu}>Contact</Link>
-        <a href="/Resume_Reuben_Chatterjee.pdf" className="resume-link" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Resume</a>
+        <a href="/Resume_Reuben_Chatterjee_DS.pdf" className="resume-link" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Resume</a>
       </nav>
     </header>
   );

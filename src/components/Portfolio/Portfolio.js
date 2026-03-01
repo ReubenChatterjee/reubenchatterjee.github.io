@@ -7,15 +7,24 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: 'Afterpay Customer Churn Prediction',
-      description: 'Developed a production-ready churn prediction model that identified $2.1M+ in at-risk revenue for Alcamo MArketing\'s  client Afterpay. Built comprehensive customer segmentation pipeline with feature engineering on transaction patterns, engagement metrics, and behavioral indicators. Deployed XGBoost classifier achieving high precision, enabling proactive customer retention strategies.',
-      image: 'afterpay-churn.jpg',
-      categories: ['ds', 'da'],
-      technologies: ['Python', 'XGBoost', 'Colab', 'Synthetic Data Generation', 'Feature Engineering', 'Customer Segmentation'],
+      title: 'Multi-Model OCR Pipeline for Industrial Labels',
+      description: 'Architected and deployed a production-grade OCR pipeline using vision-language models (Claude Sonnet 4.5, Qwen VL, PaddleOCR), achieving 85.7% precision across 500+ industrial part labels (printed, etched, and engraved). Trained and evaluated an RT-DETR based label detection system by converting LabelMe annotations to COCO format, achieving 97.8% precision on printed labels and 64.0% on engraved labels. Improved inference efficiency by 3–5x through NVMe caching and float16 GPU optimization on Databricks.',
+      image: 'part-serialization.png',
+      categories: ['ds'],
+      technologies: ['Python', 'PyTorch', 'Hugging Face', 'Claude Sonnet 4.5', 'Qwen VL', 'PaddleOCR', 'RT-DETR', 'Databricks', 'GPU Optimization'],
       github: null
     },
     {
       id: 2,
+      title: 'Afterpay Customer Retention Prediction',
+      description: 'Built gradient boosting churn prediction model achieving 89% accuracy and 0.92 ROC-AUC by engineering 50+ behavioral features including RFM metrics, payment patterns, and temporal trends from 350K+ transaction records. Identified $2.1M in at-risk revenue by scoring 12,500 high-risk customers through 4-tier risk segmentation system, enabling targeted retention campaigns that improved customer lifetime value by 18%.',
+      image: 'afterpay-churn.jpg',
+      categories: ['ds', 'da'],
+      technologies: ['Python', 'XGBoost', 'LightGBM', 'Scikit-learn', 'SHAP', 'Snowflake', 'SQL', 'Feature Engineering'],
+      github: null
+    },
+    {
+      id: 3,
       title: 'Snowflake Data Infrastructure Migration',
       description: 'Led end-to-end migration of Enterprise marketing from Adverity to Snowflake, reducing operational costs by 60% while improving data quality and accessibility. Architected and deployed 15+ automated and production-ready ETL pipelines using Fivetran and SQL, processing 50GB+ daily data across multiple marketing platforms. Designed scalable data warehouse schema and implemented data governance frameworks ensuring zero downtime during transition.',
       image: 'data-migration.jpg',
@@ -24,16 +33,16 @@ const Portfolio = () => {
       github: null
     },
     {
-      id: 3,
-      title: 'Fraud Detection for Credit Card Transactions',
-      description: 'Developed a robust fraud detection model for 97,000+ credit card transactions using advanced machine learning techniques like LightGBM, CNN, and XGBoost, achieving 92% accuracy. ',
+      id: 4,
+      title: 'Credit Card Anomaly Detection using Gradient Boosting',
+      description: 'Engineered 3,200+ behavioral features from 97,852 credit card transactions using domain-specific encodings and behavioral signals. Tuned LightGBM via multi-model comparison (Random Forest, XGBoost, CatBoost), achieving 92% accuracy and 0.59 OOT AUC. Reduced false positives by 10% via threshold tuning and SMOTE, contributing to $2M+ projected annual savings.',
       image: 'fraud-detection.jpg',
       categories: ['ds', 'da'],
-      technologies: ['Python', 'Pytorch', 'XGBoost', 'LightGBM', 'CNN', 'Seaborn'],
+      technologies: ['Python', 'Pytorch', 'XGBoost', 'LightGBM', 'Random Forest', 'CatBoost', 'CNN', 'SMOTE', 'Seaborn'],
       github: 'https://github.com/ReubenChatterjee/credit-card-fraud-detection'
     },
     {
-        id: 4,
+        id: 5,
         title: 'Gender & Group Dynamics Research Study',
         description: 'Analyzed demographic data from 500+ students to investigate the effects of gender composition on team dynamics in COGS108, a data science course at UCSD. Conducted statistical tests (ANOVA) to ensure balanced experimental groupings across demographics like race, first-gen, international status etc. Found statistically significant gender-based differences in programming comfort and created visualizations to support findings.',
         image: 'gender-study.png',
@@ -42,7 +51,7 @@ const Portfolio = () => {
         github: 'https://github.com/ReubenChatterjee/gender_groupwork'
       },
     {
-      id: 5,
+      id: 6,
       title: 'Climate Change Analysis',
       description: 'Built and evaluated a NorESM2 linear regression model to predict global warming based on CO2 emissions from the ClimateBench Dataset, extending the analysis to regional temperature variations by country.',
       image: 'climate-change.jpg',
@@ -51,7 +60,7 @@ const Portfolio = () => {
       github: 'https://github.com/ReubenChatterjee/Climate-Data-Analysis'
     },
     {
-      id: 6,
+      id: 7,
       title: 'Document Summarization Using Latent Semantic Indexing',
       description: 'Implemented a pipeline for extractive text summarization using Latent Semantic Indexing (LSI) and Truncated SVD, comparing its performance with BERTSUM, a transformer-based SOTA model. Applied advanced pre-processing, TF-IDF vectorization, and ROUGE evaluation on a subset of the CNN-DailyMail dataset to generate and assess summaries. Demonstrated the limitations of LSI and the effectiveness of transformer architectures for contextual summarization.',
       image: 'docs.png',
@@ -60,7 +69,7 @@ const Portfolio = () => {
       github: 'https://chocolate-yard-038.notion.site/Document-Summarization-Using-Latent-Semantic-Indexing-eb81fc4925054d54af65571ceb5227e5'
     },
     {
-      id: 7,
+      id: 8,
       title: 'Student Accommodation Service',
       description: 'Designed a mobile application that matches students with compatible roommates using the K-Means clustering algorithm and OCEAN personality model. The app collects lifestyle preferences via a personality questionnaire and clusters users to suggest matches with similar traits. Features include profile browsing, in-app messaging, and landlord–tenant matching.',
       image: 'sas.png',
@@ -69,7 +78,7 @@ const Portfolio = () => {
       github: 'https://github.com/ReubenChatterjee/student-accommodation-app'
     },
     {
-        id: 8,
+        id: 9,
         title: 'Tax Fraud Detection for NYC Properties',
         description: 'Built an anomaly detection pipeline on 1M+ NYC property records to identify potential tax fraud. Engineered 25+ valuation and size ratio features, applied PCA for dimensionality reduction, and used Isolation Forest and Local Outlier Factor to detect irregularities. Flagged high-risk properties and validated anomalies using satellite imagery and statistical deviations.',
         image: 'nyc.webp',
@@ -85,6 +94,7 @@ const Portfolio = () => {
     { name: 'SQL', category: 'data-engineering' },
     { name: 'Python', category: 'data-engineering' },
     { name: 'Snowflake', category: 'data-engineering' },
+    { name: 'Databricks', category: 'data-engineering' },
     { name: 'Fivetran', category: 'data-engineering' },
     { name: 'Pandas | Numpy', category: 'data-engineering' },
     { name: 'ETL Pipelines', category: 'data-engineering' },
@@ -92,20 +102,28 @@ const Portfolio = () => {
     { name: 'MongoDB', category: 'data-engineering' },
     { name: 'Spark', category: 'data-engineering' },
     { name: 'Hadoop', category: 'data-engineering' },
+    { name: 'dbt', category: 'data-engineering' },
+    { name: 'Docker', category: 'data-engineering' },
     { name: 'AWS', category: 'data-engineering' },
     { name: 'Azure', category: 'data-engineering' },
     { name: 'GCP', category: 'data-engineering' },
 
     // Machine Learning
+    { name: 'PyTorch', category: 'ML' },
+    { name: 'Hugging Face Transformers', category: 'ML' },
+    { name: 'Vision-Language Models', category: 'ML' },
+    { name: 'OCR (PaddleOCR)', category: 'ML' },
+    { name: 'Object Detection (RT-DETR)', category: 'ML' },
     { name: 'XGBoost', category: 'ML' },
     { name: 'LightGBM', category: 'ML' },
+    { name: 'CatBoost', category: 'ML' },
     { name: 'Tensorflow', category: 'ML' },
-    { name: 'Pytorch', category: 'ML' },
     { name: 'Keras', category: 'ML' },
     { name: 'scikit-learn', category: 'ML' },
     { name: 'Neural Networks', category: 'ML' },
     { name: 'Feature Engineering', category: 'ML' },
-    { name: 'Decision Trees', category: 'ML' },
+    { name: 'SHAP', category: 'ML' },
+    { name: 'GPU Optimization', category: 'ML' },
 
     // Data Analytics
     { name: 'R-studio | R-GUI', category: 'data-analytics' },
@@ -133,6 +151,7 @@ const Portfolio = () => {
     { name: 'Git', category: 'tools' },
     { name: 'Bash', category: 'tools' },
     { name: 'Jupyter', category: 'tools' },
+    { name: 'JIRA', category: 'tools' },
     { name: 'G-suite', category: 'tools' },
     { name: 'MS Office', category: 'tools' },
     { name: 'Adobe Premiere Pro', category: 'tools' },
