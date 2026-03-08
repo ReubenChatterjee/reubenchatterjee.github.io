@@ -1,37 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import './Header.css';
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+  const { scrollY } = useScroll();
+  const headerBg = useTransform(scrollY, [0, 80], ['rgba(14,14,14,0)', 'rgba(14,14,14,0.92)']);
+  const headerBorder = useTransform(scrollY, [0, 80], ['rgba(255,255,255,0)', 'rgba(255,255,255,0.07)']);
+  const headerBlur = useTransform(scrollY, [0, 80], [0, 1]);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className={scrolled ? 'header scrolled' : 'header'}>
+    <motion.header
+      className="header"
+      style={{
+        backgroundColor: headerBg,
+        borderBottomColor: headerBorder,
+      }}
+    >
       <div className="logo">
-        <Link to="/">Reuben Chatterjee</Link>
+        <Link to="/">RC</Link>
       </div>
       <div className="menu-toggle" onClick={toggleMenu}>
         <div className={menuOpen ? 'hamburger open' : 'hamburger'}>
@@ -47,7 +40,7 @@ const Header = () => {
         <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={closeMenu}>Contact</Link>
         <a href="/Resume_Reuben_Chatterjee_DS.pdf" className="resume-link" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Resume</a>
       </nav>
-    </header>
+    </motion.header>
   );
 };
 

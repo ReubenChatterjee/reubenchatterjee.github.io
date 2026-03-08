@@ -41,7 +41,7 @@ const Contact = () => {
             </div>
             <div className="contact-item">
               <FaMapMarkerAlt className="contact-icon" />
-              <span>San Diego, California</span>
+              <span>Mountain View, California</span>
             </div>
           </div>
           
