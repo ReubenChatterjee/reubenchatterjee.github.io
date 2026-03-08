@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .contact-content-centered {
     display: flex;
     justify-content: center;
@@ -15,57 +15,60 @@
     margin-top: 2rem;
     text-align: center;
   }
-  
+
   .contact-info {
     max-width: 600px;
   }
-  
+
   .contact-info h3 {
-    font-size: 2.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #61dafb;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
-  
+
   .contact-info p {
     margin-bottom: 2.5rem;
     color: #ccc;
     font-size: 1.2rem;
   }
-  
+
   .contact-details {
     margin-bottom: 2.5rem;
   }
-  
+
   .contact-item {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.2rem;
   }
-  
+
   .contact-icon {
-    color: #61dafb;
+    color: var(--accent);
     font-size: 1.4rem;
     margin-right: 1rem;
   }
-  
+
   .social-links {
     display: flex;
     justify-content: center;
     gap: 2rem;
   }
-  
+
   .social-link {
     color: #fff;
     font-size: 1.8rem;
     transition: all 0.3s ease;
   }
-  
+
   .social-link:hover {
-    color: #61dafb;
+    color: var(--accent);
     transform: translateY(-5px);
   }
-  
+
   @media (max-width: 768px) {
     .contact-info h3 {
       font-size: 2rem;

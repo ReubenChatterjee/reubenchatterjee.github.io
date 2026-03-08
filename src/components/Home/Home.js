@@ -34,132 +34,101 @@ const AnimatedCounter = ({ end, duration = 2, suffix = '', decimals = 0 }) => {
   return <span ref={ref}>{count}{suffix}</span>;
 };
 
-const Particles = () => {
-  const particleCount = 100;
-  const particles = Array.from({ length: particleCount }, (_, i) => {
-    // Create a more evenly distributed grid-like starting position
-    const gridSize = Math.ceil(Math.sqrt(particleCount));
-    const row = Math.floor(i / gridSize);
-    const col = i % gridSize;
-
-    const baseX = (col / gridSize) * 100 + Math.random() * (100 / gridSize);
-    const baseY = (row / gridSize) * 100 + Math.random() * (100 / gridSize);
-
-    return {
-      id: i,
-      x: baseX,
-      y: baseY,
-      scale: Math.random() * 0.5 + 0.5,
-      duration: Math.random() * 15 + 15,
-      offsetX: (Math.random() - 0.5) * 20,
-      offsetY: (Math.random() - 0.5) * 20,
-    };
-  });
-
-  return (
-    <div className="particles-container" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0, pointerEvents: 'none' }}>
-      {particles.map((particle) => (
-        <motion.div
-          key={particle.id}
-          className="particle"
-          animate={{
-            x: [`${particle.x}vw`, `${particle.x + particle.offsetX}vw`, `${particle.x}vw`],
-            y: [`${particle.y}vh`, `${particle.y + particle.offsetY}vh`, `${particle.y}vh`],
-            scale: [particle.scale, particle.scale * 1.3, particle.scale],
-          }}
-          transition={{
-            duration: particle.duration,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          style={{
-            position: 'absolute',
-            left: 0,
-            top: 0,
-          }}
-        />
-      ))}
-    </div>
-  );
-};
-
 const Home = () => {
   return (
     <div className="home-container">
-      <Particles />
-      <motion.div
-        className="hero-section"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Hi, I'm <span className="highlight">Reuben</span>
-        </motion.h1>
-        
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          Data Scientist | ML/AI & Production Systems Specialist
-        </motion.h2>
-        
+      {/* Gradient mesh background */}
+      <div className="gradient-mesh" aria-hidden="true" />
+
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-columns">
+          {/* Left: Name */}
+          <motion.div
+            className="hero-left"
+            whileHover={{ scale: 1.04 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            <motion.span
+              className="hero-eyebrow"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              Data Scientist · ML/AI &amp; Production Systems
+            </motion.span>
+            <motion.div
+              className="hero-name"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <span className="hero-name-line">REUBEN</span>
+              <span className="hero-name-line">CHATTERJEE</span>
+            </motion.div>
+          </motion.div>
+
+          {/* Right: Tagline + sub */}
+          <motion.div
+            className="hero-right"
+            whileHover={{ scale: 1.04 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            <motion.h1
+              className="hero-display"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              Building<br />
+              <span className="hero-display-accent">End-to-End</span><br />
+              Data Systems
+            </motion.h1>
+            <motion.p
+              className="hero-sub"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              From automated data pipelines to fine-tuned ML models to
+              executive-ready dashboards. M.S. Data Science, UC San Diego (3.82 GPA).
+            </motion.p>
+          </motion.div>
+        </div>
+
+        {/* CTAs centered below both columns */}
         <motion.div
-          className="hero-description"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <div className="hero-tagline">
-            <p className="tagline-main">Building <strong>END-TO-END DATA SYSTEMS</strong></p>
-            <p className="tagline-detail">From automated data pulls</p>
-            <p className="tagline-detail">to fine-tuned ML models</p>
-            <p className="tagline-detail">to executive-ready dashboards.</p>
-          </div>
-          <p className="hero-credentials">
-            Master's in Data Science, UC San Diego (3.82 GPA)
-          </p>
-        </motion.div>
-        
-        <motion.div 
           className="cta-buttons"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.5, delay: 0.55 }}
         >
           <Link to="/portfolio" className="primary-btn">View My Work</Link>
           <Link to="/contact" className="secondary-btn">Get In Touch</Link>
         </motion.div>
-      </motion.div>
+      </section>
 
       {/* Impact by Numbers Section */}
-      <motion.div
+      <motion.section
         className="impact-section"
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7 }}
       >
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-        >
-          Impact by Numbers
-        </motion.h3>
+        <div className="section-header-split">
+          <div>
+            <span className="section-tag">IMPACT</span>
+            <h3 className="section-heading-main">By the Numbers</h3>
+          </div>
+        </div>
 
         <motion.div
           className="impact-grid"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
         >
           <div className="impact-card">
             <div className="impact-number">
@@ -193,125 +162,88 @@ const Home = () => {
             <div className="impact-description">As Lead TA at UCSD</div>
           </div>
         </motion.div>
-      </motion.div>
+      </motion.section>
 
-      <motion.div
-        className="skills-section"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1 }}
-      >
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-        >
-          My Skills
-        </motion.h3>
-        
-        <motion.div
-          className="skills-container"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.4 }}
-        >
-          <div className="skill-card">Python</div>
-          <div className="skill-card">SQL</div>
-          <div className="skill-card">PyTorch</div>
-          <div className="skill-card">Databricks</div>
-          <div className="skill-card">Snowflake</div>
-          <div className="skill-card">Hugging Face</div>
-        </motion.div>
-        
-        <motion.div
-          className="view-all-skills"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.6 }}
-        >
-          <Link to="/portfolio#skills" className="view-all-link">View all skills...</Link>
-        </motion.div>
-      </motion.div>
-      
-      <motion.div 
+      {/* Featured Projects Section */}
+      <motion.section
         className="featured-section"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.6 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7 }}
       >
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.8 }}
-        >
-          Featured Projects
-        </motion.h3>
-        <motion.div
-          className="featured-projects"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 2 }}
-        >
-  <div className="project-card">
-    <div
-      className="project-image"
-      style={{ backgroundImage: "url(/images/part-serialization.png)", backgroundSize: 'cover', backgroundPosition: 'center' }}
-    ></div>
-    <h4>Multi-Model OCR Pipeline for Industrial Labels</h4>
-    <p>Architected production-grade OCR pipeline using vision-language models (Claude Sonnet 4.5, Qwen VL, PaddleOCR), achieving 85.7% precision on 500+ industrial labels. Trained RT-DETR object detection achieving 97.8% precision and improved inference efficiency by 3–5x through GPU optimization.</p>
-    <span className="project-link" style={{ cursor: 'default', opacity: 0.7 }}>Proprietary Work</span>
-  </div>
+        <div className="section-header-split">
+          <div>
+            <span className="section-tag">WORK</span>
+            <h3 className="section-heading-main">Featured Projects</h3>
+          </div>
+          <Link to="/portfolio" className="view-all-link">View all →</Link>
+        </div>
 
-  <div className="project-card">
-    <div
-      className="project-image"
-      style={{ backgroundImage: "url(/images/afterpay-churn.jpg)", backgroundSize: 'cover', backgroundPosition: 'center' }}
-    ></div>
-    <h4>Afterpay Customer Retention Prediction</h4>
-    <p>Built gradient boosting churn prediction model achieving 89% accuracy and 0.92 ROC-AUC. Identified $2.1M in at-risk revenue through 4-tier risk segmentation, enabling targeted retention campaigns that improved customer lifetime value by 18%.</p>
-    <span className="project-link" style={{ cursor: 'default', opacity: 0.7 }}>Proprietary Work</span>
-  </div>
+        <div className="featured-projects-wrapper">
+          <div className="featured-projects">
+            <div className="project-card">
+              <div
+                className="project-image"
+                style={{ backgroundImage: "url(/images/part-serialization.png)", backgroundSize: 'cover', backgroundPosition: 'center' }}
+              ></div>
+              <div className="project-card-body">
+                <h4>Multi-Model OCR Pipeline for Industrial Labels</h4>
+                <p>Architected production-grade OCR pipeline using vision-language models (Claude Sonnet 4.5, Qwen VL, PaddleOCR), achieving 85.7% precision on 500+ industrial labels. Trained RT-DETR object detection achieving 97.8% precision and improved inference efficiency by 3–5x through GPU optimization.</p>
+                <span className="project-link proprietary">Proprietary Work</span>
+              </div>
+            </div>
 
-  <div className="project-card">
-    <div
-      className="project-image"
-      style={{ backgroundImage: "url(/images/gender-study.png)", backgroundSize: 'cover', backgroundPosition: 'center' }}
-    ></div>
-    <h4>Gender & Group Dynamics Research Study</h4>
-    <p>Analyzed demographic data from 500+ students to investigate gender composition effects on team dynamics in COGS108. Found statistically significant gender-based differences in programming comfort using ANOVA and created visualizations to support findings.</p>
-    <a href="https://github.com/ReubenChatterjee/gender_groupwork" target="_blank" rel="noopener noreferrer" className="project-link">View Project</a>
-  </div>
+            <div className="project-card">
+              <div
+                className="project-image"
+                style={{ backgroundImage: "url(/images/afterpay-churn.jpg)", backgroundSize: 'cover', backgroundPosition: 'center' }}
+              ></div>
+              <div className="project-card-body">
+                <h4>Afterpay Customer Retention Prediction</h4>
+                <p>Built gradient boosting churn prediction model achieving 89% accuracy and 0.92 ROC-AUC. Identified $2.1M in at-risk revenue through 4-tier risk segmentation, enabling targeted retention campaigns that improved customer lifetime value by 18%.</p>
+                <span className="project-link proprietary">Proprietary Work</span>
+              </div>
+            </div>
 
-  <div className="project-card">
-    <div
-      className="project-image"
-      style={{ backgroundImage: "url(/images/fraud-detection.jpg)", backgroundSize: 'cover', backgroundPosition: 'center' }}
-    ></div>
-    <h4>Fraud Detection for Credit Card Transactions</h4>
-    <p>Built a fraud detection model on 97K+ credit card transactions using LightGBM, CNN, XGBoost, and more.</p>
-    <a href="https://github.com/ReubenChatterjee/credit-card-fraud-detection" target="_blank" rel="noopener noreferrer" className="project-link">View on GitHub</a>
-  </div>
+            <div className="project-card">
+              <div
+                className="project-image"
+                style={{ backgroundImage: "url(/images/gender-study.png)", backgroundSize: 'cover', backgroundPosition: 'center' }}
+              ></div>
+              <div className="project-card-body">
+                <h4>Gender &amp; Group Dynamics Research Study</h4>
+                <p>Analyzed demographic data from 500+ students to investigate gender composition effects on team dynamics in COGS108. Found statistically significant gender-based differences in programming comfort using ANOVA and created visualizations to support findings.</p>
+                <a href="https://github.com/ReubenChatterjee/gender_groupwork" target="_blank" rel="noopener noreferrer" className="project-link">View Project →</a>
+              </div>
+            </div>
 
-  <div className="project-card">
-    <div
-      className="project-image"
-      style={{ backgroundImage: "url(/images/sas.png)", backgroundSize: 'cover', backgroundPosition: 'center' }}
-    ></div>
-    <h4>Student Accommodation Service</h4>
-    <p>Designed a mobile application that matches students with compatible roommates using the K-Means clustering algorithm and OCEAN personality model.</p>
-    <a href="https://github.com/ReubenChatterjee/student-accommodation-app" target="_blank" rel="noopener noreferrer" className="project-link">View Project</a>
-  </div>
-  
-        </motion.div>
-        <motion.div 
-          className="view-all"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 2.2 }}
-        >
-          <Link to="/portfolio">View All Projects</Link>
-        </motion.div>
-      </motion.div>
+            <div className="project-card">
+              <div
+                className="project-image"
+                style={{ backgroundImage: "url(/images/fraud-detection.jpg)", backgroundSize: 'cover', backgroundPosition: 'center' }}
+              ></div>
+              <div className="project-card-body">
+                <h4>Fraud Detection for Credit Card Transactions</h4>
+                <p>Built a fraud detection model on 97K+ credit card transactions using LightGBM, CNN, XGBoost, and more.</p>
+                <a href="https://github.com/ReubenChatterjee/credit-card-fraud-detection" target="_blank" rel="noopener noreferrer" className="project-link">View on GitHub →</a>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div
+                className="project-image"
+                style={{ backgroundImage: "url(/images/sas.png)", backgroundSize: 'cover', backgroundPosition: 'center' }}
+              ></div>
+              <div className="project-card-body">
+                <h4>Student Accommodation Service</h4>
+                <p>Designed a mobile application that matches students with compatible roommates using the K-Means clustering algorithm and OCEAN personality model.</p>
+                <a href="https://github.com/ReubenChatterjee/student-accommodation-app" target="_blank" rel="noopener noreferrer" className="project-link">View Project →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
     </div>
   );
 };
