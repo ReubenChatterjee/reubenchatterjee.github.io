@@ -18,9 +18,9 @@
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 10% 40%, rgba(232, 160, 48, 0.08) 0%, transparent 55%),
-    radial-gradient(ellipse at 90% 10%, rgba(167, 139, 250, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at 55% 95%, rgba(232, 160, 48, 0.05) 0%, transparent 50%);
+    radial-gradient(ellipse at 10% 40%, rgba(232, 160, 48, 0.13) 0%, transparent 55%),
+    radial-gradient(ellipse at 90% 10%, rgba(167, 139, 250, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 55% 95%, rgba(232, 160, 48, 0.08) 0%, transparent 50%);
 }
 
 /* ── Hero ─────────────────────────────────────────────────── */
@@ -80,7 +80,7 @@
 
 .hero-name-line {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(3.5rem, 7.5vw, 8.5rem);
+  font-size: clamp(3.5rem, 6.5vw, 8rem);
   font-weight: 700;
   letter-spacing: -0.04em;
   color: #ffffff;
@@ -375,7 +375,7 @@
 }
 
 .project-link.proprietary {
-  color: var(--text-dim);
+  color: #777;
   cursor: default;
   font-size: 0.8rem;
 }

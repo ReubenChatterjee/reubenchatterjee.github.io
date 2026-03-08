@@ -202,13 +202,14 @@ const Portfolio = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <motion.div 
-        className="section-title"
+      <motion.div
+        className="page-header"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.1 }}
       >
-        <h2>My Portfolio</h2>
+        <span className="section-tag">PORTFOLIO</span>
+        <h2 className="page-heading">My Work</h2>
       </motion.div>
 
       <motion.div 

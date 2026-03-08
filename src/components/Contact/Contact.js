@@ -11,13 +11,14 @@ const Contact = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <motion.div 
-        className="section-title"
+      <motion.div
+        className="page-header"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        transition={{ duration: 0.4, delay: 0.1 }}
       >
-        <h2>Get In Touch</h2>
+        <span className="section-tag">CONTACT</span>
+        <h2 className="page-heading">Get In Touch</h2>
       </motion.div>
       
       <motion.div 
