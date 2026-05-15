@@ -90,8 +90,8 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              From automated data pipelines to fine-tuned ML models to
-              executive-ready dashboards. M.S. Data Science, UC San Diego (3.82 GPA).
+              Architecting scalable data pipelines, production ML models, and analytics platforms that drive business decisions. 
+
             </motion.p>
           </motion.div>
         </div>
