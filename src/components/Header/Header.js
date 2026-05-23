@@ -10,7 +10,6 @@ const Header = () => {
   const { scrollY } = useScroll();
   const headerBg = useTransform(scrollY, [0, 80], ['rgba(14,14,14,0)', 'rgba(14,14,14,0.92)']);
   const headerBorder = useTransform(scrollY, [0, 80], ['rgba(255,255,255,0)', 'rgba(255,255,255,0.07)']);
-  const headerBlur = useTransform(scrollY, [0, 80], [0, 1]);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
