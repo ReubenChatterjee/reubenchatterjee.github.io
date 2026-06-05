@@ -116,12 +116,16 @@ const AboutSection = () => {
                 I build end-to-end ML systems and scalable data pipelines that turn complex data into clear business impact.
               </p>
               <p>
-                Currently on the AI/ML team at Applied Materials, architecting production OCR pipelines with
-                vision-language models (Claude Sonnet 4.5, Qwen VL) and custom object detection (RT-DETR).
+                Currently on the AI/ML team at Applied Materials, architecting solutions for Computer Vision problems, training custom object detection models (RT-DETR, YOLO etc.), and designing OCR pipelines with
+                vision-language models (GLM, Qwen VL, Paddle, Gemini etc.) 
               </p>
               <p>
                 Previously at Alcamo Marketing, where I cut infrastructure costs by 60% and built a churn model
-                identifying $2.1M in at-risk revenue. Master's in Data Science from UC San Diego.
+                identifying $2.1M in at-risk revenue.
+              </p>
+
+              <p>
+              Master's in Data Science from UC San Diego.
               </p>
             </div>
 

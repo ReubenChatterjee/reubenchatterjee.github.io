@@ -25,24 +25,18 @@ const HeroMesh = ({ mouseRef, isMobile }) => {
   return (
     <Float speed={1.4} rotationIntensity={0.35} floatIntensity={1.1}>
       <group ref={groupRef}>
-        <mesh scale={isMobile ? 1.7 : 2.1}>
-          <icosahedronGeometry args={[1, 8]} />
-          {isMobile ? (
-            <meshStandardMaterial
-              color="#0a4dc4"
-              metalness={0.8}
-              roughness={0.2}
-            />
-          ) : (
-            <MeshDistortMaterial
-              color="#0a4dc4"
-              distort={0.42}
-              speed={1.3}
-              roughness={0.15}
-              metalness={0.9}
-              envMapIntensity={1.2}
-            />
-          )}
+        {/* Same material on every device so mobile matches the laptop look.
+            Mobile only lowers the geometry subdivision + distort speed for perf. */}
+        <mesh scale={isMobile ? 1.8 : 2.1}>
+          <icosahedronGeometry args={[1, isMobile ? 5 : 8]} />
+          <MeshDistortMaterial
+            color="#0a4dc4"
+            distort={0.42}
+            speed={isMobile ? 1.0 : 1.3}
+            roughness={0.15}
+            metalness={0.9}
+            envMapIntensity={1.2}
+          />
         </mesh>
       </group>
     </Float>
@@ -80,10 +74,11 @@ const Hero = () => {
 
   return (
     <section ref={heroRef} className="apple-hero" onMouseMove={handleMouseMove}>
-      {/* 3D scene layer — simplified material on mobile, full distort on desktop */}
+      {/* 3D scene layer — identical scene on every device, only perf knobs
+          (pixel ratio, geometry detail) differ so mobile matches the laptop. */}
       <motion.div className="hero-3d-layer" style={{ y: sceneY, opacity: sceneOpacity }}>
         <Canvas
-          dpr={isMobile ? [1, 1] : [1, 1.5]}
+          dpr={isMobile ? [1, 1.5] : [1, 2]}
           camera={{ position: [0, 0, 5], fov: 45 }}
           gl={{ antialias: true, alpha: true }}
         >
@@ -93,7 +88,9 @@ const Hero = () => {
             <pointLight position={[-5, -3, -2]} color="#00c6ff" intensity={2.2} />
             <pointLight position={[0, 0, -4]} color="#0071e3" intensity={1.8} />
             <HeroMesh mouseRef={mouseRef} isMobile={isMobile} />
-            {!isMobile && <Environment preset="city" />}
+            {/* Environment is what gives the metallic mesh its reflections —
+                without it the mesh renders near-black. Required on mobile too. */}
+            <Environment preset="city" />
           </Suspense>
         </Canvas>
       </motion.div>
