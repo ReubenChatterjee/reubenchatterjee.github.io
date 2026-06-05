@@ -8,38 +8,41 @@ import './Hero.css';
 // Apple cubic-bezier easing curve — physics-based, never abrupt
 const APPLE_EASE = [0.25, 0.46, 0.45, 0.94];
 
-// The central floating mesh. Distorted icosahedron with a metallic blue
-// surface — the lighting (warm directional + cool point light) gives it the
-// chrome/liquid-glass look you see in Apple Vision Pro / M-chip keynote shots.
-// Mouse position is passed in as refs so the parent can drive parallax tilt
-// without triggering a React re-render every mousemove.
-const HeroMesh = ({ mouseRef }) => {
+const HeroMesh = ({ mouseRef, isMobile }) => {
   const groupRef = useRef();
 
   useFrame((_, delta) => {
     if (!groupRef.current) return;
-    // ambient rotation
     groupRef.current.rotation.y += delta * 0.12;
-    // parallax tilt — lerp toward mouse position for smooth follow
-    const targetX = mouseRef.current.y * 0.4;
-    const targetY = mouseRef.current.x * 0.4;
-    groupRef.current.rotation.x += (targetX - groupRef.current.rotation.x) * 0.04;
-    groupRef.current.rotation.z += (targetY * 0.3 - groupRef.current.rotation.z) * 0.04;
+    if (!isMobile) {
+      const targetX = mouseRef.current.y * 0.4;
+      const targetY = mouseRef.current.x * 0.4;
+      groupRef.current.rotation.x += (targetX - groupRef.current.rotation.x) * 0.04;
+      groupRef.current.rotation.z += (targetY * 0.3 - groupRef.current.rotation.z) * 0.04;
+    }
   });
 
   return (
     <Float speed={1.4} rotationIntensity={0.35} floatIntensity={1.1}>
       <group ref={groupRef}>
-        <mesh scale={2.1}>
+        <mesh scale={isMobile ? 1.7 : 2.1}>
           <icosahedronGeometry args={[1, 8]} />
-          <MeshDistortMaterial
-            color="#0a4dc4"
-            distort={0.42}
-            speed={1.3}
-            roughness={0.15}
-            metalness={0.9}
-            envMapIntensity={1.2}
-          />
+          {isMobile ? (
+            <meshStandardMaterial
+              color="#0a4dc4"
+              metalness={0.8}
+              roughness={0.2}
+            />
+          ) : (
+            <MeshDistortMaterial
+              color="#0a4dc4"
+              distort={0.42}
+              speed={1.3}
+              roughness={0.15}
+              metalness={0.9}
+              envMapIntensity={1.2}
+            />
+          )}
         </mesh>
       </group>
     </Float>
@@ -77,27 +80,23 @@ const Hero = () => {
 
   return (
     <section ref={heroRef} className="apple-hero" onMouseMove={handleMouseMove}>
-      {/* 3D scene layer — Canvas on desktop, CSS gradient on mobile */}
-      {isMobile ? (
-        <div className="hero-mobile-bg" aria-hidden="true" />
-      ) : (
-        <motion.div className="hero-3d-layer" style={{ y: sceneY, opacity: sceneOpacity }}>
-          <Canvas
-            dpr={[1, 1.5]}
-            camera={{ position: [0, 0, 5], fov: 45 }}
-            gl={{ antialias: true, alpha: true }}
-          >
-            <Suspense fallback={null}>
-              <ambientLight intensity={0.35} />
-              <directionalLight position={[4, 4, 5]} intensity={1.1} color="#ffffff" />
-              <pointLight position={[-5, -3, -2]} color="#00c6ff" intensity={2.2} />
-              <pointLight position={[0, 0, -4]} color="#0071e3" intensity={1.8} />
-              <HeroMesh mouseRef={mouseRef} />
-              <Environment preset="city" />
-            </Suspense>
-          </Canvas>
-        </motion.div>
-      )}
+      {/* 3D scene layer — simplified material on mobile, full distort on desktop */}
+      <motion.div className="hero-3d-layer" style={{ y: sceneY, opacity: sceneOpacity }}>
+        <Canvas
+          dpr={isMobile ? [1, 1] : [1, 1.5]}
+          camera={{ position: [0, 0, 5], fov: 45 }}
+          gl={{ antialias: true, alpha: true }}
+        >
+          <Suspense fallback={null}>
+            <ambientLight intensity={0.35} />
+            <directionalLight position={[4, 4, 5]} intensity={1.1} color="#ffffff" />
+            <pointLight position={[-5, -3, -2]} color="#00c6ff" intensity={2.2} />
+            <pointLight position={[0, 0, -4]} color="#0071e3" intensity={1.8} />
+            <HeroMesh mouseRef={mouseRef} isMobile={isMobile} />
+            {!isMobile && <Environment preset="city" />}
+          </Suspense>
+        </Canvas>
+      </motion.div>
 
       {/* Radial glow overlay sits between the 3D scene and the text — it
           softens the mesh edges and creates the keynote-stage glow */}
