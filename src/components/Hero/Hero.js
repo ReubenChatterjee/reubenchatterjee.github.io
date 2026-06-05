@@ -1,4 +1,4 @@
-import React, { useRef, Suspense } from 'react';
+import React, { useRef, Suspense, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Canvas, useFrame } from '@react-three/fiber';
@@ -47,9 +47,16 @@ const HeroMesh = ({ mouseRef }) => {
 };
 
 const Hero = () => {
-  // Mouse position stored in a ref so updates don't re-render React tree
   const mouseRef = useRef({ x: 0, y: 0 });
   const heroRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 768px)');
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
 
   // Scroll-linked parallax: as user scrolls past hero, the 3D scene drifts
   // down and fades. useScroll on the hero element gives us a 0→1 progress.
@@ -70,28 +77,27 @@ const Hero = () => {
 
   return (
     <section ref={heroRef} className="apple-hero" onMouseMove={handleMouseMove}>
-      {/* 3D scene layer — full-bleed Canvas behind the text */}
-      <motion.div className="hero-3d-layer" style={{ y: sceneY, opacity: sceneOpacity }}>
-        <Canvas
-          dpr={[1, 2]}
-          camera={{ position: [0, 0, 5], fov: 45 }}
-          gl={{ antialias: true, alpha: true }}
-        >
-          <Suspense fallback={null}>
-            {/* Soft fill light */}
-            <ambientLight intensity={0.35} />
-            {/* Key light — warm white, top-right */}
-            <directionalLight position={[4, 4, 5]} intensity={1.1} color="#ffffff" />
-            {/* Rim light — Apple cyan, bottom-left, gives the gradient edge */}
-            <pointLight position={[-5, -3, -2]} color="#00c6ff" intensity={2.2} />
-            {/* Accent — Apple blue, behind mesh, for a halo */}
-            <pointLight position={[0, 0, -4]} color="#0071e3" intensity={1.8} />
-            <HeroMesh mouseRef={mouseRef} />
-            {/* Environment provides reflections on the metallic surface */}
-            <Environment preset="city" />
-          </Suspense>
-        </Canvas>
-      </motion.div>
+      {/* 3D scene layer — Canvas on desktop, CSS gradient on mobile */}
+      {isMobile ? (
+        <div className="hero-mobile-bg" aria-hidden="true" />
+      ) : (
+        <motion.div className="hero-3d-layer" style={{ y: sceneY, opacity: sceneOpacity }}>
+          <Canvas
+            dpr={[1, 1.5]}
+            camera={{ position: [0, 0, 5], fov: 45 }}
+            gl={{ antialias: true, alpha: true }}
+          >
+            <Suspense fallback={null}>
+              <ambientLight intensity={0.35} />
+              <directionalLight position={[4, 4, 5]} intensity={1.1} color="#ffffff" />
+              <pointLight position={[-5, -3, -2]} color="#00c6ff" intensity={2.2} />
+              <pointLight position={[0, 0, -4]} color="#0071e3" intensity={1.8} />
+              <HeroMesh mouseRef={mouseRef} />
+              <Environment preset="city" />
+            </Suspense>
+          </Canvas>
+        </motion.div>
+      )}
 
       {/* Radial glow overlay sits between the 3D scene and the text — it
           softens the mesh edges and creates the keynote-stage glow */}

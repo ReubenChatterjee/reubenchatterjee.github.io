@@ -33,6 +33,30 @@
   display: block;
 }
 
+/* CSS-only background for mobile — replaces R3F canvas */
+.hero-mobile-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(
+      ellipse 90% 70% at 50% 55%,
+      rgba(10, 76, 196, 0.75) 0%,
+      rgba(0, 113, 227, 0.35) 40%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 20% 70%,
+      rgba(0, 88, 200, 0.35) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 45% 40% at 80% 30%,
+      rgba(0, 198, 255, 0.12) 0%,
+      transparent 55%
+    );
+}
+
 /* Soft radial glow behind/around the mesh — keynote stage light */
 .hero-glow {
   position: absolute;
