@@ -1,404 +1,263 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiLock, FiGithub, FiArrowUpRight } from 'react-icons/fi';
 import './Portfolio.css';
 
+const APPLE_EASE = [0.25, 0.46, 0.45, 0.94];
+
+// Project catalog — full set, used on /portfolio. The home page shows a
+// curated subset via ProjectsSection.
+const PROJECTS = [
+  {
+    id: 1,
+    title: 'Multi-Model OCR Pipeline for Industrial Labels',
+    eyebrow: 'Applied Materials',
+    description:
+      'Production-grade OCR pipeline using vision-language models (Claude Sonnet 4.5, Qwen VL, PaddleOCR), 85.7% precision across 500+ industrial part labels. Trained an RT-DETR detector at 97.8% precision and improved inference efficiency 3–5× through NVMe caching and float16 GPU optimization on Databricks.',
+    image: '/images/part-serialization.png',
+    categories: ['ds'],
+    tags: ['Claude Sonnet 4.5', 'Qwen VL', 'PaddleOCR', 'RT-DETR', 'Databricks'],
+    proprietary: true,
+  },
+  {
+    id: 2,
+    title: 'Afterpay Customer Retention Prediction',
+    eyebrow: 'Alcamo Marketing',
+    description:
+      'Gradient boosting churn prediction model — 89% accuracy, 0.92 ROC-AUC — built on 50+ behavioral features from 350K+ transaction records. Identified $2.1M in at-risk revenue via 4-tier risk segmentation, improving customer lifetime value by 18%.',
+    image: '/images/afterpay-churn.jpg',
+    categories: ['ds', 'da'],
+    tags: ['XGBoost', 'LightGBM', 'SHAP', 'Snowflake', 'SQL'],
+    proprietary: true,
+  },
+  {
+    id: 3,
+    title: 'Snowflake Data Infrastructure Migration',
+    eyebrow: 'Alcamo Marketing',
+    description:
+      'End-to-end migration of enterprise marketing from Adverity to Snowflake — 60% cost reduction with zero downtime. Architected 15+ automated ETL pipelines via Fivetran and SQL, processing 50GB+ daily across multiple platforms.',
+    image: '/images/data-migration.jpg',
+    categories: ['ds', 'fs'],
+    tags: ['Snowflake', 'Fivetran', 'SQL', 'ETL', 'Python'],
+    proprietary: true,
+  },
+  {
+    id: 4,
+    title: 'Credit Card Anomaly Detection',
+    eyebrow: 'Personal',
+    description:
+      'Engineered 3,200+ behavioral features from 97K credit card transactions. Tuned LightGBM via multi-model comparison (Random Forest, XGBoost, CatBoost), 92% accuracy and 0.59 OOT AUC. Threshold tuning + SMOTE reduced false positives 10%, $2M+ projected annual savings.',
+    image: '/images/fraud-detection.jpg',
+    categories: ['ds', 'da'],
+    tags: ['LightGBM', 'XGBoost', 'CatBoost', 'CNN', 'SMOTE'],
+    github: 'https://github.com/ReubenChatterjee/credit-card-fraud-detection',
+  },
+  {
+    id: 5,
+    title: 'Gender & Group Dynamics Study',
+    eyebrow: 'UCSD · Ellis Lab',
+    description:
+      'Analyzed demographic data from 500+ students on gender composition effects in team dynamics for COGS108. Used ANOVA to ensure balanced experimental groupings; surfaced statistically significant gender-based differences in programming comfort.',
+    image: '/images/gender-study.png',
+    categories: ['ds'],
+    tags: ['R-Studio', 'ANOVA', 'Wilcoxon', 'ggplot2', 'NLP'],
+    github: 'https://github.com/ReubenChatterjee/gender_groupwork',
+  },
+  {
+    id: 6,
+    title: 'Climate Change Analysis',
+    eyebrow: 'Personal',
+    description:
+      'Built a NorESM2 linear regression model to predict global warming from CO₂ emissions in the ClimateBench dataset, extending the analysis to regional temperature variations across countries.',
+    image: '/images/climate-change.jpg',
+    categories: ['ds'],
+    tags: ['Python', 'Regression', 'ClimateBench', 'Visualization'],
+    github: 'https://github.com/ReubenChatterjee/Climate-Data-Analysis',
+  },
+  {
+    id: 7,
+    title: 'Document Summarization with LSI',
+    eyebrow: 'Personal',
+    description:
+      'Extractive text summarization pipeline using Latent Semantic Indexing and Truncated SVD, benchmarked against BERTSUM on CNN-DailyMail. ROUGE evaluation surfaced LSI\'s limitations and the contextual edge of transformer architectures.',
+    image: '/images/docs.png',
+    categories: ['fs', 'ds'],
+    tags: ['NLTK', 'BERTSUM', 'scikit-learn', 'SVD', 'NLP'],
+    github: 'https://chocolate-yard-038.notion.site/Document-Summarization-Using-Latent-Semantic-Indexing-eb81fc4925054d54af65571ceb5227e5',
+  },
+  {
+    id: 8,
+    title: 'Student Accommodation Service',
+    eyebrow: 'Mobile App',
+    description:
+      'Roommate-matching mobile app pairing students via K-Means clustering on the OCEAN personality model. Features lifestyle questionnaire, profile browsing, in-app messaging, and landlord–tenant matching.',
+    image: '/images/sas.png',
+    categories: ['fs'],
+    tags: ['Flutter', 'Python', 'MySQL', 'Node.js', 'K-Means'],
+    github: 'https://github.com/ReubenChatterjee/student-accommodation-app',
+  },
+  {
+    id: 9,
+    title: 'NYC Property Tax Fraud Detection',
+    eyebrow: 'Personal',
+    description:
+      'Anomaly detection on 1M+ NYC property records to surface potential tax fraud. 25+ valuation/size ratio features, PCA for dimensionality reduction, Isolation Forest + LOF for irregularity scoring, validated against satellite imagery.',
+    image: '/images/nyc.webp',
+    categories: ['ds', 'da'],
+    tags: ['scikit-learn', 'PCA', 'Isolation Forest', 'LOF', 'Python'],
+    github: 'https://github.com/ReubenChatterjee/new-york-tax-fraud-detection',
+  },
+];
+
+const FILTERS = [
+  { id: 'all', label: 'All' },
+  { id: 'ds', label: 'Data Science' },
+  { id: 'da', label: 'Data Analytics' },
+  { id: 'fs', label: 'Full Stack' },
+];
+
+// Apple system color tints rotated per card for visual variety
+const TINTS = ['blue', 'purple', 'green', 'pink', 'amber', 'teal'];
+const tintFor = (idx) => TINTS[idx % TINTS.length];
+
+const ProjectCTA = ({ proprietary, github }) => {
+  if (proprietary) {
+    return (
+      <div className="apple-project-chip apple-project-chip-proprietary">
+        <FiLock size={13} />
+        <span>Proprietary Work</span>
+      </div>
+    );
+  }
+  if (github) {
+    return (
+      <a
+        href={github}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="apple-project-chip apple-project-chip-link"
+      >
+        <FiGithub size={13} />
+        <span>View on GitHub</span>
+        <FiArrowUpRight size={13} className="apple-project-chip-arrow" />
+      </a>
+    );
+  }
+  return null;
+};
+
+const PortfolioCard = ({ project, tint }) => (
+  <article className="apple-project-card apple-portfolio-card" data-tint={tint}>
+    <div
+      className="apple-project-card-image"
+      style={{ backgroundImage: `url(${project.image})` }}
+    >
+      <div className="apple-project-card-image-tint" aria-hidden="true" />
+    </div>
+    <div className="apple-project-card-content">
+      <div className="apple-project-eyebrow">{project.eyebrow}</div>
+      <h3 className="apple-project-card-title">{project.title}</h3>
+      <p className="apple-project-card-description apple-portfolio-description">
+        {project.description}
+      </p>
+      <div className="apple-project-tags">
+        {project.tags.slice(0, 4).map((t) => (
+          <span key={t} className="apple-project-tag">{t}</span>
+        ))}
+      </div>
+      <ProjectCTA proprietary={project.proprietary} github={project.github} />
+    </div>
+  </article>
+);
+
 const Portfolio = () => {
-  // Sample project data
-  const projects = [
-    {
-      id: 1,
-      title: 'Multi-Model OCR Pipeline for Industrial Labels',
-      description: 'Architected and deployed a production-grade OCR pipeline using vision-language models (Claude Sonnet 4.5, Qwen VL, PaddleOCR), achieving 85.7% precision across 500+ industrial part labels (printed, etched, and engraved). Trained and evaluated an RT-DETR based label detection system by converting LabelMe annotations to COCO format, achieving 97.8% precision on printed labels and 64.0% on engraved labels. Improved inference efficiency by 3–5x through NVMe caching and float16 GPU optimization on Databricks.',
-      image: 'part-serialization.png',
-      categories: ['ds'],
-      technologies: ['Python', 'PyTorch', 'Hugging Face', 'Claude Sonnet 4.5', 'Qwen VL', 'PaddleOCR', 'RT-DETR', 'Databricks', 'GPU Optimization'],
-      github: null
-    },
-    {
-      id: 2,
-      title: 'Afterpay Customer Retention Prediction',
-      description: 'Built gradient boosting churn prediction model achieving 89% accuracy and 0.92 ROC-AUC by engineering 50+ behavioral features including RFM metrics, payment patterns, and temporal trends from 350K+ transaction records. Identified $2.1M in at-risk revenue by scoring 12,500 high-risk customers through 4-tier risk segmentation system, enabling targeted retention campaigns that improved customer lifetime value by 18%.',
-      image: 'afterpay-churn.jpg',
-      categories: ['ds', 'da'],
-      technologies: ['Python', 'XGBoost', 'LightGBM', 'Scikit-learn', 'SHAP', 'Snowflake', 'SQL', 'Feature Engineering'],
-      github: null
-    },
-    {
-      id: 3,
-      title: 'Snowflake Data Infrastructure Migration',
-      description: 'Led end-to-end migration of Enterprise marketing from Adverity to Snowflake, reducing operational costs by 60% while improving data quality and accessibility. Architected and deployed 15+ automated and production-ready ETL pipelines using Fivetran and SQL, processing 50GB+ daily data across multiple marketing platforms. Designed scalable data warehouse schema and implemented data governance frameworks ensuring zero downtime during transition.',
-      image: 'data-migration.jpg',
-      categories: ['ds', 'fs'],
-      technologies: ['Snowflake', 'Fivetran', 'SQL', 'ETL Pipelines', 'Python', 'Data Architecture'],
-      github: null
-    },
-    {
-      id: 4,
-      title: 'Credit Card Anomaly Detection using Gradient Boosting',
-      description: 'Engineered 3,200+ behavioral features from 97,852 credit card transactions using domain-specific encodings and behavioral signals. Tuned LightGBM via multi-model comparison (Random Forest, XGBoost, CatBoost), achieving 92% accuracy and 0.59 OOT AUC. Reduced false positives by 10% via threshold tuning and SMOTE, contributing to $2M+ projected annual savings.',
-      image: 'fraud-detection.jpg',
-      categories: ['ds', 'da'],
-      technologies: ['Python', 'Pytorch', 'XGBoost', 'LightGBM', 'Random Forest', 'CatBoost', 'CNN', 'SMOTE', 'Seaborn'],
-      github: 'https://github.com/ReubenChatterjee/credit-card-fraud-detection'
-    },
-    {
-        id: 5,
-        title: 'Gender & Group Dynamics Research Study',
-        description: 'Analyzed demographic data from 500+ students to investigate the effects of gender composition on team dynamics in COGS108, a data science course at UCSD. Conducted statistical tests (ANOVA) to ensure balanced experimental groupings across demographics like race, first-gen, international status etc. Found statistically significant gender-based differences in programming comfort and created visualizations to support findings.',
-        image: 'gender-study.png',
-        categories: 'ds',
-        technologies: ['R', 'ggplot2', 'ANOVA', 'Wilcoxon Rank Sum test', 'Tukey Stats test', 'Data Wrangling'],
-        github: 'https://github.com/ReubenChatterjee/gender_groupwork'
-      },
-    {
-      id: 6,
-      title: 'Climate Change Analysis',
-      description: 'Built and evaluated a NorESM2 linear regression model to predict global warming based on CO2 emissions from the ClimateBench Dataset, extending the analysis to regional temperature variations by country.',
-      image: 'climate-change.jpg',
-      categories: 'ds',
-      technologies: ['React', 'Firebase', 'Redux', 'Styled Components'],
-      github: 'https://github.com/ReubenChatterjee/Climate-Data-Analysis'
-    },
-    {
-      id: 7,
-      title: 'Document Summarization Using Latent Semantic Indexing',
-      description: 'Implemented a pipeline for extractive text summarization using Latent Semantic Indexing (LSI) and Truncated SVD, comparing its performance with BERTSUM, a transformer-based SOTA model. Applied advanced pre-processing, TF-IDF vectorization, and ROUGE evaluation on a subset of the CNN-DailyMail dataset to generate and assess summaries. Demonstrated the limitations of LSI and the effectiveness of transformer architectures for contextual summarization.',
-      image: 'docs.png',
-      category: 'fs',
-      technologies: ['NLTK', 'BERTSUM', 'Scikit-learn', 'Singular Value Decomposition', 'Latent Semantic Indexing'],
-      github: 'https://chocolate-yard-038.notion.site/Document-Summarization-Using-Latent-Semantic-Indexing-eb81fc4925054d54af65571ceb5227e5'
-    },
-    {
-      id: 8,
-      title: 'Student Accommodation Service',
-      description: 'Designed a mobile application that matches students with compatible roommates using the K-Means clustering algorithm and OCEAN personality model. The app collects lifestyle preferences via a personality questionnaire and clusters users to suggest matches with similar traits. Features include profile browsing, in-app messaging, and landlord–tenant matching.',
-      image: 'sas.png',
-      category: 'fs',
-      technologies: ['Flutter', 'Python', 'MySQL', 'Node.js', 'Unsupervised Learning'],
-      github: 'https://github.com/ReubenChatterjee/student-accommodation-app'
-    },
-    {
-        id: 9,
-        title: 'Tax Fraud Detection for NYC Properties',
-        description: 'Built an anomaly detection pipeline on 1M+ NYC property records to identify potential tax fraud. Engineered 25+ valuation and size ratio features, applied PCA for dimensionality reduction, and used Isolation Forest and Local Outlier Factor to detect irregularities. Flagged high-risk properties and validated anomalies using satellite imagery and statistical deviations.',
-        image: 'nyc.webp',
-        categories: ['ds', 'da'],
-        technologies: ['Python', 'Scikit-learn', 'PCA', 'LOF', 'Isolation Forest', 'Seaborn'],
-        github: 'https://github.com/ReubenChatterjee/new-york-tax-fraud-detection'
-      }
-  ];
+  const [activeFilter, setActiveFilter] = useState('all');
 
-  // Comprehensive skills data
-  const allSkills = [
-    // Data Engineering
-    { name: 'SQL', category: 'data-engineering' },
-    { name: 'Python', category: 'data-engineering' },
-    { name: 'Snowflake', category: 'data-engineering' },
-    { name: 'Databricks', category: 'data-engineering' },
-    { name: 'Fivetran', category: 'data-engineering' },
-    { name: 'Pandas | Numpy', category: 'data-engineering' },
-    { name: 'ETL Pipelines', category: 'data-engineering' },
-    { name: 'PostgreSQL', category: 'data-engineering' },
-    { name: 'MongoDB', category: 'data-engineering' },
-    { name: 'Spark', category: 'data-engineering' },
-    { name: 'Hadoop', category: 'data-engineering' },
-    { name: 'dbt', category: 'data-engineering' },
-    { name: 'Docker', category: 'data-engineering' },
-    { name: 'AWS', category: 'data-engineering' },
-    { name: 'Azure', category: 'data-engineering' },
-    { name: 'GCP', category: 'data-engineering' },
-
-    // Machine Learning
-    { name: 'PyTorch', category: 'ML' },
-    { name: 'Hugging Face Transformers', category: 'ML' },
-    { name: 'Vision-Language Models', category: 'ML' },
-    { name: 'OCR (PaddleOCR)', category: 'ML' },
-    { name: 'Object Detection (RT-DETR)', category: 'ML' },
-    { name: 'XGBoost', category: 'ML' },
-    { name: 'LightGBM', category: 'ML' },
-    { name: 'CatBoost', category: 'ML' },
-    { name: 'Tensorflow', category: 'ML' },
-    { name: 'Keras', category: 'ML' },
-    { name: 'scikit-learn', category: 'ML' },
-    { name: 'Neural Networks', category: 'ML' },
-    { name: 'Feature Engineering', category: 'ML' },
-    { name: 'SHAP', category: 'ML' },
-    { name: 'GPU Optimization', category: 'ML' },
-
-    // Data Analytics
-    { name: 'R-studio | R-GUI', category: 'data-analytics' },
-    { name: 'Tableau', category: 'data-analytics' },
-    { name: 'PowerBI', category: 'data-analytics' },
-    { name: 'Looker', category: 'data-analytics' },
-    { name: 'Excel', category: 'data-analytics' },
-    { name: 'Seaborn | Matplotlib', category: 'data-analytics' },
-    { name: 'Statistical Analysis', category: 'data-analytics' },
-    { name: 'A/B Testing', category: 'data-analytics' },
-
-    // Frontend
-    { name: 'React', category: 'frontend' },
-    { name: 'JavaScript', category: 'frontend' },
-    { name: 'HTML5', category: 'frontend' },
-    { name: 'CSS3', category: 'frontend' },
-    { name: 'Redux', category: 'frontend' },
-
-    // Backend
-    { name: 'Node.js', category: 'backend' },
-    { name: 'Express', category: 'backend' },
-    { name: 'Firebase', category: 'backend' },
-
-    // Other Tools
-    { name: 'Git', category: 'tools' },
-    { name: 'Bash', category: 'tools' },
-    { name: 'Jupyter', category: 'tools' },
-    { name: 'JIRA', category: 'tools' },
-    { name: 'G-suite', category: 'tools' },
-    { name: 'MS Office', category: 'tools' },
-    { name: 'Adobe Premiere Pro', category: 'tools' },
-    { name: 'Blender 3D', category: 'tools' },
-
-
-  ];
-
-  const [filter, setFilter] = useState('all');
-  
-  // State to track if we need to scroll to the skills section
-  const [scrollToSkills, setScrollToSkills] = useState(false);
-  
-  useEffect(() => {
-    // Check if URL has the #skills hash
-    if (window.location.hash === '#skills') {
-      setScrollToSkills(true);
-    }
-  }, []);
-  
-  useEffect(() => {
-    // Scroll to the skills section if needed
-    if (scrollToSkills) {
-      const skillsSection = document.getElementById('skills-section');
-      if (skillsSection) {
-        skillsSection.scrollIntoView({ behavior: 'smooth' });
-        setScrollToSkills(false);
-      }
-    }
-  }, [scrollToSkills]);
-
-  const filteredProjects = filter === 'all' 
-  ? projects 
-  : projects.filter(project => {
-      // Handle both formats (backward compatibility)
-      if (project.categories) {
-        return project.categories.includes(filter);
-      } else if (project.category) {
-        return project.category === filter;
-      }
-      return false;
-    });
+  const filteredProjects = useMemo(() => {
+    if (activeFilter === 'all') return PROJECTS;
+    return PROJECTS.filter((p) => (p.categories || []).includes(activeFilter));
+  }, [activeFilter]);
 
   return (
-    <motion.div 
-      className="portfolio-container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
-      <motion.div
-        className="page-header"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.1 }}
-      >
-        <span className="section-tag">PORTFOLIO</span>
-        <h2 className="page-heading">My Work</h2>
-      </motion.div>
-
-      <motion.div 
-        className="filter-buttons"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.2 }}
-      >
-        <button 
-          className={filter === 'all' ? 'active' : ''} 
-          onClick={() => setFilter('all')}
-        >
-          All
-        </button>
-        <button 
-          className={filter === 'ds' ? 'active' : ''} 
-          onClick={() => setFilter('ds')}
-        >
-          Data Science
-        </button>
-        <button 
-          className={filter === 'da' ? 'active' : ''} 
-          onClick={() => setFilter('da')}
-        >
-          Data Analytics
-        </button>
-
-        <button 
-          className={filter === 'fs' ? 'active' : ''} 
-          onClick={() => setFilter('fs')}
-        >
-          Full Stack
-        </button>
-      </motion.div>
-
-      <motion.div 
-        className="projects-grid"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.3 }}
-      >
-        {filteredProjects.map((project, index) => (
-          <motion.div 
-            key={project.id}
-            className="project-item"
-            initial={{ opacity: 0, y: 30 }}
+    <div className="apple-portfolio-page">
+      {/* ─── Hero header ───────────────────────────────────── */}
+      <section className="apple-portfolio-hero">
+        <div className="apple-portfolio-hero-glow" aria-hidden="true" />
+        <div className="apple-portfolio-hero-inner">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 * (index + 3) }}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            transition={{ duration: 1, ease: APPLE_EASE }}
           >
-            <div
-                className="project-image"
-                style={{ 
-                    backgroundImage: `url(/images/${project.image})`
-                    }}
-                ></div>
-            <div className="project-details">
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="technologies">
-                {project.technologies.map((tech, i) => (
-                  <span key={i} className="tech-tag">{tech}</span>
-                ))}
-              </div>
-              
-              <div className="project-links">
-                {project.github ? (
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="view-project">View on Github</a>
-                ) : (
-                  <span className="confidential-tag">Proprietary Work</span>
-                )}
-              </div>
-            </div>
+            <span className="apple-eyebrow">Work</span>
+            <h1 className="apple-portfolio-title">
+              Projects, end{' '}
+              <span className="apple-title-muted">to end.</span>
+            </h1>
+            <p className="apple-portfolio-subtitle">
+              A catalog of the systems I've built — from production ML pipelines
+              and forecasting models to research studies and full-stack apps.
+            </p>
           </motion.div>
-        ))}
-      </motion.div>
 
-      {/* NEW: Skills Section */}
-      <motion.div 
-        id="skills-section"
-        className="skills-section-full"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        <motion.div 
-          className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-        >
-          <h2>My Complete Skill Set</h2>
-        </motion.div>
-        
-        <motion.div
-          className="skills-categories"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-        >
-          <div className="skills-category">
-            <h3>Data Engineering</h3>
-            <div className="skills-grid">
-              {allSkills
-                .filter(skill => skill.category === 'data-engineering')
-                .map((skill, index) => (
-                  <div key={index} className="skill-item">
-                    {skill.name}
-                  </div>
-                ))
-              }
+          {/* Apple-style segmented filter */}
+          <motion.div
+            className="apple-portfolio-filters"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: APPLE_EASE }}
+            role="tablist"
+            aria-label="Filter projects by category"
+          >
+            {FILTERS.map((f) => (
+              <button
+                key={f.id}
+                onClick={() => setActiveFilter(f.id)}
+                className={`apple-portfolio-filter${
+                  activeFilter === f.id ? ' active' : ''
+                }`}
+                role="tab"
+                aria-selected={activeFilter === f.id}
+              >
+                {f.label}
+              </button>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── Grid ──────────────────────────────────────────── */}
+      <section className="apple-portfolio-grid-section">
+        <div className="apple-portfolio-grid-inner">
+          <motion.div className="apple-portfolio-grid" layout>
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((p, i) => (
+                <motion.div
+                  key={p.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95, y: 24 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                  transition={{
+                    duration: 0.55,
+                    delay: i * 0.04,
+                    ease: APPLE_EASE,
+                  }}
+                >
+                  <PortfolioCard project={p} tint={tintFor(i)} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+
+          {filteredProjects.length === 0 && (
+            <div className="apple-portfolio-empty">
+              No projects in this category yet.
             </div>
-          </div>
-
-          <div className="skills-category">
-            <h3>Machine Learning</h3>
-            <div className="skills-grid">
-              {allSkills
-                .filter(skill => skill.category === 'ML')
-                .map((skill, index) => (
-                  <div key={index} className="skill-item">
-                    {skill.name}
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-
-          <div className="skills-category">
-            <h3>Data Analytics & Visualization</h3>
-            <div className="skills-grid">
-              {allSkills
-                .filter(skill => skill.category === 'data-analytics')
-                .map((skill, index) => (
-                  <div key={index} className="skill-item">
-                    {skill.name}
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-
-          <div className="skills-category">
-            <h3>Frontend</h3>
-            <div className="skills-grid">
-              {allSkills
-                .filter(skill => skill.category === 'frontend')
-                .map((skill, index) => (
-                  <div key={index} className="skill-item">
-                    {skill.name}
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-
-          <div className="skills-category">
-            <h3>Backend</h3>
-            <div className="skills-grid">
-              {allSkills
-                .filter(skill => skill.category === 'backend')
-                .map((skill, index) => (
-                  <div key={index} className="skill-item">
-                    {skill.name}
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-
-          <div className="skills-category">
-            <h3>Other Tools</h3>
-            <div className="skills-grid">
-              {allSkills
-                .filter(skill => skill.category === 'tools')
-                .map((skill, index) => (
-                  <div key={index} className="skill-item">
-                    {skill.name}
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-
-
-
-        </motion.div>
-      </motion.div>
-    </motion.div>
+          )}
+        </div>
+      </section>
+    </div>
   );
 };
 

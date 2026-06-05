@@ -1,57 +1,67 @@
-.footer {
-    background-color: #0a0a0a;
-    padding: 2rem 0 1rem;
-    border-top: 1px solid var(--border);
-  }
+/* ─────────────────────────────────────────────────────────────
+   Apple-style Footer (v2-apple)
+   Minimal dark closer with social row + copyright line.
+   ───────────────────────────────────────────────────────────── */
 
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    margin-bottom: 1.5rem;
-  }
+.apple-footer {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 28px 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Inter", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .footer-logo {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: -0.02em;
-  }
+.apple-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .footer-social {
-    display: flex;
-    gap: 1.5rem;
-  }
+.apple-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-  .footer-social a {
-    color: var(--text-muted);
-    font-size: 1.4rem;
-    transition: color 0.25s ease, transform 0.25s ease;
-  }
+.apple-footer-copy {
+  font-size: 12px;
+  color: #6e6e73;
+  letter-spacing: -0.005em;
+}
 
-  .footer-social a:hover {
-    color: var(--accent);
-    transform: translateY(-3px);
-  }
+.apple-footer-socials {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+}
 
-  .footer-bottom {
+.apple-footer-socials a {
+  color: #6e6e73;
+  font-size: 16px;
+  display: inline-flex;
+  text-decoration: none;
+  transition:
+    color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.apple-footer-socials a:hover {
+  color: #4ba6ff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 540px) {
+  .apple-footer {
+    padding: 24px 16px;
+  }
+  .apple-footer-row {
+    flex-direction: column;
     text-align: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
+    gap: 14px;
   }
-
-  .footer-bottom p {
-    font-size: 0.85rem;
-    color: var(--text-dim);
-  }
-
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-  }
+}

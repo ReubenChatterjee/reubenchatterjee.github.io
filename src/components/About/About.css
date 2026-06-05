@@ -1,258 +1,408 @@
-.about-container {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    margin-top: 1rem;
-  }
-  
-  .about-flex {
-    display: flex;
-    gap: 3rem;
-    margin-bottom: 3rem;
-    align-items: flex-start;
-  }
-  
-  .about-text {
-    flex: 3;
-    line-height: 1.8;
-  }
-  
-  .about-text p {
-    margin-bottom: 1.5rem;
-  }
-  
-  .about-image {
-    flex: 2;
-    max-width: 250px;
-  }
-  
-  .about-image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    border: 3px solid #000000;
-  }
-  
-  .intro-text {
-    font-size: 1.5rem;
-    color: var(--accent);
-    font-weight: 500;
-  }
+/* ─────────────────────────────────────────────────────────────
+   Apple-style /about page (v2-apple)
+   Hero (text + headshot) → Journey chapters → Strengths bento → CTA
+   ───────────────────────────────────────────────────────────── */
 
-  .section-subheading {
-    font-family: 'Space Grotesk', sans-serif;
-    color: var(--accent);
-    margin: 2rem 0 1rem;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 0.5rem;
-    font-size: 1.1rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
+.apple-about-page {
+  background: #000000;
+  color: #f5f5f7;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "Inter", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .section-subheading::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background-color: var(--accent);
-  }
-  
-  .strength-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
-  
-  .strength-card {
-    background-color: var(--surface);
-    padding: 1.5rem;
-    border-radius: 8px;
-    flex: 1;
-    min-width: 250px;
-    transition: all 0.3s ease;
-  }
-  
-  .strength-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .strength-card h4 {
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Timeline CSS */
-  .timeline-container {
-    margin: 2rem 0 4rem;
-    width: 100%;
-  }
+/* ─── Hero ──────────────────────────────────────────────── */
 
-  .journey-text {
-    margin-bottom: 3rem;
-    line-height: 1.8;
+.apple-about-page-hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 180px 24px 120px;
+  background: #000000;
+  overflow: hidden;
+}
+
+.apple-about-page-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 50% 50% at 80% 30%,
+    rgba(10, 124, 255, 0.16) 0%,
+    rgba(0, 198, 255, 0.04) 35%,
+    transparent 65%
+  );
+}
+
+.apple-about-page-hero-inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.apple-about-page-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.apple-about-page-title {
+  font-size: clamp(44px, 6.5vw, 84px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  margin: 12px 0 8px;
+  background: linear-gradient(180deg, #ffffff 0%, #c8c8cd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-wrap: balance;
+}
+
+.apple-about-page-lead {
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.5;
+  color: #f5f5f7;
+  letter-spacing: -0.01em;
+  margin: 0;
+  max-width: 600px;
+}
+
+.apple-about-page-lead-secondary {
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.55;
+  color: #86868b;
+  letter-spacing: -0.005em;
+  margin: 4px 0 0;
+  max-width: 600px;
+}
+
+/* Headshot */
+.apple-about-page-headshot {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 380px;
+  justify-self: end;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #1a1a1c;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow:
+    0 30px 80px rgba(0, 113, 227, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+}
+
+.apple-about-page-headshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.apple-about-page-headshot-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse at top right,
+    rgba(10, 124, 255, 0.16) 0%,
+    transparent 50%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ─── Generic section scaffolding ────────────────────────── */
+
+.apple-about-page-journey,
+.apple-about-page-strengths,
+.apple-about-page-cta {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: #000000;
+  padding: 120px 24px;
+  overflow: hidden;
+}
+
+.apple-about-page-section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.apple-about-page-section-header {
+  margin-bottom: 72px;
+}
+
+/* ─── Journey chapters ──────────────────────────────────── */
+
+.apple-about-page-chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 920px;
+}
+
+.apple-about-page-chapter {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.apple-about-page-chapter:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.apple-about-page-chapter-year {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #86868b;
+  padding-top: 10px;
+  white-space: nowrap;
+}
+
+.apple-about-page-chapter-body h3 {
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #f5f5f7;
+  margin: 0 0 14px;
+  text-wrap: balance;
+}
+
+.apple-about-page-chapter-body p {
+  font-size: 16px;
+  line-height: 1.62;
+  color: #c8c8cd;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+
+/* ─── Strengths bento ───────────────────────────────────── */
+
+.apple-about-page-strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.apple-about-page-strength-card {
+  position: relative;
+  padding: 32px 30px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.apple-about-page-strength-card[data-tint="blue"]   { --tint: 10, 124, 255; }
+.apple-about-page-strength-card[data-tint="purple"] { --tint: 149, 100, 254; }
+.apple-about-page-strength-card[data-tint="pink"]   { --tint: 255, 89, 130; }
+.apple-about-page-strength-card[data-tint="green"]  { --tint: 48, 209, 88; }
+
+.apple-about-page-strength-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse 90% 60% at 100% 0%,
+    rgba(var(--tint), 0.16) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.apple-about-page-strength-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--tint), 0.30);
+  box-shadow: 0 18px 48px rgba(var(--tint), 0.18);
+}
+
+.apple-about-page-strength-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--tint), 0.12);
+  border: 1px solid rgba(var(--tint), 0.25);
+  color: rgb(var(--tint));
+  margin-bottom: 4px;
+}
+
+.apple-about-page-strength-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  color: #f5f5f7;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.apple-about-page-strength-card p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #a1a1a6;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+
+/* ─── CTA ───────────────────────────────────────────────── */
+
+.apple-about-page-cta {
+  padding: 140px 24px 160px;
+  text-align: center;
+}
+
+.apple-about-page-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 40% 40% at 50% 50%,
+    rgba(10, 124, 255, 0.14) 0%,
+    transparent 60%
+  );
+}
+
+.apple-about-page-cta-inner {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.apple-about-page-cta-title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0;
+  background: linear-gradient(180deg, #ffffff 0%, #c8c8cd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-wrap: balance;
+}
+
+.apple-about-page-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background: linear-gradient(180deg, #0a7cff 0%, #0058c8 100%);
+  border-radius: 980px;
+  text-decoration: none;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2) inset,
+    0 10px 32px rgba(0, 113, 227, 0.4);
+  transition:
+    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-top: 8px;
+}
+
+.apple-about-page-cta-btn svg {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.apple-about-page-cta-btn:hover {
+  transform: scale(1.04);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 14px 40px rgba(0, 113, 227, 0.55);
+}
+
+.apple-about-page-cta-btn:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .apple-about-page-hero {
+    padding: 140px 20px 80px;
   }
-
-  .journey-text p {
-    margin-bottom: 1.5rem;
+  .apple-about-page-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: left;
   }
-
-  .timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 0 2rem 60px;
+  .apple-about-page-headshot {
+    max-width: 320px;
+    justify-self: start;
   }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 29px;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--accent), rgba(232, 160, 48, 0.2));
+  .apple-about-page-journey,
+  .apple-about-page-strengths {
+    padding: 100px 20px;
   }
-
-  .timeline-item {
-    position: relative;
-    margin-bottom: 50px;
-    padding-left: 40px;
-    transition: all 0.3s ease;
+  .apple-about-page-chapter {
+    grid-template-columns: 140px 1fr;
+    gap: 32px;
   }
-
-  .timeline-item:hover {
-    transform: translateX(5px);
+  .apple-about-page-section-header {
+    margin-bottom: 56px;
   }
-
-  .timeline-item:last-child {
-    margin-bottom: 0;
+  .apple-about-page-cta {
+    padding: 100px 20px 120px;
   }
+}
 
-  .timeline-dot {
-    position: absolute;
-    left: -30px;
-    top: 5px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: var(--accent);
-    border: 4px solid var(--bg);
-    box-shadow: 0 0 0 4px rgba(232, 160, 48, 0.2);
-    z-index: 1;
-    transition: all 0.3s ease;
+@media (max-width: 640px) {
+  .apple-about-page-hero {
+    padding: 120px 16px 64px;
   }
-
-  .timeline-item:hover .timeline-dot {
-    transform: scale(1.2);
-    box-shadow: 0 0 0 8px rgba(232, 160, 48, 0.25);
+  .apple-about-page-headshot {
+    max-width: 260px;
   }
-
-  .timeline-date {
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
+  .apple-about-page-journey,
+  .apple-about-page-strengths {
+    padding: 80px 16px;
   }
-
-  .timeline-content {
-    background-color: rgba(24, 24, 24, 0.6);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 3px solid var(--accent);
-    transition: all 0.3s ease;
+  .apple-about-page-chapter {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-bottom: 40px;
   }
-
-  .timeline-item:hover .timeline-content {
-    background-color: rgba(26, 26, 26, 0.8);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  .apple-about-page-chapter-year {
+    padding-top: 0;
   }
-
-  .timeline-content h4 {
-    margin: 0 0 0.75rem;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
+  .apple-about-page-strengths-grid {
+    grid-template-columns: 1fr;
   }
-
-  .timeline-content p {
-    margin: 0.5rem 0;
-    font-size: 0.95rem;
-    color: #ccc;
-    line-height: 1.6;
+  .apple-about-page-cta {
+    padding: 80px 16px 96px;
   }
-  
-  .inline-link {
-    color: var(--accent);
-    position: relative;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-
-  .inline-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--accent);
-    transition: width 0.3s ease;
-  }
-
-  .inline-link:hover::after {
-    width: 100%;
-  }
-
-  .inline-link:hover {
-    color: var(--accent-light);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .about-flex {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .about-image {
-      order: -1;
-      margin-bottom: 2rem;
-    }
-
-    .timeline {
-      padding: 1rem 0 1rem 40px;
-    }
-
-    .timeline::before {
-      left: 19px;
-    }
-
-    .timeline-dot {
-      left: -20px;
-    }
-
-    .timeline-content {
-      padding: 1rem;
-    }
-
-    .timeline-date {
-      font-size: 1rem;
-    }
-
-    .strength-cards {
-      flex-direction: column;
-    }
-  }
+}

@@ -1,205 +1,232 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { FiTarget, FiFeather, FiCompass, FiBookOpen, FiArrowUpRight } from 'react-icons/fi';
 import './About.css';
+
+const APPLE_EASE = [0.25, 0.46, 0.45, 0.94];
+
+// Long-form narrative split into clean chapters. The dedicated /about
+// page goes deeper than the home About section — full journey + strengths.
+const JOURNEY_CHAPTERS = [
+  {
+    year: '2017 — 2020',
+    title: 'The first lines of code.',
+    body:
+      'Started in high school with C and C++. The languages were unforgiving, but the loop felt right — write, run, watch it work. By my second year at the University of Mumbai I had a real foothold: Python, SQL, and Database Management Systems became the daily tools. Python has been my go-to language ever since.',
+  },
+  {
+    year: '2020 — 2022',
+    title: 'Curiosity, in three dimensions.',
+    body:
+      'A parallel interest in computer graphics led me to The Learning Buddy in 2022 as 3D Design Lead, building AR/VR-ready assets in Blender and shaping the visual language of the EdTech startup. I still ship the occasional design project on the side — the work lives on Behance.',
+  },
+  {
+    year: '2023 — 2024',
+    title: 'San Diego, and the deep end.',
+    body:
+      'Fall 2023 I started my Master\'s in Data Science at UC San Diego — Statistical Models, Causal Inference, Scalable Systems, Deep Learning. Alongside the degree I worked part-time as a Social Media Analyst at the Halıcıoğlu Data Science Institute, then interned at Datamatics Global Services on demand-forecasting pipelines that hit 92% accuracy.',
+  },
+  {
+    year: '2024 — 2025',
+    title: 'Teaching what I was learning.',
+    body:
+      'Appointed TA for COGS 108 — one of UCSD\'s largest undergrad courses — and promoted to Lead TA in Winter 2025, managing a team of 16 TAs across 800+ students. In parallel I led data analysis at the Ellis Lab on a study of gender-based patterns in data science education, using NLP and statistics in R.',
+  },
+  {
+    year: '2025',
+    title: 'From research to revenue.',
+    body:
+      'Graduated June 2025 with a 3.82 GPA and joined Alcamo Marketing as a Data Scientist. Within months I migrated the data infrastructure to Snowflake (60% cost reduction), built 15 production ETL pipelines processing 50GB+ daily, and shipped a churn prediction model that identified $2.1M in at-risk revenue for Afterpay.',
+  },
+  {
+    year: 'Dec 2025 — Now',
+    title: 'Applied AI, at scale.',
+    body:
+      'Joined the AI/ML team at Applied Materials in the Data Insights & Apps department. I architect production computer-vision systems — multi-model OCR pipelines combining Claude Sonnet 4.5, Qwen VL, and PaddleOCR with custom RT-DETR detectors, optimized 3–5× through GPU work on Databricks. Where cutting-edge AI meets industrial reality.',
+  },
+];
+
+const STRENGTHS = [
+  {
+    icon: FiTarget,
+    title: 'Problem solver.',
+    body:
+      'Real-world problems, framed in data. From predictive models to end-to-end workflow automation, I look for the root cause and ship the fix.',
+    tint: 'blue',
+  },
+  {
+    icon: FiFeather,
+    title: 'Creative technologist.',
+    body:
+      'Analytical rigor with design sensibility. ML pipelines, frontends, 3D scenes — I move between them and keep the work cohesive.',
+    tint: 'pink',
+  },
+  {
+    icon: FiCompass,
+    title: 'Detail-oriented leader.',
+    body:
+      'I sweat the small things — naming, ergonomics, error states. I lead with empathy and precision, whether the team is students or engineers.',
+    tint: 'purple',
+  },
+  {
+    icon: FiBookOpen,
+    title: 'Continuous learner.',
+    body:
+      'I stay sharp across Python, R, SQL, and cloud platforms. New tools, new theory — I treat the field as something I get to keep growing into.',
+    tint: 'green',
+  },
+];
 
 const About = () => {
   return (
-    <motion.div 
-      className="about-container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-    >
-      <motion.div
-        className="page-header"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.1 }}
-      >
-        <span className="section-tag">ABOUT</span>
-        <h2 className="page-heading">About Me</h2>
-      </motion.div>
-      
-      <div className="about-content">
-        <div className="about-flex">
-          <motion.div 
-            className="about-text"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+    <div className="apple-about-page">
+      {/* ─── Hero ──────────────────────────────────────────── */}
+      <section className="apple-about-page-hero">
+        <div className="apple-about-page-glow" aria-hidden="true" />
+
+        <div className="apple-about-page-hero-inner">
+          <motion.div
+            className="apple-about-page-hero-content"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: APPLE_EASE }}
           >
-            <p className="intro-text">
-            I'm a Data Scientist passionate about building end-to-end ML systems and scalable data pipelines that turn complex data into clear, actionable business impact.
+            <span className="apple-eyebrow">About</span>
+            <h1 className="apple-about-page-title">
+              Data Scientist,{' '}
+              <span className="apple-title-muted">building in production.</span>
+            </h1>
+            <p className="apple-about-page-lead">
+              I'm Reuben — a Data Scientist who treats ML systems as products. I
+              build the pipeline, the model, the interface — whatever it takes to
+              ship something measurable.
             </p>
-
-            <p>
-            With a Master's in Data Science from UC San Diego (GPA: 3.82/4.00, graduated June 2025), I specialize in predictive analytics, customer segmentation, and production data infrastructure. My background in Computer Engineering gives me a strong foundation in machine learning, statistical analysis, scalable systems, and full-stack development.
+            <p className="apple-about-page-lead-secondary">
+              Currently at Applied Materials. Before that, Alcamo Marketing,
+              UC San Diego, and a few years of figuring out where I wanted to
+              point all this curiosity.
             </p>
-
-            <p>
-            Currently at Applied Materials, I architect production-grade ML systems combining vision-language models (Claude Sonnet 4.5, Qwen VL) with custom object detection (RT-DETR), achieving 85.7% precision on industrial OCR tasks while optimizing inference efficiency by 3–5x through GPU optimization on Databricks. Previously at Alcamo Marketing, I reduced operational costs by 60% through infrastructure migration, built 15 production ETL pipelines processing 50GB+ daily data, and developed a churn prediction model identifying $2.1M in at-risk revenue.
-            </p>
-
-            <p>
-            My experience spans both academic and industry settings — from achieving 92% model accuracy at Datamatics Global Services, to analyzing educational equity data using NLP and statistical methods at UC San Diego's Ellis Lab, to teaching and mentoring 800+ students as Lead TA for UCSD's largest undergraduate data science course.
-            </p>
-
-            <p>I bridge the gap between technical depth and business impact, with a proven track record of delivering production ML systems and scalable analytics solutions that drive meaningful results.</p>
           </motion.div>
-          
-          <motion.div 
-            className="about-image"
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+
+          <motion.div
+            className="apple-about-page-headshot"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.1, delay: 0.2, ease: APPLE_EASE }}
           >
+            <div className="apple-about-page-headshot-glow" aria-hidden="true" />
             <img src="/images/headshot.png" alt="Reuben Chatterjee" />
           </motion.div>
         </div>
-          
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="section-subheading"
-        >
-          My Journey
-        </motion.h3>
-        
-        <div className="timeline-container">
+      </section>
+
+      {/* ─── Journey ───────────────────────────────────────── */}
+      <section className="apple-about-page-journey">
+        <div className="apple-about-page-section-inner">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="journey-text"
+            className="apple-about-page-section-header"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.9, ease: APPLE_EASE }}
           >
-            <p>I began my coding journey back in high school in 2017, starting with C and C++. But it was during my second year at the University of Mumbai (2020) that I truly found my footing in programming through Python, SQL, and Database Management Systems. Since then, Python has remained my go-to language for nearly everything, from scripting and automation to full-fledged machine learning pipelines.</p>
-            <p>That same year, I joined a startup called The Learning Buddy as the 3D Design Lead, driven by a deep interest in computer graphics. I created AR/VR-ready assets and helped shape the 3D animation team. I'm especially proficient in <a href="https://www.behance.net/reubenchatterjee" target="_blank" rel="noopener noreferrer" className="inline-link">Blender</a>, and continue to explore design projects on the side.</p>
-            <p>In my final undergraduate year, I was introduced to R-Studio, a tool I revisited more seriously later in grad school while working on a research study focused on gender disparities in data science education.</p>
-            <p>In Fall 2023, I began my Master's in Data Science at UC San Diego, diving into courses like Statistical Models, Causal Inference, Scalable Systems, Deep Learning, and Fraud & Pricing Analytics. Alongside my studies, I worked part-time at the Halıcıoğlu Data Science Institute as a Social Media Analyst, where I turned engagement metrics into actionable insights to shape content strategy. I also interned at Datamatics Global Services, where I built scalable ETL pipelines and ML models for demand forecasting, achieving 92% accuracy.</p>
-            <p>During my time at UCSD, I was appointed Teaching Assistant for COGS 108: Data Science in Practice — one of UCSD's largest undergraduate courses. I served as lead grader for 800+ students, wrote deployable Python scripts to improve grading efficiency, and mentored project groups throughout multiple quarters.</p>
-            <p>In Winter 2025, I was promoted to Lead TA, managing a team of 16 TAs and IAs while overseeing student groups. During this time, I joined a research study at Ellis Lab focused on identifying gender-based patterns in data science education. I led the data analysis using NLP and statistical methods in R, contributing to research on educational equity.</p>
-            <p>After graduating in June 2025, I joined Alcamo Marketing as a Data Scientist, where I made immediate impact: migrating data infrastructure to reduce costs by 60%, building 15 production ETL pipelines processing 50GB+ daily data using Snowflake and Fivetran, and developing a churn prediction model that identified $2.1M in at-risk revenue for Afterpay.</p>
-            <p>In December 2025, I joined Applied Materials as a Data Scientist in the AI/ML team of the Data Insights and Apps (DIA) department. Here, I've been architecting production-grade computer vision systems, deploying multi-model OCR pipelines using vision-language models like Claude Sonnet 4.5 and Qwen VL, training custom RT-DETR object detection models, and optimizing ML inference performance on Databricks. I'm working at the intersection of cutting-edge AI research and practical industrial applications, solving complex problems in semiconductor manufacturing.</p>
-            <p>Today, I continue to combine technical expertise with business acumen, building production ML systems and scalable data solutions that drive measurable results.</p>
+            <span className="apple-eyebrow">Journey</span>
+            <h2 className="apple-section-title">
+              From the first line{' '}
+              <span className="apple-title-muted">to now.</span>
+            </h2>
           </motion.div>
 
-          <motion.div
-            className="timeline"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-          >
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-date">2025 - Present</div>
-              <div className="timeline-content">
-                <h4>Data Scientist at Applied Materials (Dec 2025 - Present)</h4>
-                <p>Architected multi-model OCR pipeline using vision-language models achieving 85.7% precision on 500+ industrial labels</p>
-                <p>Trained RT-DETR object detection system achieving 97.8% precision on printed labels</p>
-                <p>Improved inference efficiency by 3–5x through GPU optimization and NVMe caching on Databricks</p>
-              </div>
-            </div>
-
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-date">2025</div>
-              <div className="timeline-content">
-                <h4>Data Scientist at Alcamo Marketing (Jul 2025 - Oct 2025)</h4>
-                <p>Built 15 production ETL pipelines processing 50GB+ daily data using SQL, Fivetran, Snowflake, Looker</p>
-                <p>Reduced operational costs by 60% through infrastructure migration from Adverity to Snowflake</p>
-                <p>Developed churn prediction model using XGBoost, identifying $2.1M in at-risk revenue</p>
-              </div>
-            </div>
-
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-date">2024 - 2025</div>
-              <div className="timeline-content">
-                <h4>Graduated from UC San Diego</h4>
-                <p>Master's in Data Science (GPA: 3.82/4.00)</p>
-                <p>Promoted to Lead TA for COGS 108, managing a team of 16 TAs and 800+ students (Jan 2025 - Jun 2025)</p>
-                <p>Research Lead at Ellis Lab for the Gender disparities study (Sep 2024 - Jun 2025)</p>
-              </div>
-            </div>
-
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-date">2023 - 2024</div>
-              <div className="timeline-content">
-                <h4>Started Master's in Data Science at UC San Diego</h4>
-                <p>Social Media Analyst at Halıcıoğlu Data Science Institute (Dec 2023 - Jun 2024)</p>
-                <p>Data Science Intern at Datamatics Global Services (Jul 2024 - Sep 2024)</p>
-                <p>Teaching Assistant for COGS 108 - Data Science in Practice (Oct 2024 - Dec 2024)</p>
-              </div>
-            </div>
-
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-date">2022</div>
-              <div className="timeline-content">
-                <h4>Found My Passion in Data Science</h4>
-                <p>Mastered Python, SQL, and Database Management</p>
-                <p>3D Design Lead at The Learning Buddy startup (Mar 2022 - Jun 2022)</p>
-                <p>Created AR/VR-ready assets using Blender</p>
-              </div>
-            </div>
-
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-date">2019</div>
-              <div className="timeline-content">
-                <h4>Started University of Mumbai</h4>
-                <p>BE in Computer Engineering</p>
-                <p>Focused on Machine Learning and Data Analysis</p>
-              </div>
-            </div>
-
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-date">2017</div>
-              <div className="timeline-content">
-                <h4>Started Coding Journey</h4>
-                <p>High school: C and C++</p>
-                <p>Built foundation in programming fundamentals</p>
-              </div>
-            </div>
-          </motion.div>
+          <div className="apple-about-page-chapters">
+            {JOURNEY_CHAPTERS.map((c, i) => (
+              <motion.article
+                key={c.year}
+                className="apple-about-page-chapter"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.9,
+                  delay: i * 0.05,
+                  ease: APPLE_EASE,
+                }}
+              >
+                <div className="apple-about-page-chapter-year">{c.year}</div>
+                <div className="apple-about-page-chapter-body">
+                  <h3>{c.title}</h3>
+                  <p>{c.body}</p>
+                </div>
+              </motion.article>
+            ))}
+          </div>
         </div>
-        
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="section-subheading"
+      </section>
+
+      {/* ─── Strengths ─────────────────────────────────────── */}
+      <section className="apple-about-page-strengths">
+        <div className="apple-about-page-section-inner">
+          <motion.div
+            className="apple-about-page-section-header"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.9, ease: APPLE_EASE }}
+          >
+            <span className="apple-eyebrow">Strengths</span>
+            <h2 className="apple-section-title">
+              What I bring{' '}
+              <span className="apple-title-muted">to the table.</span>
+            </h2>
+          </motion.div>
+
+          <div className="apple-about-page-strengths-grid">
+            {STRENGTHS.map(({ icon: Icon, title, body, tint }, i) => (
+              <motion.div
+                key={title}
+                className="apple-about-page-strength-card"
+                data-tint={tint}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.9,
+                  delay: i * 0.08,
+                  ease: APPLE_EASE,
+                }}
+              >
+                <div className="apple-about-page-strength-icon" aria-hidden="true">
+                  <Icon size={20} strokeWidth={1.8} />
+                </div>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CTA ───────────────────────────────────────────── */}
+      <section className="apple-about-page-cta">
+        <motion.div
+          className="apple-about-page-cta-inner"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 1, ease: APPLE_EASE }}
         >
-          What I Bring to the Table
-        </motion.h3>
-        <motion.div 
-          className="strength-cards"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.4 }}
-        >
-          <div className="strength-card">
-            <h4>Problem Solver</h4>
-            <p>I enjoy solving real world problems using data, from building predictive models to automating entire workflows.</p>
-          </div>
-          <div className="strength-card">
-            <h4>Creative Technologist</h4>
-            <p>I blend analytical rigor with design thinking, from building ML pipelines to designing</p>
-          </div>
-          <div className="strength-card">
-            <h4>Detail Oriented Leader</h4>
-            <p>I pay close attention to the small details that make a big difference, and lead with empathy and precision, whether it's managing students or cross functional Teams.</p>
-          </div>
-          <div className="strength-card">
-            <h4>Continuous Learner</h4>
-            <p>I'm always diving into new tools, theories, and techniques, staying sharp across Python, R, SQL, and cloud platforms.</p>
-          </div>
+          <span className="apple-eyebrow">Next</span>
+          <h2 className="apple-about-page-cta-title">
+            Want to build{' '}
+            <span className="apple-title-muted">something together?</span>
+          </h2>
+          <Link to="/contact" className="apple-about-page-cta-btn">
+            Get in touch
+            <FiArrowUpRight size={18} />
+          </Link>
         </motion.div>
-      </div>
-    </motion.div>
+      </section>
+    </div>
   );
 };
 
