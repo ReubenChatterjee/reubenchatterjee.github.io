@@ -16,7 +16,18 @@ const PROJECTS = [
       'Production-grade OCR pipeline using vision-language models (Claude Sonnet 4.5, Qwen VL, PaddleOCR), 85.7% precision across 500+ industrial part labels. Trained an RT-DETR detector at 97.8% precision and improved inference efficiency 3–5× through NVMe caching and float16 GPU optimization on Databricks.',
     image: '/images/part-serialization.png',
     categories: ['ds'],
-    tags: ['Claude Sonnet 4.5', 'Qwen VL', 'PaddleOCR', 'RT-DETR', 'Databricks'],
+    tags: ['Qwen VL', 'RT-DETR', 'Databricks', 'Jenkins'],
+    proprietary: true,
+  },
+  {
+    id: 10,
+    title: 'Technician Certification Route Recommender',
+    eyebrow: 'Applied Materials',
+    description:
+      'Databricks recommender that scores 433K candidate operations to rank the top 5 certification routes for ~2,000 technicians. Built as a weekly scheduled job that writes ~7,000 rows to SQL Server in under 5 minutes, with CI/CD through Jenkins and Databricks Asset Bundles.',
+    image: '/images/technician-recommender.png',
+    categories: ['ds'],
+    tags: ['Python', 'Databricks', 'Jenkins', 'CI/CD', 'Databricks Asset Bundles', 'SQL Server'],
     proprietary: true,
   },
   {

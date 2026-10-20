@@ -14,12 +14,23 @@ const HERO_PROJECT = {
   description:
     'Production-grade OCR system combining vision-language models (Claude Sonnet 4.5, Qwen VL, PaddleOCR) with a custom RT-DETR detector — 85.7% precision across 500+ industrial labels, 3–5× faster inference via GPU optimization on Databricks.',
   image: '/images/part-serialization.png',
-  tags: ['Claude Sonnet 4.5', 'Qwen VL', 'PaddleOCR', 'RT-DETR', 'Databricks'],
+  tags: ['Qwen VL', 'RT-DETR', 'Databricks', 'Jenkins'],
   tint: 'blue',
   proprietary: true,
 };
 
 const PROJECTS = [
+  {
+    id: 'cert-recommender',
+    eyebrow: 'Applied Materials',
+    title: 'Technician Certification Route Recommender',
+    description:
+      'Databricks recommender that scores 433K candidate operations to rank the top 5 certification routes for ~2,000 technicians. Built as a weekly scheduled job that writes ~7,000 rows to SQL Server in under 5 minutes, with CI/CD through Jenkins and Databricks Asset Bundles.',
+    image: '/images/technician-recommender.png',
+    tags: ['Python', 'Databricks', 'Jenkins', 'CI/CD', 'Databricks Asset Bundles', 'SQL Server'],
+    tint: 'teal',
+    proprietary: true,
+  },
   {
     id: 'afterpay',
     eyebrow: 'Alcamo Marketing',
