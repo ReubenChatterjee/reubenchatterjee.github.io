@@ -1,0 +1,2 @@
+/* Room 3: Pokemon. Uses the shared .room--wide layout (20-wingman.css); only the world detail lives here. */
+#pokemon .kicker::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent2);flex:none}

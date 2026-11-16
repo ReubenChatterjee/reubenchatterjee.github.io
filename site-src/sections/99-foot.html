@@ -1,0 +1,26 @@
+<script>
+/* Off the critical path: the hero still is the LCP element, so everything that does not paint the first screen
+   (the script, the video posters) starts only after the browser has reported its first largest-contentful-paint
+   entry. It never waits past the first scroll, touch or key press, or 1.5 s after the load event, and browsers that
+   do not report that entry (older Safari and Firefox) start at once. Videos' posters are set here. */
+(function () {
+  var d = 0, ev = ['scroll', 'pointerdown', 'touchstart', 'keydown', 'wheel'];
+  function go() {
+    if (d) return; d = 1;
+    var s = document.createElement('script'); s.src = 'js/site.js'; document.body.appendChild(s);
+    [].forEach.call(document.querySelectorAll('video[data-poster]'), function (v) { v.poster = v.getAttribute('data-poster'); });
+  }
+  var ok = false;
+  try {
+    if ((PerformanceObserver.supportedEntryTypes || []).indexOf('largest-contentful-paint') > -1) {
+      new PerformanceObserver(function (l, o) { o.disconnect(); setTimeout(go, 0); }).observe({ type: 'largest-contentful-paint', buffered: true });
+      ok = true;
+    }
+  } catch (e) {}
+  if (!ok) return go();
+  addEventListener('load', function () { setTimeout(go, 1500); }); /* only if no entry was ever reported */
+  ev.forEach(function (n) { addEventListener(n, go, { passive: true, once: true }); });
+})();
+</script>
+</body>
+</html>

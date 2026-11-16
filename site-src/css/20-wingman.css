@@ -1,0 +1,31 @@
+/* Room 2: Wingman (wide band room). The .room--wide layout is reusable by any wide-piece room. */
+.room--wide .room__inner{justify-content:flex-start;gap:6px}
+.room--wide .head{display:flex;flex-direction:column;gap:14px;position:relative;z-index:2}
+.room--wide .title{font-size:min(19vw,15svh)}
+.room--wide .band{margin:0 calc(var(--gut) * -1);flex:1;min-height:0;display:grid;place-items:center;container-type:size}
+.room--wide .piece--wide{width:min(100cqw,100cqh * 1.7778)}
+.room--wide .card{align-self:stretch;width:auto;margin-top:2px}
+@media (min-width:900px){
+  .room--wide .room__inner{padding-top:78px;padding-bottom:0}
+  .room--wide .head{display:block}
+  .room--wide .title{font-size:min(7.2vw,12.5svh);display:flex;gap:.22em;align-items:baseline;white-space:nowrap}
+  .room--wide .title .mask{display:block}
+  .room--wide .card{position:absolute;right:var(--gut);top:84px;width:380px;margin:0}
+  .room--wide .lede{max-width:36ch;margin-top:10px}
+  .room--wide .band{position:absolute;left:0;right:0;top:250px;bottom:0;margin:0}
+}
+@media (max-width:899.98px){
+  /* phone order: kicker, title, lede, strip + Play pill, then the piece edge to edge, then the model card (no dead space between).
+     Sized to fit between the header and the rail at 393x660 (the visible area of a phone with its browser bars). */
+  .room--wide .room__inner{padding-top:70px;padding-bottom:var(--bot);gap:6px}
+  .room--wide .head{display:contents}
+  .room--wide .copy{order:1;position:relative}
+  .room--wide .title{font-size:min(12.5vw,5.9svh)}
+  .room--wide .lede{font-size:clamp(15.5px,2.5svh,19.5px);margin:4px 0 0;max-width:none}
+  .room--wide .kicker{margin-bottom:6px}
+  .room--wide .band{order:2;flex:none;container-type:normal;display:block;margin:auto calc(var(--gut) * -1)}
+  .room--wide .piece--wide{width:100%}
+  /* the band's top and bottom edges already feather into the ground, so the strip row and the card may sit over them a little */
+  .room--wide .copy{margin-bottom:-12px;z-index:2}
+  .room--wide .card{order:3;margin-top:-14px}
+}

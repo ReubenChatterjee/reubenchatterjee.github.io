@@ -1,0 +1,20 @@
+/* Room 6: Mercedes G Wagon (portrait room). The .room--tall layout is reusable by any portrait-piece room. */
+.room--tall .room__inner{padding-left:var(--gut);padding-right:var(--gut);justify-content:flex-start;gap:10px}
+.room--tall .piece--tall{position:absolute;left:0;bottom:0;z-index:0;width:100%;max-width:none}
+.room--tall .piece--tall{height:calc(100% - 150px);width:auto;aspect-ratio:9/16;left:50%;transform:translateX(-50%)}
+.room--tall .copy,.room--tall .card{position:relative;z-index:2}
+.room--tall .title{font-size:min(15vw,9svh)}
+.room--tall .lede{display:none}
+.room--tall .card{margin-top:auto;align-self:stretch;width:auto}
+@media (min-width:900px){
+  .room--tall .piece--tall{left:0;top:0;bottom:auto;height:100%;transform:none}
+  .room--tall .room__inner{padding-left:calc(100svh * .5625 + var(--gut) + 2vw);padding-bottom:calc(var(--bot) + 24px);justify-content:center;gap:16px}
+  .room--tall .title{font-size:min(10.5vw,17svh)}
+  .room--tall .lede{display:block}
+  .room--tall .card{margin-top:10px;align-self:flex-start;width:400px}
+  .piece--tall::after{background:linear-gradient(90deg,transparent 78%,var(--bg) 100%),linear-gradient(180deg,var(--bg) 0,transparent 12%)}
+}
+@media (max-width:899.98px){
+  .room--tall .room__inner{padding-top:70px;padding-bottom:var(--bot)}
+  .room--tall .piece--tall{height:calc(100% - 140px)}
+}

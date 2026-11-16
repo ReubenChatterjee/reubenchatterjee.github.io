@@ -1,0 +1,58 @@
+/* Room 1: hero (Boat Rockerz 460) */
+.lockup{margin:0 0 10px;font-family:var(--display);font-size:clamp(26px,3.2vw,50px);line-height:.92;letter-spacing:-.02em;display:flex;flex-direction:column}
+.lockup__l{font-weight:200;font-stretch:100%}
+.lockup__h{font-weight:800;font-stretch:75%}
+.role{margin:0 0 12px;font-weight:600;font-size:16px;line-height:1.25;color:var(--muted)}
+.title--hero .light{color:var(--ink)}
+
+/* hero image and clip melt into the studio ground (same edge mask on both) */
+.piece--hero .piece__img,.piece--hero .piece__vid--hero{
+  -webkit-mask-image:radial-gradient(ellipse 52% 64% at 50% 50%,#000 80%,transparent 100%),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+  -webkit-mask-composite:source-in,source-in;
+          mask-image:radial-gradient(ellipse 52% 64% at 50% 50%,#000 80%,transparent 100%),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+          mask-composite:intersect,intersect;
+}
+/* the clip frames the headphones about 5% larger than the still; this box (95%, nudged) lines up the first frame with the still */
+.piece--hero .piece__vid--hero{inset:auto;left:-.4%;top:4.2%;width:95%;height:95%;object-fit:cover;pointer-events:none;transition:opacity .6s linear}
+.piece--hero[data-hv] .piece__vid--hero{opacity:1}
+.piece--hero[data-hv-instant] .piece__vid--hero{transition:none}
+.piece--hero[data-hv-done] .piece__img{opacity:0}
+.motion{position:absolute;right:max(14px,4%);bottom:max(10px,3%);z-index:3;width:44px;height:44px;border-radius:50%;border:0;display:grid;place-items:center;cursor:pointer;background:var(--ink);color:var(--bg);box-shadow:0 4px 14px rgba(14,26,61,.3)}
+.motion[hidden]{display:none}
+.motion .motion__play{display:none}
+.motion[aria-pressed="true"] .motion__play{display:block}
+.motion[aria-pressed="true"] .motion__pause{display:none}
+.motion:focus-visible{outline-color:var(--accent);outline-offset:3px}
+
+/* hero layout */
+.room--hero .room__inner{justify-content:flex-start;gap:8px}
+.room--hero .copy{position:relative;z-index:2;margin-top:6px}
+.room--hero .title{font-size:min(23vw,9.6svh)}
+.room--hero .piece--hero{position:relative;z-index:1;width:min(100vw,calc(100svh - 546px));min-width:250px;align-self:center;margin:6px calc(var(--gut) * -1) 0}
+.room--hero .card{align-self:stretch;width:auto;margin-top:-6px}
+
+@media (min-width:900px){
+  .room--hero .room__inner{justify-content:center;gap:18px;max-width:none;padding-right:calc(var(--gut) + 0px);align-items:flex-start}
+  .room--hero .copy{width:min(560px,46vw)}
+  .room--hero .title{font-size:min(9vw,13.4svh)}
+  .lockup{font-size:clamp(34px,3vw,44px);margin-bottom:4px}
+  .role{font-size:17px;margin-bottom:8px}
+  .room--hero .piece--hero{position:absolute;right:0;top:50%;transform:translateY(-50%);width:min(86svh,63vw);margin:0;min-width:0;align-self:auto}
+  .room--hero .card{align-self:auto;width:400px;margin-top:0}
+}
+/* short desktop windows (1280x720): tighten the hero copy so the model card clears the rail */
+@media (min-width:900px) and (max-height:780px){
+  .room--hero .title{font-size:min(9vw,10.4svh)}
+  .room--hero .room__inner{gap:8px}
+  .lockup{margin-bottom:2px}
+  .role{margin-bottom:4px}
+  .room--hero .lede{margin-top:8px}
+  .room--hero .card{margin-top:-4px}
+  .room--hero .card .fields{gap:8px 16px}
+  .room--hero .card .dry{margin-top:8px}
+  .room--hero .card .pal{margin-top:8px}
+}
+@media (max-width:899.98px){
+  .room--hero .room__inner{padding-top:36px;padding-bottom:84px}
+  .room--hero .lede{margin-top:8px}
+}

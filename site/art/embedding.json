@@ -1,0 +1,1273 @@
+{
+  "generatedBy": "tools/build-embedding.mjs",
+  "source": "site/art/projects.json",
+  "count": 23,
+  "method": {
+    "colourSpace": "OKLab",
+    "x": "lightness: pixel-share-weighted mean of OKLab L over the five palette colours, rescaled to the data range (0 = darkest still, 1 = brightest), then drawn on a power scale (value ^ 0.6) so the many dark stills get room; order is unchanged",
+    "y": "warmth: pixel-share-weighted mean of a*cos(60deg) + b*sin(60deg) in OKLab, rescaled to the data range (0 = coolest, 1 = warmest), then drawn on a power scale (value ^ 0.6) so the crowded cool end gets room; order is unchanged",
+    "layout": "deterministic collision relaxation (600 passes, spring 0.02 toward the measured point, then a strict separation pass); the wide layout keeps a key box in the bright-and-warm corner, where no still measures",
+    "neighbours": "symmetric pixel-share-weighted nearest-colour distance between palettes in OKLab; 3 closest",
+    "size": "thumbnail area is equal for all stills except a rank tier (rank 1 x1.55, ranks 2-3 x1.25); size is curation, not measurement"
+  },
+  "ranges": {
+    "lightness": [
+      0.1502,
+      0.8084
+    ],
+    "warmth": [
+      -0.0239,
+      0.0619
+    ]
+  },
+  "pieces": [
+    {
+      "id": "boat-front",
+      "rank": 1,
+      "features": {
+        "lightness": 0.6815,
+        "a": -0.0029,
+        "b": -0.0161,
+        "warmth": -0.0155,
+        "chroma": 0.0164,
+        "lightnessScaled": 0.8071,
+        "warmthScaled": 0.099,
+        "x": 0.8793,
+        "y": 0.2496
+      },
+      "neighbours": [
+        {
+          "id": "boat-trio",
+          "distance": 0.035
+        },
+        {
+          "id": "boat-float",
+          "distance": 0.044
+        },
+        {
+          "id": "ice-cream",
+          "distance": 0.054
+        }
+      ]
+    },
+    {
+      "id": "wingman-gold",
+      "rank": 2,
+      "features": {
+        "lightness": 0.2161,
+        "a": 0.0017,
+        "b": 0.0195,
+        "warmth": 0.0177,
+        "chroma": 0.0202,
+        "lightnessScaled": 0.1,
+        "warmthScaled": 0.4857,
+        "x": 0.2513,
+        "y": 0.6484
+      },
+      "neighbours": [
+        {
+          "id": "gwagon-tall",
+          "distance": 0.03
+        },
+        {
+          "id": "autoshop",
+          "distance": 0.038
+        },
+        {
+          "id": "gwagon-street",
+          "distance": 0.043
+        }
+      ]
+    },
+    {
+      "id": "pokemon-group",
+      "rank": 3,
+      "features": {
+        "lightness": 0.2503,
+        "a": 0.0352,
+        "b": -0.0092,
+        "warmth": 0.0096,
+        "chroma": 0.0427,
+        "lightnessScaled": 0.152,
+        "warmthScaled": 0.3911,
+        "x": 0.323,
+        "y": 0.5694
+      },
+      "neighbours": [
+        {
+          "id": "pokemon-salamence",
+          "distance": 0.027
+        },
+        {
+          "id": "pokemon-jigglypuff",
+          "distance": 0.041
+        },
+        {
+          "id": "pokemon-group-tall",
+          "distance": 0.044
+        }
+      ]
+    },
+    {
+      "id": "boat-trio",
+      "rank": 4,
+      "features": {
+        "lightness": 0.6276,
+        "a": -0.0031,
+        "b": -0.0081,
+        "warmth": -0.0086,
+        "chroma": 0.009,
+        "lightnessScaled": 0.7253,
+        "warmthScaled": 0.1794,
+        "x": 0.8247,
+        "y": 0.3566
+      },
+      "neighbours": [
+        {
+          "id": "boat-front",
+          "distance": 0.035
+        },
+        {
+          "id": "boat-float",
+          "distance": 0.047
+        },
+        {
+          "id": "ice-cream",
+          "distance": 0.055
+        }
+      ]
+    },
+    {
+      "id": "hotwheels-case",
+      "rank": 5,
+      "features": {
+        "lightness": 0.5045,
+        "a": -0.0079,
+        "b": -0.0056,
+        "warmth": -0.0088,
+        "chroma": 0.0329,
+        "lightnessScaled": 0.5382,
+        "warmthScaled": 0.1763,
+        "x": 0.6896,
+        "y": 0.353
+      },
+      "neighbours": [
+        {
+          "id": "boat-trio",
+          "distance": 0.057
+        },
+        {
+          "id": "boat-float",
+          "distance": 0.06
+        },
+        {
+          "id": "boat-front",
+          "distance": 0.065
+        }
+      ]
+    },
+    {
+      "id": "gwagon-street",
+      "rank": 7,
+      "features": {
+        "lightness": 0.271,
+        "a": 0.0016,
+        "b": 0.0222,
+        "warmth": 0.02,
+        "chroma": 0.0228,
+        "lightnessScaled": 0.1835,
+        "warmthScaled": 0.5123,
+        "x": 0.3616,
+        "y": 0.6695
+      },
+      "neighbours": [
+        {
+          "id": "gwagon-tall",
+          "distance": 0.021
+        },
+        {
+          "id": "wingman-gold",
+          "distance": 0.043
+        },
+        {
+          "id": "autoshop",
+          "distance": 0.048
+        }
+      ]
+    },
+    {
+      "id": "wingman-blue",
+      "rank": 8,
+      "features": {
+        "lightness": 0.1502,
+        "a": 0.0008,
+        "b": -0.0246,
+        "warmth": -0.0209,
+        "chroma": 0.0248,
+        "lightnessScaled": 0,
+        "warmthScaled": 0.0352,
+        "x": 0,
+        "y": 0.1343
+      },
+      "neighbours": [
+        {
+          "id": "wingman-red",
+          "distance": 0.048
+        },
+        {
+          "id": "hotwheels-dark",
+          "distance": 0.049
+        },
+        {
+          "id": "controller",
+          "distance": 0.051
+        }
+      ]
+    },
+    {
+      "id": "wingman-red",
+      "rank": 9,
+      "features": {
+        "lightness": 0.175,
+        "a": 0.0205,
+        "b": 0.0091,
+        "warmth": 0.0181,
+        "chroma": 0.0225,
+        "lightnessScaled": 0.0376,
+        "warmthScaled": 0.4903,
+        "x": 0.1398,
+        "y": 0.652
+      },
+      "neighbours": [
+        {
+          "id": "autoshop",
+          "distance": 0.033
+        },
+        {
+          "id": "controller",
+          "distance": 0.035
+        },
+        {
+          "id": "hotwheels-dark",
+          "distance": 0.04
+        }
+      ]
+    },
+    {
+      "id": "pokemon-jigglypuff",
+      "rank": 10,
+      "features": {
+        "lightness": 0.2841,
+        "a": 0.0341,
+        "b": -0.0346,
+        "warmth": -0.0129,
+        "chroma": 0.0506,
+        "lightnessScaled": 0.2034,
+        "warmthScaled": 0.1286,
+        "x": 0.3846,
+        "y": 0.2922
+      },
+      "neighbours": [
+        {
+          "id": "pokemon-group",
+          "distance": 0.041
+        },
+        {
+          "id": "wingman-blue",
+          "distance": 0.053
+        },
+        {
+          "id": "pokemon-salamence",
+          "distance": 0.055
+        }
+      ]
+    },
+    {
+      "id": "pokemon-group-tall",
+      "rank": 11,
+      "features": {
+        "lightness": 0.3231,
+        "a": 0.0324,
+        "b": 0.0036,
+        "warmth": 0.0193,
+        "chroma": 0.0455,
+        "lightnessScaled": 0.2626,
+        "warmthScaled": 0.5038,
+        "x": 0.4483,
+        "y": 0.6627
+      },
+      "neighbours": [
+        {
+          "id": "pokemon-salamence",
+          "distance": 0.039
+        },
+        {
+          "id": "pokemon-group",
+          "distance": 0.044
+        },
+        {
+          "id": "gwagon-tall",
+          "distance": 0.053
+        }
+      ]
+    },
+    {
+      "id": "pokemon-salamence",
+      "rank": 12,
+      "features": {
+        "lightness": 0.2583,
+        "a": 0.0344,
+        "b": -0.0045,
+        "warmth": 0.0133,
+        "chroma": 0.0479,
+        "lightnessScaled": 0.1641,
+        "warmthScaled": 0.4343,
+        "x": 0.3381,
+        "y": 0.6063
+      },
+      "neighbours": [
+        {
+          "id": "pokemon-group",
+          "distance": 0.027
+        },
+        {
+          "id": "pokemon-group-tall",
+          "distance": 0.039
+        },
+        {
+          "id": "controller",
+          "distance": 0.047
+        }
+      ]
+    },
+    {
+      "id": "boat-float",
+      "rank": 13,
+      "features": {
+        "lightness": 0.5923,
+        "a": -0.0049,
+        "b": -0.0214,
+        "warmth": -0.021,
+        "chroma": 0.0221,
+        "lightnessScaled": 0.6716,
+        "warmthScaled": 0.0338,
+        "x": 0.7875,
+        "y": 0.1311
+      },
+      "neighbours": [
+        {
+          "id": "boat-front",
+          "distance": 0.044
+        },
+        {
+          "id": "boat-trio",
+          "distance": 0.047
+        },
+        {
+          "id": "hotwheels-case",
+          "distance": 0.06
+        }
+      ]
+    },
+    {
+      "id": "hotwheels-dark",
+      "rank": 14,
+      "features": {
+        "lightness": 0.2558,
+        "a": 0.0064,
+        "b": -0.0097,
+        "warmth": -0.0052,
+        "chroma": 0.0392,
+        "lightnessScaled": 0.1604,
+        "warmthScaled": 0.2187,
+        "x": 0.3335,
+        "y": 0.4017
+      },
+      "neighbours": [
+        {
+          "id": "wingman-red",
+          "distance": 0.04
+        },
+        {
+          "id": "autoshop",
+          "distance": 0.042
+        },
+        {
+          "id": "wingman-blue",
+          "distance": 0.049
+        }
+      ]
+    },
+    {
+      "id": "pills",
+      "rank": 15,
+      "features": {
+        "lightness": 0.8084,
+        "a": -0.033,
+        "b": 0.0071,
+        "warmth": -0.0104,
+        "chroma": 0.0512,
+        "lightnessScaled": 1,
+        "warmthScaled": 0.1584,
+        "x": 1,
+        "y": 0.331
+      },
+      "neighbours": [
+        {
+          "id": "syringe",
+          "distance": 0.033
+        },
+        {
+          "id": "boat-front",
+          "distance": 0.098
+        },
+        {
+          "id": "boat-float",
+          "distance": 0.109
+        }
+      ]
+    },
+    {
+      "id": "syringe",
+      "rank": 16,
+      "features": {
+        "lightness": 0.7953,
+        "a": -0.0449,
+        "b": -0.0016,
+        "warmth": -0.0238,
+        "chroma": 0.048,
+        "lightnessScaled": 0.98,
+        "warmthScaled": 0.0013,
+        "x": 0.9879,
+        "y": 0.0187
+      },
+      "neighbours": [
+        {
+          "id": "pills",
+          "distance": 0.033
+        },
+        {
+          "id": "boat-front",
+          "distance": 0.066
+        },
+        {
+          "id": "boat-float",
+          "distance": 0.074
+        }
+      ]
+    },
+    {
+      "id": "the-view",
+      "rank": 17,
+      "features": {
+        "lightness": 0.3167,
+        "a": 0.0013,
+        "b": 0.0176,
+        "warmth": 0.0159,
+        "chroma": 0.0194,
+        "lightnessScaled": 0.2529,
+        "warmthScaled": 0.4639,
+        "x": 0.4383,
+        "y": 0.6308
+      },
+      "neighbours": [
+        {
+          "id": "wingman-gold",
+          "distance": 0.051
+        },
+        {
+          "id": "autoshop",
+          "distance": 0.051
+        },
+        {
+          "id": "gwagon-tall",
+          "distance": 0.052
+        }
+      ]
+    },
+    {
+      "id": "desk-setup",
+      "rank": 19,
+      "features": {
+        "lightness": 0.4336,
+        "a": 0.0669,
+        "b": 0.0042,
+        "warmth": 0.0371,
+        "chroma": 0.0709,
+        "lightnessScaled": 0.4305,
+        "warmthScaled": 0.7113,
+        "x": 0.6031,
+        "y": 0.8151
+      },
+      "neighbours": [
+        {
+          "id": "pokemon-jigglypuff",
+          "distance": 0.069
+        },
+        {
+          "id": "gwagon-tall",
+          "distance": 0.072
+        },
+        {
+          "id": "autoshop",
+          "distance": 0.073
+        }
+      ]
+    },
+    {
+      "id": "creature",
+      "rank": 20,
+      "features": {
+        "lightness": 0.2869,
+        "a": -0.0141,
+        "b": -0.0195,
+        "warmth": -0.0239,
+        "chroma": 0.0471,
+        "lightnessScaled": 0.2077,
+        "warmthScaled": 0,
+        "x": 0.3894,
+        "y": 0
+      },
+      "neighbours": [
+        {
+          "id": "gwagon-tall",
+          "distance": 0.049
+        },
+        {
+          "id": "gwagon-street",
+          "distance": 0.055
+        },
+        {
+          "id": "wingman-gold",
+          "distance": 0.068
+        }
+      ]
+    },
+    {
+      "id": "autoshop",
+      "rank": 21,
+      "features": {
+        "lightness": 0.1966,
+        "a": 0.0071,
+        "b": 0.019,
+        "warmth": 0.02,
+        "chroma": 0.0204,
+        "lightnessScaled": 0.0704,
+        "warmthScaled": 0.5121,
+        "x": 0.2034,
+        "y": 0.6693
+      },
+      "neighbours": [
+        {
+          "id": "wingman-red",
+          "distance": 0.033
+        },
+        {
+          "id": "wingman-gold",
+          "distance": 0.038
+        },
+        {
+          "id": "hotwheels-dark",
+          "distance": 0.042
+        }
+      ]
+    },
+    {
+      "id": "ice-cream",
+      "rank": 22,
+      "features": {
+        "lightness": 0.4926,
+        "a": 0.0096,
+        "b": 0.0194,
+        "warmth": 0.0216,
+        "chroma": 0.033,
+        "lightnessScaled": 0.5202,
+        "warmthScaled": 0.5308,
+        "x": 0.6756,
+        "y": 0.6838
+      },
+      "neighbours": [
+        {
+          "id": "boat-front",
+          "distance": 0.054
+        },
+        {
+          "id": "boat-trio",
+          "distance": 0.055
+        },
+        {
+          "id": "the-view",
+          "distance": 0.063
+        }
+      ]
+    },
+    {
+      "id": "gwagon-tall",
+      "rank": 23,
+      "features": {
+        "lightness": 0.238,
+        "a": 0.0011,
+        "b": 0.0128,
+        "warmth": 0.0117,
+        "chroma": 0.0193,
+        "lightnessScaled": 0.1334,
+        "warmthScaled": 0.4151,
+        "x": 0.2986,
+        "y": 0.59
+      },
+      "neighbours": [
+        {
+          "id": "gwagon-street",
+          "distance": 0.021
+        },
+        {
+          "id": "wingman-gold",
+          "distance": 0.03
+        },
+        {
+          "id": "creature",
+          "distance": 0.049
+        }
+      ]
+    },
+    {
+      "id": "solar-jupiter",
+      "rank": 24,
+      "features": {
+        "lightness": 0.5319,
+        "a": 0.0361,
+        "b": 0.0506,
+        "warmth": 0.0619,
+        "chroma": 0.0633,
+        "lightnessScaled": 0.5798,
+        "warmthScaled": 1,
+        "x": 0.7211,
+        "y": 1
+      },
+      "neighbours": [
+        {
+          "id": "wingman-red",
+          "distance": 0.05
+        },
+        {
+          "id": "autoshop",
+          "distance": 0.059
+        },
+        {
+          "id": "hotwheels-dark",
+          "distance": 0.062
+        }
+      ]
+    },
+    {
+      "id": "controller",
+      "rank": 25,
+      "features": {
+        "lightness": 0.1833,
+        "a": 0.0345,
+        "b": 0.0152,
+        "warmth": 0.0304,
+        "chroma": 0.0381,
+        "lightnessScaled": 0.0503,
+        "warmthScaled": 0.6329,
+        "x": 0.1662,
+        "y": 0.76
+      },
+      "neighbours": [
+        {
+          "id": "wingman-red",
+          "distance": 0.035
+        },
+        {
+          "id": "pokemon-group",
+          "distance": 0.045
+        },
+        {
+          "id": "pokemon-salamence",
+          "distance": 0.047
+        }
+      ]
+    }
+  ],
+  "layouts": {
+    "wide": {
+      "width": 1600,
+      "height": 800,
+      "pad": 56,
+      "key": {
+        "x": 1290,
+        "y": 24,
+        "w": 286,
+        "h": 238
+      },
+      "nodes": {
+        "boat-front": {
+          "x": 1349.3,
+          "y": 594.9,
+          "w": 182.9,
+          "h": 182.9,
+          "trueX": 1364.5,
+          "trueY": 572.3
+        },
+        "wingman-gold": {
+          "x": 437.8,
+          "y": 151.7,
+          "w": 196.7,
+          "h": 110.6,
+          "trueX": 429.9,
+          "trueY": 297.9
+        },
+        "pokemon-group": {
+          "x": 536.6,
+          "y": 447.6,
+          "w": 196.7,
+          "h": 110.6,
+          "trueX": 536.6,
+          "trueY": 352.3
+        },
+        "boat-trio": {
+          "x": 1283.2,
+          "y": 445.2,
+          "w": 157.3,
+          "h": 88.5,
+          "trueX": 1283.2,
+          "trueY": 498.6
+        },
+        "hotwheels-case": {
+          "x": 1082.1,
+          "y": 501.1,
+          "w": 118,
+          "h": 118,
+          "trueX": 1082.1,
+          "trueY": 501.1
+        },
+        "gwagon-street": {
+          "x": 628.8,
+          "y": 229.3,
+          "w": 157.3,
+          "h": 88.5,
+          "trueX": 594.1,
+          "trueY": 283.4
+        },
+        "wingman-blue": {
+          "x": 106.7,
+          "y": 651.6,
+          "w": 157.3,
+          "h": 88.5,
+          "trueX": 56,
+          "trueY": 651.6
+        },
+        "wingman-red": {
+          "x": 163.5,
+          "y": 300,
+          "w": 157.3,
+          "h": 88.5,
+          "trueX": 264,
+          "trueY": 295.4
+        },
+        "pokemon-jigglypuff": {
+          "x": 666.1,
+          "y": 561.1,
+          "w": 157.3,
+          "h": 88.5,
+          "trueX": 628.3,
+          "trueY": 543
+        },
+        "pokemon-group-tall": {
+          "x": 849.4,
+          "y": 288,
+          "w": 88.5,
+          "h": 157.3,
+          "trueX": 723.1,
+          "trueY": 288
+        },
+        "pokemon-salamence": {
+          "x": 580.5,
+          "y": 332.6,
+          "w": 157.3,
+          "h": 88.5,
+          "trueX": 559.1,
+          "trueY": 326.9
+        },
+        "boat-float": {
+          "x": 1184.9,
+          "y": 653.8,
+          "w": 118,
+          "h": 118,
+          "trueX": 1227.9,
+          "trueY": 653.8
+        },
+        "hotwheels-dark": {
+          "x": 514.5,
+          "y": 575.9,
+          "w": 118,
+          "h": 118,
+          "trueX": 552.2,
+          "trueY": 467.6
+        },
+        "pills": {
+          "x": 1513.9,
+          "y": 516.3,
+          "w": 118,
+          "h": 118,
+          "trueX": 1544,
+          "trueY": 516.3
+        },
+        "syringe": {
+          "x": 1513.7,
+          "y": 713,
+          "w": 118,
+          "h": 118,
+          "trueX": 1526.1,
+          "trueY": 731.2
+        },
+        "the-view": {
+          "x": 732.2,
+          "y": 346.6,
+          "w": 118,
+          "h": 118,
+          "trueX": 708.2,
+          "trueY": 310
+        },
+        "desk-setup": {
+          "x": 976.8,
+          "y": 166.7,
+          "w": 138.2,
+          "h": 100.8,
+          "trueX": 953.4,
+          "trueY": 183.2
+        },
+        "creature": {
+          "x": 635.5,
+          "y": 713,
+          "w": 118,
+          "h": 118,
+          "trueX": 635.5,
+          "trueY": 744
+        },
+        "autoshop": {
+          "x": 320.7,
+          "y": 309.1,
+          "w": 129.3,
+          "h": 107.7,
+          "trueX": 358.7,
+          "trueY": 283.5
+        },
+        "ice-cream": {
+          "x": 1061.3,
+          "y": 290.1,
+          "w": 118,
+          "h": 118,
+          "trueX": 1061.3,
+          "trueY": 273.5
+        },
+        "gwagon-tall": {
+          "x": 443.6,
+          "y": 299.6,
+          "w": 88.5,
+          "h": 157.3,
+          "trueX": 500.3,
+          "trueY": 338
+        },
+        "solar-jupiter": {
+          "x": 1128.9,
+          "y": 87,
+          "w": 118,
+          "h": 118,
+          "trueX": 1128.9,
+          "trueY": 56
+        },
+        "controller": {
+          "x": 256.3,
+          "y": 190.9,
+          "w": 138.2,
+          "h": 100.8,
+          "trueX": 303.4,
+          "trueY": 221.1
+        }
+      }
+    },
+    "tall": {
+      "width": 400,
+      "height": 600,
+      "pad": 18,
+      "nodes": {
+        "boat-front": {
+          "x": 336.8,
+          "y": 450,
+          "w": 108.5,
+          "h": 108.5,
+          "trueX": 338.1,
+          "trueY": 441.2
+        },
+        "wingman-gold": {
+          "x": 109.5,
+          "y": 62.2,
+          "w": 116.7,
+          "h": 65.6,
+          "trueX": 109.5,
+          "trueY": 216.3
+        },
+        "pokemon-group": {
+          "x": 86.4,
+          "y": 350,
+          "w": 116.7,
+          "h": 65.6,
+          "trueX": 135.6,
+          "trueY": 260.9
+        },
+        "boat-trio": {
+          "x": 273.4,
+          "y": 363.5,
+          "w": 93.3,
+          "h": 52.5,
+          "trueX": 318.2,
+          "trueY": 380.9
+        },
+        "hotwheels-case": {
+          "x": 185.7,
+          "y": 382.9,
+          "w": 70,
+          "h": 70,
+          "trueX": 269,
+          "trueY": 382.9
+        },
+        "gwagon-street": {
+          "x": 150.3,
+          "y": 127.2,
+          "w": 93.3,
+          "h": 52.5,
+          "trueX": 149.6,
+          "trueY": 204.4
+        },
+        "wingman-blue": {
+          "x": 55.7,
+          "y": 506.2,
+          "w": 93.3,
+          "h": 52.5,
+          "trueX": 18,
+          "trueY": 506.2
+        },
+        "wingman-red": {
+          "x": 50.7,
+          "y": 203.5,
+          "w": 93.3,
+          "h": 52.5,
+          "trueX": 68.9,
+          "trueY": 214.3
+        },
+        "pokemon-jigglypuff": {
+          "x": 158,
+          "y": 491.1,
+          "w": 93.3,
+          "h": 52.5,
+          "trueX": 158,
+          "trueY": 417.2
+        },
+        "pokemon-group-tall": {
+          "x": 264,
+          "y": 208.2,
+          "w": 52.5,
+          "h": 93.3,
+          "trueX": 181.2,
+          "trueY": 208.2
+        },
+        "pokemon-salamence": {
+          "x": 150.3,
+          "y": 285,
+          "w": 93.3,
+          "h": 52.5,
+          "trueX": 141.1,
+          "trueY": 240.1
+        },
+        "boat-float": {
+          "x": 280.5,
+          "y": 545.2,
+          "w": 70,
+          "h": 70,
+          "trueX": 304.7,
+          "trueY": 508
+        },
+        "hotwheels-dark": {
+          "x": 109.7,
+          "y": 423.8,
+          "w": 70,
+          "h": 70,
+          "trueX": 139.4,
+          "trueY": 355.5
+        },
+        "pills": {
+          "x": 361,
+          "y": 354.7,
+          "w": 70,
+          "h": 70,
+          "trueX": 382,
+          "trueY": 395.3
+        },
+        "syringe": {
+          "x": 356.5,
+          "y": 556,
+          "w": 70,
+          "h": 70,
+          "trueX": 377.6,
+          "trueY": 571.5
+        },
+        "the-view": {
+          "x": 196.8,
+          "y": 213.9,
+          "w": 70,
+          "h": 70,
+          "trueX": 177.5,
+          "trueY": 226.2
+        },
+        "desk-setup": {
+          "x": 244,
+          "y": 122.3,
+          "w": 82,
+          "h": 59.8,
+          "trueX": 237.5,
+          "trueY": 122.3
+        },
+        "creature": {
+          "x": 159.8,
+          "y": 558.3,
+          "w": 70,
+          "h": 70,
+          "trueX": 159.8,
+          "trueY": 582
+        },
+        "autoshop": {
+          "x": 58,
+          "y": 267.7,
+          "w": 76.7,
+          "h": 63.9,
+          "trueX": 92.1,
+          "trueY": 204.5
+        },
+        "ice-cream": {
+          "x": 331.3,
+          "y": 196.3,
+          "w": 70,
+          "h": 70,
+          "trueX": 263.9,
+          "trueY": 196.3
+        },
+        "gwagon-tall": {
+          "x": 129.5,
+          "y": 206.1,
+          "w": 52.5,
+          "h": 93.3,
+          "trueX": 126.7,
+          "trueY": 249.2
+        },
+        "solar-jupiter": {
+          "x": 280.5,
+          "y": 44,
+          "w": 70,
+          "h": 70,
+          "trueX": 280.5,
+          "trueY": 18
+        },
+        "controller": {
+          "x": 55.4,
+          "y": 141.4,
+          "w": 82,
+          "h": 59.8,
+          "trueX": 78.5,
+          "trueY": 153.4
+        }
+      }
+    },
+    "short": {
+      "width": 400,
+      "height": 500,
+      "pad": 18,
+      "nodes": {
+        "boat-front": {
+          "x": 338.1,
+          "y": 374.5,
+          "w": 96.1,
+          "h": 96.1,
+          "trueX": 338.1,
+          "trueY": 366.2
+        },
+        "wingman-gold": {
+          "x": 109.5,
+          "y": 33.1,
+          "w": 103.3,
+          "h": 58.1,
+          "trueX": 109.5,
+          "trueY": 181.1
+        },
+        "pokemon-group": {
+          "x": 118.6,
+          "y": 283.1,
+          "w": 103.3,
+          "h": 58.1,
+          "trueX": 135.6,
+          "trueY": 217.8
+        },
+        "boat-trio": {
+          "x": 285.6,
+          "y": 297.2,
+          "w": 82.7,
+          "h": 46.5,
+          "trueX": 318.2,
+          "trueY": 316.5
+        },
+        "hotwheels-case": {
+          "x": 207.2,
+          "y": 318.2,
+          "w": 62,
+          "h": 62,
+          "trueX": 269,
+          "trueY": 318.2
+        },
+        "gwagon-street": {
+          "x": 149.6,
+          "y": 88.3,
+          "w": 82.7,
+          "h": 46.5,
+          "trueX": 149.6,
+          "trueY": 171.4
+        },
+        "wingman-blue": {
+          "x": 50.4,
+          "y": 419.7,
+          "w": 82.7,
+          "h": 46.5,
+          "trueX": 18,
+          "trueY": 419.7
+        },
+        "wingman-red": {
+          "x": 48.1,
+          "y": 102.7,
+          "w": 82.7,
+          "h": 46.5,
+          "trueX": 68.9,
+          "trueY": 179.5
+        },
+        "pokemon-jigglypuff": {
+          "x": 158,
+          "y": 406.3,
+          "w": 82.7,
+          "h": 46.5,
+          "trueX": 158,
+          "trueY": 346.4
+        },
+        "pokemon-group-tall": {
+          "x": 239.2,
+          "y": 177.1,
+          "w": 46.5,
+          "h": 82.7,
+          "trueX": 181.2,
+          "trueY": 174.5
+        },
+        "pokemon-salamence": {
+          "x": 141.1,
+          "y": 227.9,
+          "w": 82.7,
+          "h": 46.5,
+          "trueX": 141.1,
+          "trueY": 200.7
+        },
+        "boat-float": {
+          "x": 292.2,
+          "y": 459.6,
+          "w": 62,
+          "h": 62,
+          "trueX": 304.7,
+          "trueY": 421.2
+        },
+        "hotwheels-dark": {
+          "x": 139.3,
+          "y": 347.6,
+          "w": 62,
+          "h": 62,
+          "trueX": 139.4,
+          "trueY": 295.6
+        },
+        "pills": {
+          "x": 363.9,
+          "y": 289.5,
+          "w": 62,
+          "h": 62,
+          "trueX": 382,
+          "trueY": 328.4
+        },
+        "syringe": {
+          "x": 360.2,
+          "y": 460,
+          "w": 62,
+          "h": 62,
+          "trueX": 377.6,
+          "trueY": 473.3
+        },
+        "the-view": {
+          "x": 178.9,
+          "y": 166.1,
+          "w": 62,
+          "h": 62,
+          "trueX": 177.5,
+          "trueY": 189.3
+        },
+        "desk-setup": {
+          "x": 237.5,
+          "y": 102.7,
+          "w": 72.6,
+          "h": 52.9,
+          "trueX": 237.5,
+          "trueY": 103.8
+        },
+        "creature": {
+          "x": 159.8,
+          "y": 465,
+          "w": 62,
+          "h": 62,
+          "trueX": 159.8,
+          "trueY": 482
+        },
+        "autoshop": {
+          "x": 55.5,
+          "y": 219.2,
+          "w": 67.9,
+          "h": 56.6,
+          "trueX": 92.1,
+          "trueY": 171.4
+        },
+        "ice-cream": {
+          "x": 299.4,
+          "y": 166.7,
+          "w": 62,
+          "h": 62,
+          "trueX": 263.9,
+          "trueY": 164.7
+        },
+        "gwagon-tall": {
+          "x": 118.7,
+          "y": 157.3,
+          "w": 46.5,
+          "h": 82.7,
+          "trueX": 126.7,
+          "trueY": 208.2
+        },
+        "solar-jupiter": {
+          "x": 280.5,
+          "y": 39.2,
+          "w": 62,
+          "h": 62,
+          "trueX": 280.5,
+          "trueY": 18
+        },
+        "controller": {
+          "x": 53.1,
+          "y": 158.4,
+          "w": 72.6,
+          "h": 52.9,
+          "trueX": 78.5,
+          "trueY": 129.4
+        }
+      }
+    }
+  }
+}

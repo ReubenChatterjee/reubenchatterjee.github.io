@@ -1,0 +1,29 @@
+/* Fonts, reset, page ground, focus, skip link */
+@font-face{
+  font-family:"Bricolage";
+  src:url("../fonts/bricolage-wdth.woff2") format("woff2");
+  font-weight:200 800; font-stretch:75% 100%; font-display:swap;
+}
+@font-face{
+  font-family:"Instrument";
+  src:url("../fonts/instrument-sans.woff2") format("woff2");
+  font-weight:400 700; font-display:swap;
+}
+
+*{box-sizing:border-box}
+html{background:#cdcfd2;-webkit-text-size-adjust:100%}
+body{
+  margin:0; font-family:var(--body); font-size:17px; line-height:1.5; color:#0e1a3d;
+  background:#dedac3; font-variant-numeric:tabular-nums;
+}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent,#1d46c8);outline-offset:3px;border-radius:4px}
+
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:#fff;color:#000;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}

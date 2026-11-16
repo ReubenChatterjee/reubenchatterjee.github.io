@@ -1,0 +1,25 @@
+/* Room 4: Hottest Wheels (square piece room). The .room--square layout is reusable by any square-piece room.
+   Orange (--block) is only ever a solid block behind dark text. */
+.room--square .room__inner{justify-content:flex-start;gap:6px}
+.room--square .piece--square{aspect-ratio:1/1;width:100%;max-width:min(100%,30svh);align-self:center;flex:none}
+.room--square .piece--square::after{content:"";position:absolute;inset:-1px;z-index:1;pointer-events:none;background:
+  linear-gradient(90deg,var(--bg) 0,transparent 6%,transparent 94%,var(--bg) 100%),
+  linear-gradient(180deg,var(--bg) 0,transparent 6%,transparent 94%,var(--bg) 100%)}
+.room--square .copy,.room--square .card{position:relative;z-index:2}
+.room--square .title{font-size:min(15vw,6.4svh)}
+.room--square .title .ln.heavy{display:inline-block;background:var(--block);color:#14182e;padding:.02em .12em 0;border-radius:.1em}
+.room--square .kicker .num{background:var(--block);color:#14182e}
+.room--square .lede{font-size:clamp(15.5px,2.5svh,17px);max-width:36ch;margin:0}
+.room--square .kicker{margin-bottom:4px}
+.room--square .card{margin-top:auto;align-self:stretch;width:auto}
+@media (min-width:900px){
+  .room--square .room__inner{padding-top:var(--top);padding-bottom:28px;justify-content:center;gap:16px;padding-right:calc(min(100svh - var(--top) - 28px,60vw) + var(--gut) * 2)}
+  .room--square .piece--square{position:absolute;right:var(--gut);top:var(--top);width:min(100svh - var(--top) - 28px,60vw);max-width:none;height:auto}
+  .room--square .title{font-size:min(9vw,15svh)}
+  .room--square .lede{font-size:var(--t-lede-d)}
+  .room--square .card{margin-top:10px;align-self:flex-start;width:400px}
+}
+@media (max-width:899.98px){
+  .room--square .room__inner{padding-top:62px;padding-bottom:var(--bot)}
+  .room--square .piece--square{margin-bottom:auto;margin-top:auto}
+}

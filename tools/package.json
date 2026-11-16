@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-asset-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Build and screenshot tools for the portfolio proofs",
+  "scripts": {
+    "build-assets": "node build-assets.mjs",
+    "shoot": "node shoot.mjs"
+  },
+  "dependencies": {
+    "@babel/parser": "7.26.5",
+    "puppeteer-core": "^24.0.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "playwright": "1.49.1"
+  }
+}

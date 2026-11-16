@@ -1,0 +1,39 @@
+/* 06 Everything else: the colour map (normal flow, after the rooms). Its script and data load only when it approaches.
+   Without js/map.js (not yet loaded, or failed) the section is the head, the method note and the plain list.
+   Phone sizing is for the visible area with browser bars (about 393 x 660): the plot plus its controls fit between
+   the fixed header (--top) and the rail (--bot), using svh only. */
+.map{--panel:#130c25;--field:#21163d;background:var(--bg);color:var(--ink);position:relative;
+  padding:calc(var(--top) + 32px) var(--gut) calc(var(--bot) + 24px);scroll-margin-top:0}
+.map :focus-visible{outline-color:var(--accent)}
+
+/* ---------- head ---------- */
+.map__head{max-width:1440px;margin:0 auto 28px}
+.map__title{font-family:var(--display);font-size:var(--t-section-title);line-height:.92;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.map__title > span{display:block}
+.map__lede{margin:16px 0 0;font-size:var(--t-lede-m);line-height:1.35;color:var(--muted);max-width:30ch;text-wrap:pretty}
+@media (min-width:900px){
+  .map__head{margin-bottom:32px}
+  .map__lede{font-size:var(--t-lede-d);max-width:40ch}
+}
+
+/* ---------- plot: y axis | frame, then x axis, then tools ---------- */
+.map__plot{display:none;max-width:1440px;margin:0 auto;grid-template-columns:22px minmax(0,1fr);column-gap:6px;row-gap:6px;scroll-margin-top:calc(var(--top) + 4px)}
+.map--broken .map__plot{display:none}
+/* ---------- method note and the plain list ---------- */
+.map__more{max-width:1440px;margin:28px auto 0}
+.map__method{margin:0;color:var(--muted);font-size:15px;line-height:1.55;max-width:68ch}
+.map__all{margin-top:24px}
+.map__sum{list-style:none;display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 20px;border-radius:var(--r-pill);border:2px solid var(--ink);font-weight:600;cursor:pointer}
+.map__sum::-webkit-details-marker{display:none}
+.map__sum::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translate(-2px,-2px)}
+.map__all[open] .map__sum::after{transform:rotate(-135deg) translate(-2px,-2px)}
+@media (hover:hover){.map__sum:hover{background:var(--ink);color:var(--bg)}}
+.map__list{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
+@media (min-width:600px){.map__list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1200px){.map__list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.map__li{display:grid;gap:2px;min-height:56px;padding:10px 16px 12px;border-radius:14px;background:var(--card);color:var(--card-ink);text-decoration:none;transition:filter .2s}
+.map__li:hover{filter:brightness(1.15)}
+.map__li-t{font-weight:600;font-size:15px;line-height:1.3}
+.map__li-m{color:var(--card-muted);font-size:14px}
+.map__sw{display:flex;gap:2px;height:6px;margin-top:6px;border-radius:99px;overflow:hidden;max-width:160px}
+.map__sw i{display:block;min-width:4px}

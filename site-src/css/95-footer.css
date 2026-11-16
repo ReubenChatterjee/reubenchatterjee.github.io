@@ -1,0 +1,7 @@
+/* Footer. Takes the "clock" world, as the page ends on the same bone ground. */
+.foot{background:var(--bg);color:var(--ink);padding:26px var(--gut) 110px;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.foot p{margin:0}
+.foot a{font-weight:600;display:inline-flex;min-height:44px;align-items:center}
+@media (min-width:900px){
+  .foot{flex-direction:row;justify-content:space-between;align-items:center;padding:26px var(--gut) 100px}
+}

@@ -1,0 +1,73 @@
+/* Design tokens (design brief sections 4 to 8).
+   Colour worlds are [data-world="..."] blocks. Rooms, the footer, and the fixed header and rail all take their world from this attribute,
+   so a new room needs a world name here (or an existing one) and nothing else. */
+
+/* Boat Rockerz (hero): studio grey, cobalt. Final. */
+[data-world="boat"]{
+  --bg:#cdcfd2; --ink:#0e1a3d; --accent:#1d46c8; --muted:#34406a; --on-accent:#cdcfd2;
+  --card:#0e1a3d; --card-ink:#eef0fa; --card-muted:#a9b6e6; --card-line:rgba(238,240,250,.22);
+}
+/* Wingman: warm black, gold. Final. */
+[data-world="wingman"]{
+  --bg:#0d0a07; --ink:#f3e8d0; --accent:#d9b53c; --muted:#b9ab8d; --on-accent:#0d0a07;
+  --card:#211a12; --card-ink:#f3e8d0; --card-muted:#bfae8a; --card-line:rgba(243,232,208,.2);
+}
+/* Mercedes G Wagon: deep navy, sodium yellow, purple underglow. Final. */
+[data-world="gwagon"]{
+  --bg:#05061c; --ink:#eceef9; --accent:#f0c430; --accent2:#a964ff; --muted:#aeb4d6; --on-accent:#05061c;
+  --card:#12163f; --card-ink:#eceef9; --card-muted:#aab2dc; --card-line:rgba(236,238,249,.2);
+}
+/* On the clock: bone, olive. Final. */
+[data-world="clock"]{
+  --bg:#dedac3; --ink:#232016; --accent:#5a5430; --muted:#48442e; --on-accent:#dedac3;
+  --card:#232016; --card-ink:#dedac3; --card-muted:#c3bea1; --card-line:rgba(222,218,195,.25);
+}
+
+/* Starting values for worlds not built yet (design brief section 4). card-muted, card-line and on-accent are derived, not from the brief. */
+/* Pokemon: deep violet, mint, with a red detail. */
+[data-world="pokemon"]{
+  --bg:#1a0f2e; --ink:#f4ecff; --accent:#3ef0c2; --accent2:#e5261f; --muted:#b9a8d6; --on-accent:#1a0f2e;
+  --card:#2a1c4a; --card-ink:#f4ecff; --card-muted:#bcaadc; --card-line:rgba(244,236,255,.2);
+}
+/* Hottest Wheels: sage ground, navy ink. Orange is a block colour (--block), never text on the sage. */
+[data-world="wheels"]{
+  --bg:#819696; --ink:#14182e; --accent:#14182e; --block:#f28a1e; --muted:#222944; --on-accent:#819696;
+  --card:#14182e; --card-ink:#f3efe6; --card-muted:#b9bfd3; --card-line:rgba(243,239,230,.22);
+}
+/* Everything else (the colour map): from Proof B. */
+[data-world="map"]{
+  --bg:#1a1131; --ink:#f1ecff; --accent:#3ef0c2; --accent2:#ff6b3d; --muted:#b6a9d9; --on-accent:#1a1131;
+  --card:#261a45; --card-ink:#f1ecff; --card-muted:#b9acdc; --card-line:rgba(241,236,255,.2);
+}
+/* Story: ultramarine, apricot. From Proof C. */
+[data-world="story"]{
+  --bg:#15318a; --ink:#f4ead5; --accent:#ff9a52; --muted:#b9c4ee; --on-accent:#15318a;
+  --card:#0f2468; --card-ink:#f4ead5; --card-muted:#b9c4ee; --card-line:rgba(244,234,213,.22);
+}
+
+:root{
+  /* fonts */
+  --display:"Bricolage","Arial Narrow",system-ui,sans-serif;
+  --body:"Instrument",system-ui,-apple-system,"Segoe UI",sans-serif;
+
+  /* type scale (design brief section 5). Declared for the tasks that build the new sections; the current rooms keep their own sizes. */
+  --t-room-title:clamp(56px,12vw,200px);
+  --t-section-title:clamp(44px,8vw,128px);
+  --t-lede-d:23px;  --t-lede-m:19.5px;
+  --t-body-d:17px;  --t-body-m:16px;
+  --t-label:14px;
+  --t-card-d:14.5px; --t-card-m:15px;
+
+  /* spacing scale (design brief section 6) */
+  --gut:clamp(20px,4vw,64px);
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:24px; --s-6:32px; --s-7:48px; --s-8:72px; --s-9:112px;
+  --top:72px; --bot:92px;
+
+  /* radii */
+  --r-card:20px; --r-media:12px; --r-pill:99px;
+
+  /* easing and durations */
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --dur-ui:.3s;
+}
+@media (min-width:900px){ :root{--top:84px;--bot:104px} }

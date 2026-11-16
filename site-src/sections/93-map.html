@@ -1,0 +1,105 @@
+
+<!-- 06 Everything else: the colour map. A normal-flow section after the rooms.
+     Until it approaches, this is plain HTML: js/71-map-loader.js then fetches js/map.js, which loads art/embedding.json,
+     art/projects.json and the 480 thumbnails. The count and the list between the markers are written by tools/build-embedding.mjs. -->
+<section class="map" id="map" data-world="map" data-rail-text="Map" data-shot="map" aria-labelledby="h-map">
+ <div class="map__head">
+  <p class="kicker"><span class="num">06</span> Everything else</p>
+  <h2 class="map__title" id="h-map"><span class="light"><!-- count:start -->Twenty-three<!-- count:end --> renders,</span> <span class="heavy">plotted by colour.</span></h2>
+  <p class="map__lede">Each one sits where its own pixels put it. Open one to see what lands closest.</p>
+ </div>
+
+ <div class="map__plot" id="map-plot">
+  <div class="map__ya" aria-hidden="true"><span class="map__aw map__aw--warm">warmer</span><span class="map__rule"></span><span class="map__aw map__aw--cool">cooler</span></div>
+  <div class="map__frame" id="map-frame">
+   <div class="map__vp" id="map-vp" tabindex="0" role="group" aria-roledescription="map" aria-label="Colour map of the renders. Arrow keys pan, plus and minus zoom, 0 resets. Tab moves through the pieces in my order." aria-describedby="map-hint">
+    <div class="map__world" id="map-world">
+     <div class="map__field" aria-hidden="true"></div>
+     <div class="map__key" id="map-key" aria-hidden="true">
+      <p class="map__key-h">Bright and warm</p>
+      <p class="map__key-p">Nothing I've made lands here. Yet.</p>
+      <p class="map__key-l"><i class="map__key-dot"></i>Dot: where a piece really measures</p>
+      <p class="map__key-l"><i class="map__key-big"></i>Bigger: my picks, not a measurement</p>
+     </div>
+     <div class="map__links" id="map-links" aria-hidden="true"></div>
+     <div class="map__dots" id="map-dots" aria-hidden="true"></div>
+     <div class="map__nodes" id="map-nodes"></div>
+    </div>
+   </div>
+   <p class="map__status" id="map-status">Plotting the map</p>
+   <p class="map__toast" id="map-toast" role="status" aria-live="polite"></p>
+  </div>
+  <div class="map__xa" aria-hidden="true"><span class="map__aw">darker</span><span class="map__rule"></span><span class="map__aw map__aw--bright">brighter</span></div>
+  <div class="map__tools">
+   <p class="map__hint" id="map-hint"><span class="map__fine">Drag to look around. Hold Ctrl or Cmd and scroll to zoom, or click the map first.</span><span class="map__coarse">Tap a piece to open it. Explore the map to pan and pinch.</span></p>
+   <button class="btn map__explore" type="button" id="map-explore" aria-pressed="false" aria-controls="map-vp"><span class="map__ex-off">Explore the map</span><span class="map__ex-on">Done exploring</span></button>
+   <div class="map__ctl" role="group" aria-label="Map controls">
+    <button class="map__zb" type="button" id="map-in" aria-label="Zoom in" aria-controls="map-vp"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+    <button class="map__zb" type="button" id="map-out" aria-label="Zoom out" aria-controls="map-vp"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+    <button class="map__zb" type="button" id="map-reset" aria-label="Reset view" aria-controls="map-vp"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9V4M4 4h5M4 4l4.2 4.2A7 7 0 1 1 5 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+   </div>
+  </div>
+ </div>
+
+ <div class="map__more">
+  <p class="map__method">How it's plotted: I took each still's five main colours (k-means on a small copy), weighted by how much of the frame they fill. Left to right is average lightness in OKLab, a colour space built around how eyes judge brightness. Bottom to top is how far the colours lean from blue toward orange. Both axes are stretched on a power scale so the crowded end gets room; the order is untouched. Thumbnails are nudged apart until none overlap, so a small dot marks where each one really measures. Bigger thumbnails are my picks, not a measurement.</p>
+  <details class="map__all" id="map-all" open>
+   <summary class="map__sum">All <!-- n:start -->23<!-- n:end --> as a list</summary>
+   <ol class="map__list" id="map-list"><!-- list:start -->
+    <li><a class="map__li" href="art/img/boat-front-1600.webp" data-open="boat-front"><span class="map__li-t">Boat Rockerz 460</span><span class="map__li-m">Jan 2023 · view 1 of 3</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:309;background:#c7c9cd"></i><i style="flex-grow:215;background:#d8d9db"></i><i style="flex-grow:203;background:#a7acb3"></i><i style="flex-grow:183;background:#121b2b"></i><i style="flex-grow:90;background:#435a7a"></i></span></a></li>
+    <li><a class="map__li" href="art/img/wingman-gold-1600.webp" data-open="wingman-gold"><span class="map__li-t">Wingman 3D model</span><span class="map__li-m">Nov 2022 · view 1 of 3</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:603;background:#050504"></i><i style="flex-grow:142;background:#1c1817"></i><i style="flex-grow:120;background:#3a3126"></i><i style="flex-grow:82;background:#785917"></i><i style="flex-grow:53;background:#c6a633"></i></span></a></li>
+    <li><a class="map__li" href="art/img/pokemon-group-1600.webp" data-open="pokemon-group"><span class="map__li-t">Pokemon</span><span class="map__li-m">Jan 2022 · view 1 of 4</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:499;background:#080508"></i><i style="flex-grow:171;background:#412f51"></i><i style="flex-grow:160;background:#2a1c2b"></i><i style="flex-grow:106;background:#b22035"></i><i style="flex-grow:64;background:#8a7888"></i></span></a></li>
+    <li><a class="map__li" href="art/img/boat-trio-1600.webp" data-open="boat-trio"><span class="map__li-t">Boat Rockerz 460</span><span class="map__li-m">Jan 2023 · view 2 of 3</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:363;background:#cececf"></i><i style="flex-grow:221;background:#a4a7a8"></i><i style="flex-grow:150;background:#39434e"></i><i style="flex-grow:133;background:#14181f"></i><i style="flex-grow:133;background:#6a747b"></i></span></a></li>
+    <li><a class="map__li" href="art/img/hotwheels-case-1600.webp" data-open="hotwheels-case"><span class="map__li-t">Hottest Wheels</span><span class="map__li-m">Oct 2022 · view 1 of 2</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:504;background:#819696"></i><i style="flex-grow:278;background:#1b1c1e"></i><i style="flex-grow:111;background:#2d3b6e"></i><i style="flex-grow:81;background:#ae6f23"></i><i style="flex-grow:26;background:#c4c8c2"></i></span></a></li>
+    <li><a class="map__li" href="art/img/gwagon-street-1600.webp" data-open="gwagon-street"><span class="map__li-t">Mercedes G Wagon</span><span class="map__li-m">Jul 2023 · view 1 of 2</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:391;background:#0d0a08"></i><i style="flex-grow:258;background:#282116"></i><i style="flex-grow:180;background:#413a28"></i><i style="flex-grow:117;background:#605839"></i><i style="flex-grow:54;background:#837b51"></i></span></a></li>
+    <li><a class="map__li" href="art/img/wingman-blue-1600.webp" data-open="wingman-blue"><span class="map__li-t">Wingman 3D model</span><span class="map__li-m">Nov 2022 · view 2 of 3</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:545;background:#020203"></i><i style="flex-grow:203;background:#07080f"></i><i style="flex-grow:105;background:#0b0f2c"></i><i style="flex-grow:104;background:#202e5d"></i><i style="flex-grow:43;background:#546f9f"></i></span></a></li>
+    <li><a class="map__li" href="art/img/wingman-red-1600.webp" data-open="wingman-red"><span class="map__li-t">Wingman 3D model</span><span class="map__li-m">Nov 2022 · view 3 of 3</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:647;background:#030202"></i><i style="flex-grow:177;background:#2f1211"></i><i style="flex-grow:108;background:#503f3e"></i><i style="flex-grow:39;background:#931815"></i><i style="flex-grow:29;background:#c3837f"></i></span></a></li>
+    <li><a class="map__li" href="art/img/pokemon-jigglypuff-1600.webp" data-open="pokemon-jigglypuff"><span class="map__li-t">Pokemon</span><span class="map__li-m">Jan 2022 · view 2 of 4</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:465;background:#0b080c"></i><i style="flex-grow:177;background:#453466"></i><i style="flex-grow:162;background:#271a3a"></i><i style="flex-grow:119;background:#8c5187"></i><i style="flex-grow:77;background:#ba78aa"></i></span></a></li>
+    <li><a class="map__li" href="art/img/pokemon-group-tall-960.webp" data-open="pokemon-group-tall"><span class="map__li-t">Pokemon</span><span class="map__li-m">Jan 2022 · view 3 of 4</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:419;background:#0c080b"></i><i style="flex-grow:235;background:#2d1822"></i><i style="flex-grow:129;background:#af9aa5"></i><i style="flex-grow:115;background:#cc211f"></i><i style="flex-grow:102;background:#44717d"></i></span></a></li>
+    <li><a class="map__li" href="art/img/pokemon-salamence-1600.webp" data-open="pokemon-salamence"><span class="map__li-t">Pokemon</span><span class="map__li-m">Jan 2022 · view 4 of 4</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:471;background:#0a0609"></i><i style="flex-grow:215;background:#432948"></i><i style="flex-grow:145;background:#20111c"></i><i style="flex-grow:98;background:#d11f0f"></i><i style="flex-grow:71;background:#5d8b97"></i></span></a></li>
+    <li><a class="map__li" href="art/img/boat-float-1600.webp" data-open="boat-float"><span class="map__li-t">Boat Rockerz 460</span><span class="map__li-m">Jan 2023 · view 3 of 3</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:282;background:#b6bcc2"></i><i style="flex-grow:213;background:#3f4d63"></i><i style="flex-grow:191;background:#6f7d8e"></i><i style="flex-grow:173;background:#191e29"></i><i style="flex-grow:141;background:#dee0e2"></i></span></a></li>
+    <li><a class="map__li" href="art/img/hotwheels-dark-1600.webp" data-open="hotwheels-dark"><span class="map__li-t">Hottest Wheels</span><span class="map__li-m">Oct 2022 · view 2 of 2</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:401;background:#020203"></i><i style="flex-grow:268;background:#181924"></i><i style="flex-grow:116;background:#214291"></i><i style="flex-grow:113;background:#6f4719"></i><i style="flex-grow:102;background:#ac8a6b"></i></span></a></li>
+    <li><a class="map__li" href="art/img/pills-1600.webp" data-open="pills"><span class="map__li-t">Capsules</span><span class="map__li-m">Feb 2022</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:712;background:#a3cec4"></i><i style="flex-grow:139;background:#e5e2e4"></i><i style="flex-grow:68;background:#36a081"></i><i style="flex-grow:44;background:#d1ae91"></i><i style="flex-grow:37;background:#d43b30"></i></span></a></li>
+    <li><a class="map__li" href="art/img/syringe-1600.webp" data-open="syringe"><span class="map__li-t">Syringe</span><span class="map__li-m">Feb 2022</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:406;background:#abd3cc"></i><i style="flex-grow:321;background:#9cccc1"></i><i style="flex-grow:195;background:#89bdae"></i><i style="flex-grow:50;background:#59526b"></i><i style="flex-grow:28;background:#e6e6e5"></i></span></a></li>
+    <li><a class="map__li" href="art/img/the-view-960.webp" data-open="the-view"><span class="map__li-t">The View</span><span class="map__li-m">May 2022</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:466;background:#15100a"></i><i style="flex-grow:328;background:#313233"></i><i style="flex-grow:103;background:#66655a"></i><i style="flex-grow:53;background:#e3d087"></i><i style="flex-grow:50;background:#ae8d40"></i></span></a></li>
+    <li><a class="map__li" href="art/img/desk-setup-1600.webp" data-open="desk-setup"><span class="map__li-t">Desk Setup</span><span class="map__li-m">Feb 2022</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:352;background:#673436"></i><i style="flex-grow:286;background:#855f6b"></i><i style="flex-grow:163;background:#411818"></i><i style="flex-grow:120;background:#e482d1"></i><i style="flex-grow:79;background:#110808"></i></span></a></li>
+    <li><a class="map__li" href="art/img/creature-1600.webp" data-open="creature"><span class="map__li-t">Creature</span><span class="map__li-m">Feb 2022</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:364;background:#1a253d"></i><i style="flex-grow:263;background:#3c4b30"></i><i style="flex-grow:197;background:#19241d"></i><i style="flex-grow:104;background:#040810"></i><i style="flex-grow:72;background:#1c2784"></i></span></a></li>
+    <li><a class="map__li" href="art/img/autoshop-1600.webp" data-open="autoshop"><span class="map__li-t">Autoshop</span><span class="map__li-m">Jun 2022</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:458;background:#030201"></i><i style="flex-grow:289;background:#171109"></i><i style="flex-grow:113;background:#382915"></i><i style="flex-grow:92;background:#684a31"></i><i style="flex-grow:48;background:#9e8877"></i></span></a></li>
+    <li><a class="map__li" href="art/img/ice-cream-960.webp" data-open="ice-cream"><span class="map__li-t">Fuzzy Ice Cream</span><span class="map__li-m">Mar 2022</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:454;background:#1a160f"></i><i style="flex-grow:174;background:#d6d4c4"></i><i style="flex-grow:164;background:#c7c4a3"></i><i style="flex-grow:127;background:#793e5b"></i><i style="flex-grow:81;background:#b3a988"></i></span></a></li>
+    <li><a class="map__li" href="art/img/gwagon-tall-960.webp" data-open="gwagon-tall"><span class="map__li-t">Mercedes G Wagon</span><span class="map__li-m">Jul 2023 · view 2 of 2</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:455;background:#09070a"></i><i style="flex-grow:275;background:#232016"></i><i style="flex-grow:178;background:#3d3824"></i><i style="flex-grow:80;background:#6c6543"></i><i style="flex-grow:12;background:#c3bea1"></i></span></a></li>
+    <li><a class="map__li" href="art/img/solar-jupiter-960.webp" data-open="solar-jupiter"><span class="map__li-t">3D Solar System</span><span class="map__li-m">Feb 2022</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:329;background:#c3a48d"></i><i style="flex-grow:309;background:#b47b4d"></i><i style="flex-grow:201;background:#050302"></i><i style="flex-grow:125;background:#924011"></i><i style="flex-grow:36;background:#4b3e49"></i></span></a></li>
+    <li><a class="map__li" href="art/img/controller-1600.webp" data-open="controller"><span class="map__li-t">Controller</span><span class="map__li-m">Mar 2022</span><span class="map__sw" aria-hidden="true"><i style="flex-grow:462;background:#0b0708"></i><i style="flex-grow:250;background:#040202"></i><i style="flex-grow:100;background:#221516"></i><i style="flex-grow:96;background:#6d0506"></i><i style="flex-grow:92;background:#af1216"></i></span></a></li>
+    <!-- list:end --></ol>
+  </details>
+ </div>
+
+ <div class="map__detail" id="map-detail" hidden>
+  <div class="map__scrim" data-close></div>
+  <div class="map__panel" role="dialog" aria-modal="true" aria-labelledby="md-title" tabindex="-1">
+   <button class="btn map__back" type="button" data-close><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to the map<span class="map__esc" aria-hidden="true">Esc</span></button>
+   <div class="map__scroll" id="md-scroll">
+    <div class="map__media" id="md-media"><img id="md-img" alt="" decoding="async"></div>
+    <div class="map__body">
+     <p class="map__dk" id="md-kicker"></p>
+     <h3 class="map__dt" id="md-title"></h3>
+     <div class="map__dcard">
+      <dl class="fields" id="md-facts"></dl>
+      <div class="pal">
+       <div class="pal__row"><p class="pal__label">Palette, k = 5</p><output class="pal__out" id="md-out" aria-live="polite"></output></div>
+       <div class="pal__bar" id="md-pal" role="group" aria-label="Palette, k equals 5"></div>
+      </div>
+      <p class="map__measure" id="md-measure"></p>
+     </div>
+     <figure class="map__film" id="md-film" hidden></figure>
+     <h4 class="map__h4">Closest in colour</h4>
+     <ol class="map__near" id="md-near"></ol>
+     <div id="md-sibs-wrap">
+      <h4 class="map__h4">Same project</h4>
+      <ul class="map__sibs" id="md-sibs"></ul>
+     </div>
+     <a class="btn map__be" id="md-be" href="#" rel="noopener" hidden>See the full project on Behance</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>

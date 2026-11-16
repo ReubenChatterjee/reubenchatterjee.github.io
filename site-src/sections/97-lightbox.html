@@ -1,0 +1,12 @@
+
+<!-- Lightbox for the "more views" strips (ul.views in any room; see js/70-lightbox.js). One dialog for every room: it takes the room's colour world when it opens. -->
+<dialog class="lb" id="lb" data-world="boat" aria-labelledby="lb-cap">
+  <div class="lb__bg"></div>
+  <div class="lb__stage"></div>
+  <div class="lb__bar">
+    <button type="button" class="lb__btn lb__prev" aria-label="Previous view"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10.5 2.5 5 8l5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <p class="lb__cap" id="lb-cap" aria-live="polite"><span class="lb__n"></span> <span class="lb__t"></span></p>
+    <button type="button" class="lb__btn lb__next" aria-label="Next view"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M5.5 2.5 11 8l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+  <button type="button" class="lb__btn lb__x" aria-label="Close"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3.5 3.5l9 9m0-9-9 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+</dialog>

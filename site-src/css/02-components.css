@@ -1,0 +1,92 @@
+/* Shared components: titles, kicker, lede, media pieces, film control, model card, buttons */
+
+/* ---------- type ---------- */
+.mask{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.ln{display:block;will-change:auto}
+.title{font-family:var(--display);margin:0;line-height:.88;letter-spacing:-.02em;text-wrap:balance}
+.light{font-weight:250;font-stretch:100%}
+.heavy{font-weight:800;font-stretch:75%;color:var(--accent)}
+.title{font-size:min(21vw,16svh)}
+.lede{margin:14px 0 0;font-size:clamp(17px,1.5vw,21px);line-height:1.38;color:var(--muted);max-width:30ch;text-wrap:pretty}
+.kicker{margin:0 0 14px;font-weight:600;font-size:15px;color:var(--muted);display:flex;gap:10px;align-items:center}
+.kicker .num{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:15px;background:var(--accent);color:var(--bg);border-radius:99px;padding:2px 10px 1px}
+
+/* ---------- pieces (always native ratio) ---------- */
+.piece{position:relative}
+.piece__img,.piece__vid{width:100%;height:auto}
+.piece__vid{position:absolute;inset:0;height:100%;object-fit:contain;opacity:0;transition:opacity .5s}
+.piece[data-playing] .piece__vid{opacity:1}
+.piece--hero{aspect-ratio:1/1}
+.piece--wide{aspect-ratio:16/9}
+.piece--tall{aspect-ratio:9/16}
+/* wide + tall pieces: edges feather into the room ground with overlays (no masks on video) */
+.piece--wide::after,.piece--tall::after{content:"";position:absolute;inset:-1px;z-index:1;pointer-events:none}
+.piece--wide::after{background:
+  linear-gradient(90deg,var(--bg) 0,transparent 9%,transparent 91%,var(--bg) 100%),
+  linear-gradient(180deg,var(--bg) 0,transparent 10%,transparent 90%,var(--bg) 100%)}
+.piece--tall::after{background:linear-gradient(180deg,var(--bg) 0,transparent 16%)}
+
+/* ---------- film control (Play pill) ---------- */
+.play{position:absolute;right:12px;bottom:12px;min-height:44px;padding:0 18px 0 14px;border:0;border-radius:99px;display:flex;align-items:center;gap:8px;cursor:pointer;
+  background:var(--accent);color:var(--on-accent);font-weight:600;font-size:15px;z-index:2;transition:opacity .3s}
+.play--copy{position:static;margin-top:14px;display:inline-flex;align-self:flex-start}
+.play.is-off{opacity:0;pointer-events:none}
+
+/* ---------- model card ---------- */
+.card{background:var(--card);color:var(--card-ink);border-radius:22px;padding:6px 18px 16px;width:min(100%,400px);position:relative;z-index:3;text-align:left}
+.card summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:10px;min-height:44px;align-items:center}
+.card summary::-webkit-details-marker{display:none}
+.card__k{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:21px;letter-spacing:-.01em}
+.card__sub{color:var(--card-muted);font-size:14px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card__chev{width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-135deg) translate(-2px,-2px);transition:transform .25s}
+.card details[open] .card__chev{transform:rotate(45deg)}
+.card :focus-visible{outline-color:var(--card-ink)}
+.fields{margin:2px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+.fields div{min-width:0}
+.fields dt{font-size:13px;color:var(--card-muted);font-weight:500}
+.nb{white-space:nowrap}
+.fields dd{margin:0;font-size:15.5px;font-weight:600;line-height:1.25}
+.dry{margin:14px 0 0;font-size:14px;color:var(--card-muted);font-style:italic}
+.pal{margin-top:14px}
+.pal__row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px}
+.pal__label{margin:0;font-size:13px;color:var(--card-muted);font-weight:500}
+.pal__bar{display:flex;gap:2px;height:40px;border-radius:10px;overflow:hidden}
+.seg{flex:var(--w) 1 0;min-width:10px;border:0;padding:0;background:var(--c);cursor:pointer;transition:flex-grow .25s var(--ease),filter .2s}
+/* hit area: a narrow segment is tappable over at least 24px, centred on it, with nothing drawn. The bar no longer clips
+   (its rounded ends are on the end segments instead), so an end segment's area can reach past the bar into the card's padding. */
+.pal__bar{overflow:visible}
+.seg{position:relative}
+.seg:first-child,.seg:first-child:hover,.seg:first-child:focus-visible{border-radius:10px 0 0 10px}
+.seg:last-child,.seg:last-child:hover,.seg:last-child:focus-visible{border-radius:0 10px 10px 0}
+.seg::after{content:"";position:absolute;z-index:1;top:50%;left:50%;width:max(100%,24px);height:max(100%,24px);transform:translate(-50%,-50%)}
+.seg:hover,.seg:focus-visible{filter:brightness(1.12);outline:3px solid var(--card-ink);outline-offset:-3px;border-radius:0}
+.pal__out{display:block;font-size:14px;font-weight:600;min-height:21px;text-align:right}
+
+/* ---------- buttons ---------- */
+.btn{display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 18px;border-radius:99px;border:2px solid var(--ink);text-decoration:none;font-weight:600;
+  font-size:16px;transition:background-color .2s,color .2s,transform .2s;text-align:center}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn--main{background:var(--ink);color:var(--bg)}
+.btn--main:hover{background:var(--accent);border-color:var(--accent)}
+
+@media (min-width:900px){
+  .card{padding:8px 22px 20px}
+  .card summary{cursor:default;pointer-events:none}
+  .card__chev{display:none}
+  .card__sub{display:none}
+  .card__body{margin-top:4px}
+  .pal__bar{height:44px}
+}
+/* mobile popover for the card body */
+@media (max-width:899.98px){
+  .card{padding:2px 14px 12px}
+  .card__d[open] .card__body{position:absolute;left:0;right:0;bottom:100%;margin-bottom:8px;background:var(--card);border-radius:22px;padding:16px 18px 18px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .pal{margin-top:2px}
+  .pal__bar{height:24px}
+  .pal__out{font-size:13px;min-height:19px}
+  .pal__row{margin-bottom:3px}
+  .card__k{font-size:19px}
+}
+@media (prefers-reduced-motion:reduce){
+  .piece__vid{transition:opacity .2s!important}
+}

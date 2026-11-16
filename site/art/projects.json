@@ -1,0 +1,1202 @@
+{
+  "disclaimer": "Personal projects. Not affiliated with or endorsed by any brand shown.",
+  "projects": [
+    {
+      "id": "boat-rockerz",
+      "title": "Boat Rockerz 460",
+      "date": "2023-01",
+      "dateLabel": "Jan 2023",
+      "tools": [
+        "Blender",
+        "Adobe Premiere Pro"
+      ],
+      "behanceUrl": "https://www.behance.net/gallery/161705745/Boat-Rockerz-460",
+      "canLead": true,
+      "pieces": [
+        "boat-front",
+        "boat-trio",
+        "boat-float"
+      ],
+      "video": "boat-film"
+    },
+    {
+      "id": "g-wagon",
+      "title": "Mercedes G Wagon",
+      "date": "2023-07",
+      "dateLabel": "Jul 2023",
+      "tools": [
+        "Blender",
+        "Adobe Premiere Pro"
+      ],
+      "behanceUrl": "https://www.behance.net/gallery/175614965/Mercedes-G-Wagon",
+      "canLead": true,
+      "pieces": [
+        "gwagon-street",
+        "gwagon-tall"
+      ],
+      "video": "gwagon-reel"
+    },
+    {
+      "id": "wingman",
+      "title": "Wingman 3D model",
+      "date": "2022-11",
+      "dateLabel": "Nov 2022",
+      "tools": [
+        "Blender",
+        "Adobe Premiere Pro"
+      ],
+      "behanceUrl": "https://www.behance.net/gallery/158204171/Wingman-3D-model",
+      "canLead": true,
+      "pieces": [
+        "wingman-gold",
+        "wingman-blue",
+        "wingman-red"
+      ],
+      "video": "wingman-film"
+    },
+    {
+      "id": "hot-wheels",
+      "title": "Hottest Wheels",
+      "date": "2022-10",
+      "dateLabel": "Oct 2022",
+      "tools": [
+        "Blender"
+      ],
+      "behanceUrl": "https://www.behance.net/gallery/155749489/Hottest-Wheels",
+      "canLead": true,
+      "pieces": [
+        "hotwheels-case",
+        "hotwheels-dark"
+      ],
+      "video": null
+    },
+    {
+      "id": "autoshop",
+      "title": "Autoshop",
+      "date": "2022-06",
+      "dateLabel": "Jun 2022",
+      "tools": [
+        "Blender"
+      ],
+      "behanceUrl": "https://www.behance.net/gallery/148746081/Autoshop",
+      "canLead": false,
+      "pieces": [
+        "autoshop"
+      ],
+      "video": null
+    },
+    {
+      "id": "the-view",
+      "title": "The View",
+      "date": "2022-05",
+      "dateLabel": "May 2022",
+      "tools": [
+        "Blender"
+      ],
+      "behanceUrl": "https://www.behance.net/gallery/142858139/The-View",
+      "canLead": false,
+      "pieces": [
+        "the-view"
+      ],
+      "video": null
+    },
+    {
+      "id": "solar-system",
+      "title": "3D Solar System",
+      "date": "2022-02",
+      "dateLabel": "Feb 2022",
+      "tools": [
+        "Blender",
+        "Adobe Premiere Pro"
+      ],
+      "behanceUrl": "https://www.behance.net/gallery/138670283/3D-Solar-System",
+      "canLead": false,
+      "pieces": [
+        "solar-jupiter"
+      ],
+      "video": "solar-film"
+    },
+    {
+      "id": "pokemon",
+      "title": "Pokemon",
+      "date": "2022-01",
+      "dateLabel": "Jan 2022",
+      "tools": [
+        "Blender"
+      ],
+      "behanceUrl": null,
+      "canLead": true,
+      "pieces": [
+        "pokemon-group",
+        "pokemon-jigglypuff",
+        "pokemon-group-tall",
+        "pokemon-salamence"
+      ],
+      "video": null
+    },
+    {
+      "id": "capsules",
+      "title": "Capsules",
+      "date": "2022-02",
+      "dateLabel": "Feb 2022",
+      "tools": [
+        "Blender"
+      ],
+      "behanceUrl": null,
+      "canLead": false,
+      "pieces": [
+        "pills"
+      ],
+      "video": null
+    },
+    {
+      "id": "syringe",
+      "title": "Syringe",
+      "date": "2022-02",
+      "dateLabel": "Feb 2022",
+      "tools": [
+        "Blender"
+      ],
+      "behanceUrl": null,
+      "canLead": false,
+      "pieces": [
+        "syringe"
+      ],
+      "video": null
+    },
+    {
+      "id": "desk-setup",
+      "title": "Desk Setup",
+      "date": "2022-02",
+      "dateLabel": "Feb 2022",
+      "tools": [
+        "Blender"
+      ],
+      "behanceUrl": null,
+      "canLead": false,
+      "pieces": [
+        "desk-setup"
+      ],
+      "video": null
+    },
+    {
+      "id": "creature",
+      "title": "Creature",
+      "date": "2022-02",
+      "dateLabel": "Feb 2022",
+      "tools": [
+        "Blender"
+      ],
+      "behanceUrl": null,
+      "canLead": false,
+      "pieces": [
+        "creature"
+      ],
+      "video": null
+    },
+    {
+      "id": "controller",
+      "title": "Controller",
+      "date": "2022-03",
+      "dateLabel": "Mar 2022",
+      "tools": [
+        "Blender"
+      ],
+      "behanceUrl": null,
+      "canLead": false,
+      "pieces": [
+        "controller"
+      ],
+      "video": null
+    },
+    {
+      "id": "ice-cream",
+      "title": "Fuzzy Ice Cream",
+      "date": "2022-03",
+      "dateLabel": "Mar 2022",
+      "tools": [
+        "Blender"
+      ],
+      "behanceUrl": null,
+      "canLead": false,
+      "pieces": [
+        "ice-cream"
+      ],
+      "video": null
+    }
+  ],
+  "pieces": [
+    {
+      "id": "boat-front",
+      "project": "boat-rockerz",
+      "rank": 1,
+      "width": 2160,
+      "height": 2160,
+      "ratio": 1,
+      "orientation": "square",
+      "src": {
+        "480": "art/img/boat-front-480.webp",
+        "960": "art/img/boat-front-960.webp",
+        "1600": "art/img/boat-front-1600.webp"
+      },
+      "alt": "Blue and black over-ear headphones seen from the front against a soft grey studio gradient.",
+      "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAAAwBgCdASoYABgAPu1eqU6ppKOiMBgMATAdiWMAwPdfw8j41qXLl8X4tUVzeLkaN9mej0kzrafV1p0AAP7e4CWBSclsJWQ7KP2zZzQf/z3v8w7F+ggpWUPJYp/q9a27QpWtvKnumHmhsDAtE9Zwi4yhQSs/jKUaLOW3IlE/2ROIXJlUPTFS0jc+U7vQFj4poZRg8q9fAZdRfzV4UuqR5tfwEm/1aNNCracZ4wZ0+/YRprZdyPY56oazVMP1gvbLyRFFpSvUBdnAOLlEDTeefsR+xxToQxmYAAA=",
+      "palette": [
+        {
+          "hex": "#c7c9cd",
+          "weight": 0.309
+        },
+        {
+          "hex": "#d8d9db",
+          "weight": 0.215
+        },
+        {
+          "hex": "#a7acb3",
+          "weight": 0.203
+        },
+        {
+          "hex": "#121b2b",
+          "weight": 0.183
+        },
+        {
+          "hex": "#435a7a",
+          "weight": 0.09
+        }
+      ],
+      "mean": "#979ca5",
+      "lightness": 0.425
+    },
+    {
+      "id": "wingman-gold",
+      "project": "wingman",
+      "rank": 2,
+      "width": 1920,
+      "height": 1080,
+      "ratio": 1.7778,
+      "orientation": "wide",
+      "src": {
+        "480": "art/img/wingman-gold-480.webp",
+        "960": "art/img/wingman-gold-960.webp",
+        "1600": "art/img/wingman-gold-1600.webp"
+      },
+      "alt": "Ornate gold stylised pistol with an engraved grip on a black background.",
+      "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADwAwCdASoYAA4APu1iqU2ppaOiMAgBMB2JaAC7AB0ljYM3viv/dVgAAP70Mqin8L4ISoNImfXFVYAFukt88xgdPo9n9Or3pae4DJTiPNxcKg9RZIVUpno2DL9/B8r5rVKSdoNaR80AAAAA",
+      "palette": [
+        {
+          "hex": "#050504",
+          "weight": 0.603
+        },
+        {
+          "hex": "#1c1817",
+          "weight": 0.142
+        },
+        {
+          "hex": "#3a3126",
+          "weight": 0.12
+        },
+        {
+          "hex": "#785917",
+          "weight": 0.082
+        },
+        {
+          "hex": "#c6a633",
+          "weight": 0.053
+        }
+      ],
+      "mean": "#221c0f",
+      "lightness": 0.038
+    },
+    {
+      "id": "pokemon-group",
+      "project": "pokemon",
+      "rank": 3,
+      "width": 1920,
+      "height": 1080,
+      "ratio": 1.7778,
+      "orientation": "wide",
+      "src": {
+        "480": "art/img/pokemon-group-480.webp",
+        "960": "art/img/pokemon-group-960.webp",
+        "1600": "art/img/pokemon-group-1600.webp"
+      },
+      "alt": "Salamence, Jigglypuff, Ralts and two Poke Balls on a purple-lit stage.",
+      "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADwAwCdASoYAA4APu1iqk2ppaQiMAgBMB2JZgCdABugAlmel/T6d/TUAP70MsmRKLZjsaz3T3wP/I1UfFs2NltNmSrhYjYIBLpZK76VsQ1qc/kVR/UCDuzM7F3wHInlhYMwDkNdfpZVHFveJcWA1/7gvdmdqObjmeY8PWdAAAA=",
+      "palette": [
+        {
+          "hex": "#080508",
+          "weight": 0.499
+        },
+        {
+          "hex": "#412f51",
+          "weight": 0.171
+        },
+        {
+          "hex": "#2a1c2b",
+          "weight": 0.16
+        },
+        {
+          "hex": "#b22035",
+          "weight": 0.106
+        },
+        {
+          "hex": "#8a7888",
+          "weight": 0.064
+        }
+      ],
+      "mean": "#331b28",
+      "lightness": 0.04
+    },
+    {
+      "id": "boat-trio",
+      "project": "boat-rockerz",
+      "rank": 4,
+      "width": 3840,
+      "height": 2160,
+      "ratio": 1.7778,
+      "orientation": "wide",
+      "src": {
+        "480": "art/img/boat-trio-480.webp",
+        "960": "art/img/boat-trio-960.webp",
+        "1600": "art/img/boat-trio-1600.webp"
+      },
+      "alt": "Three over-ear headphones side by side in grey, blue and black.",
+      "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAABQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JQBfJMYYRe+tSIxz3M79DlDxAAP3tY1oqWMPm8cRVAXzvKMLN8ZDQ2Q6pkwfneLXA3RyrPXBmKuYwu6g99W5QYKFN0NVdoZAvrK9pfZhXEYvsfM9Hyw758b0av4I5z/454PG9ApJOouY0D/wGkJRt4CFmFsLwqz6/WvwxFrjYn3L8Q3IxmOi34ZTPpCTzakjV5FtFFno6ikAA",
+      "palette": [
+        {
+          "hex": "#cececf",
+          "weight": 0.363
+        },
+        {
+          "hex": "#a4a7a8",
+          "weight": 0.221
+        },
+        {
+          "hex": "#39434e",
+          "weight": 0.15
+        },
+        {
+          "hex": "#14181f",
+          "weight": 0.133
+        },
+        {
+          "hex": "#6a747b",
+          "weight": 0.133
+        }
+      ],
+      "mean": "#888d91",
+      "lightness": 0.345
+    },
+    {
+      "id": "hotwheels-case",
+      "project": "hot-wheels",
+      "rank": 5,
+      "width": 1920,
+      "height": 1920,
+      "ratio": 1,
+      "orientation": "square",
+      "src": {
+        "480": "art/img/hotwheels-case-480.webp",
+        "960": "art/img/hotwheels-case-960.webp",
+        "1600": "art/img/hotwheels-case-1600.webp"
+      },
+      "alt": "White toy car in an open collector case with orange and blue inserts.",
+      "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAABwBQCdASoYABgAPu1ur1IppiQiqAgBMB2JaACsM2Qlsgy30DWruHDcvnHaZFwyw0VtsxlAAMsjJtDVIKYaAe+EgNIRWl4H8uEsR6FyxZGHHo2stShJkWtyXnQDNcLTEtyfjs9fhuRRBjcLSHYHedu+h6ot314oGB8GzAOLMRBJYA/ysteENxsS9F1a16YMddYgr+xBDHeQromk/9SSg0QxjqbgTtiZJLh6dG6kGpoVLMBlqLwZv36HqJDUQdHX7r+J2U1ZfblifvloA5iqJfyDVbQDwqLkAAA=",
+      "palette": [
+        {
+          "hex": "#819696",
+          "weight": 0.504
+        },
+        {
+          "hex": "#1b1c1e",
+          "weight": 0.278
+        },
+        {
+          "hex": "#2d3b6e",
+          "weight": 0.111
+        },
+        {
+          "hex": "#ae6f23",
+          "weight": 0.081
+        },
+        {
+          "hex": "#c4c8c2",
+          "weight": 0.026
+        }
+      ],
+      "mean": "#616868",
+      "lightness": 0.19
+    },
+    {
+      "id": "gwagon-street",
+      "project": "g-wagon",
+      "rank": 7,
+      "width": 1920,
+      "height": 1080,
+      "ratio": 1.7778,
+      "orientation": "wide",
+      "src": {
+        "480": "art/img/gwagon-street-480.webp",
+        "960": "art/img/gwagon-street-960.webp",
+        "1600": "art/img/gwagon-street-1600.webp"
+      },
+      "alt": "Pearl white G-Wagon on a wet night street with city lights and purple underglow.",
+      "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADQAwCdASoYAA4APu1iqU2ppaOiMAgBMB2JYwC7ACHPZUea4ZXiIYAA/vKlAJqiSR4qWA7/sBT+/n0y3t9F2lbRDkzdOW992q+ms050ojJzWtsSXkx+I6KHvTJrVy8FyFqYcx0T0UNCAtp6XIAAAA==",
+      "palette": [
+        {
+          "hex": "#0d0a08",
+          "weight": 0.391
+        },
+        {
+          "hex": "#282116",
+          "weight": 0.258
+        },
+        {
+          "hex": "#413a28",
+          "weight": 0.18
+        },
+        {
+          "hex": "#605839",
+          "weight": 0.117
+        },
+        {
+          "hex": "#837b51",
+          "weight": 0.054
+        }
+      ],
+      "mean": "#2d281b",
+      "lightness": 0.036
+    },
+    {
+      "id": "wingman-blue",
+      "project": "wingman",
+      "rank": 8,
+      "width": 1920,
+      "height": 1080,
+      "ratio": 1.7778,
+      "orientation": "wide",
+      "src": {
+        "480": "art/img/wingman-blue-480.webp",
+        "960": "art/img/wingman-blue-960.webp",
+        "1600": "art/img/wingman-blue-1600.webp"
+      },
+      "alt": "Stylised pistol outlined in glowing cyan edge lines on black.",
+      "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAACwAwCdASoYAA4APu1kqU2ppaOiMAgBMB2JYwAAXBt45Y3unSt3wAD+8zOMZxfM1Azor2rDBNCrRhDEihRiPA1UigYwimUM6HKdOmHAAGLZgOQWV0DyyvbHDiZRgcBAAAA=",
+      "palette": [
+        {
+          "hex": "#020203",
+          "weight": 0.545
+        },
+        {
+          "hex": "#07080f",
+          "weight": 0.203
+        },
+        {
+          "hex": "#0b0f2c",
+          "weight": 0.105
+        },
+        {
+          "hex": "#202e5d",
+          "weight": 0.104
+        },
+        {
+          "hex": "#546f9f",
+          "weight": 0.043
+        }
+      ],
+      "mean": "#0b0e1b",
+      "lightness": 0.013
+    },
+    {
+      "id": "wingman-red",
+      "project": "wingman",
+      "rank": 9,
+      "width": 1920,
+      "height": 1080,
+      "ratio": 1.7778,
+      "orientation": "wide",
+      "src": {
+        "480": "art/img/wingman-red-480.webp",
+        "960": "art/img/wingman-red-960.webp",
+        "1600": "art/img/wingman-red-1600.webp"
+      },
+      "alt": "Red and black stylised pistol with a red glow on black.",
+      "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwBACdASoYAA4APu1iqk2ppaQiMAgBMB2JZgDCgCL2yLzlEP+hY1bBIAAA/vF0OvbGtje7TaMX/2tavU/slHw9R5l4jgniN0DZAPm2jnm3ZbrHav7LPJI3n1Ishmj1y+dQ3L7eL75A9V3o8AA=",
+      "palette": [
+        {
+          "hex": "#030202",
+          "weight": 0.647
+        },
+        {
+          "hex": "#2f1211",
+          "weight": 0.177
+        },
+        {
+          "hex": "#503f3e",
+          "weight": 0.108
+        },
+        {
+          "hex": "#931815",
+          "weight": 0.039
+        },
+        {
+          "hex": "#c3837f",
+          "weight": 0.029
+        }
+      ],
+      "mean": "#1f1010",
+      "lightness": 0.022
+    },
+    {
+      "id": "pokemon-jigglypuff",
+      "project": "pokemon",
+      "rank": 10,
+      "width": 1920,
+      "height": 1080,
+      "ratio": 1.7778,
+      "orientation": "wide",
+      "src": {
+        "480": "art/img/pokemon-jigglypuff-480.webp",
+        "960": "art/img/pokemon-jigglypuff-960.webp",
+        "1600": "art/img/pokemon-jigglypuff-1600.webp"
+      },
+      "alt": "Pink Jigglypuff with teal eyes on a purple floor.",
+      "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADwAwCdASoYAA4APu1iqU2ppaOiMAgBMB2JQBYdhDeBTOEP/y5lvNikAP70K1uk80ye06+6sHEUDCjSWMRziZGVfHGBnqHRUgHHaCuLxsdK1aIkb/ohGspizQu1ZWiRXV0gezMYfAwQ3Bt1yGw/5raBJAH0kjFVAAA=",
+      "palette": [
+        {
+          "hex": "#0b080c",
+          "weight": 0.465
+        },
+        {
+          "hex": "#453466",
+          "weight": 0.177
+        },
+        {
+          "hex": "#271a3a",
+          "weight": 0.162
+        },
+        {
+          "hex": "#8c5187",
+          "weight": 0.119
+        },
+        {
+          "hex": "#ba78aa",
+          "weight": 0.077
+        }
+      ],
+      "mean": "#37243e",
+      "lightness": 0.05
+    },
+    {
+      "id": "pokemon-group-tall",
+      "project": "pokemon",
+      "rank": 11,
+      "width": 1080,
+      "height": 1920,
+      "ratio": 0.5625,
+      "orientation": "portrait",
+      "src": {
+        "480": "art/img/pokemon-group-tall-480.webp",
+        "960": "art/img/pokemon-group-tall-960.webp"
+      },
+      "alt": "Portrait view of Salamence, Jigglypuff, Ralts and two Poke Balls.",
+      "lqip": "data:image/webp;base64,UklGRloBAABXRUJQVlA4IE4BAACQCACdASoYACsAPu1sr1GppaQipWsxMB2JbACdISIIBtq+e60wDeVP9QWKxuoW4FcjgJFOuxOgWg4/uQ34j6tqGoX6AtL1Xvk1RKIQAAD+93Wy5CaPKrtDy6vie+vpLuj3mLCXK8lpfvJyL58No/s3OUAJJgMen2li9XRPRgttXBDcd2WjuHo420CoZP2ymCy2okKuKnU7mtvmjB3aZouirfOJttqpp2e9XN/8iYE2FYCGB7jwHgnD10//dS7LSXRq85tgKH/6QwvRwZu4vh+KNOmGFJv9jX/MyhPASa1UwWSmOsV1vvYo3uKHsI2Ku9kKFu5eJhJdFunz8hqmtRC+Q3btJsUjsgULpJmssDOkzdDd1ySLdoR6opMjeVr/kX3fvFRT3o7T2Ztgw8ASvT/C/EJPEqfsyIq0gHiankkc3+7ggCHO0tZwRxPlgAAA",
+      "palette": [
+        {
+          "hex": "#0c080b",
+          "weight": 0.419
+        },
+        {
+          "hex": "#2d1822",
+          "weight": 0.235
+        },
+        {
+          "hex": "#af9aa5",
+          "weight": 0.129
+        },
+        {
+          "hex": "#cc211f",
+          "weight": 0.115
+        },
+        {
+          "hex": "#44717d",
+          "weight": 0.102
+        }
+      ],
+      "mean": "#452c33",
+      "lightness": 0.09
+    },
+    {
+      "id": "pokemon-salamence",
+      "project": "pokemon",
+      "rank": 12,
+      "width": 1920,
+      "height": 1080,
+      "ratio": 1.7778,
+      "orientation": "wide",
+      "src": {
+        "480": "art/img/pokemon-salamence-480.webp",
+        "960": "art/img/pokemon-salamence-960.webp",
+        "1600": "art/img/pokemon-salamence-1600.webp"
+      },
+      "alt": "Salamence in profile with a red wing and teal and yellow body.",
+      "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JbACw7Bjyc5GTGTbkvEDoAAD+9DLHwAKzYHVztGxFNXB88U5TQfh8nL8gr3WFqjrusnSwIZqbaThRsh0hNu3B+1BI1wKY+LV1kpWGJ/FFgAAA",
+      "palette": [
+        {
+          "hex": "#0a0609",
+          "weight": 0.471
+        },
+        {
+          "hex": "#432948",
+          "weight": 0.215
+        },
+        {
+          "hex": "#20111c",
+          "weight": 0.145
+        },
+        {
+          "hex": "#d11f0f",
+          "weight": 0.098
+        },
+        {
+          "hex": "#5d8b97",
+          "weight": 0.071
+        }
+      ],
+      "mean": "#331b24",
+      "lightness": 0.043
+    },
+    {
+      "id": "boat-float",
+      "project": "boat-rockerz",
+      "rank": 13,
+      "width": 2160,
+      "height": 2160,
+      "ratio": 1,
+      "orientation": "square",
+      "src": {
+        "480": "art/img/boat-float-480.webp",
+        "960": "art/img/boat-float-960.webp",
+        "1600": "art/img/boat-float-1600.webp"
+      },
+      "alt": "Blue headphones floating at an angle with a dark vignette.",
+      "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAACwBQCdASoYABgAPu1oqk+ppiOiKA1RMB2JYwC7AYxsYSp6S8kL5OoQXARUwtpz741NZS6vHgAA/u1dfGAhi4nFB0tivlTBNGD3eCqnJG73qs5wdvaHN5U1gJLEwPOWPOQmdydDyfixSPZFy+ndJrO2s7qB9deY5kU8tB2pkLfu3VrNX3hjCNwxJJeOVpmnUIXpMrizQnLCNFqO+sv5NASQ0JYPjtLBdEKEh4VF7O6vcpleD01Wu/QH4wAAAA==",
+      "palette": [
+        {
+          "hex": "#b6bcc2",
+          "weight": 0.282
+        },
+        {
+          "hex": "#3f4d63",
+          "weight": 0.213
+        },
+        {
+          "hex": "#6f7d8e",
+          "weight": 0.191
+        },
+        {
+          "hex": "#191e29",
+          "weight": 0.173
+        },
+        {
+          "hex": "#dee0e2",
+          "weight": 0.141
+        }
+      ],
+      "mean": "#7a828e",
+      "lightness": 0.306
+    },
+    {
+      "id": "hotwheels-dark",
+      "project": "hot-wheels",
+      "rank": 14,
+      "width": 1920,
+      "height": 1920,
+      "ratio": 1,
+      "orientation": "square",
+      "src": {
+        "480": "art/img/hotwheels-dark-480.webp",
+        "960": "art/img/hotwheels-dark-960.webp",
+        "1600": "art/img/hotwheels-dark-1600.webp"
+      },
+      "alt": "The open toy car case on a black background, with orange and blue inserts.",
+      "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAACQBQCdASoYABgAPu1ur1IppiQiqAgBMB2JZgC22f/2SyAs93MwH8mvGCcFHOEs4AYnHDq/gAD+9JCcpzTI0iM6VY+rk7ahTFJrAHiyp4iLW0QjkDCKtq0cQoWdExc5ylaOTzeF8ydPaYOgUXNaUnCX0Eo0B3tSqeZoSqeeKRJqyWqAy+7MLVBwgXxcM6mkSHg7XuoE7l16qGXiEIwdz93C/HKPppNjONctQjo4B6jDdRAN2yIxDQH3VgIvDXOkNcLcVfGIAAA=",
+      "palette": [
+        {
+          "hex": "#020203",
+          "weight": 0.401
+        },
+        {
+          "hex": "#181924",
+          "weight": 0.268
+        },
+        {
+          "hex": "#214291",
+          "weight": 0.116
+        },
+        {
+          "hex": "#6f4719",
+          "weight": 0.113
+        },
+        {
+          "hex": "#ac8a6b",
+          "weight": 0.102
+        }
+      ],
+      "mean": "#2c272b",
+      "lightness": 0.06
+    },
+    {
+      "id": "pills",
+      "project": "capsules",
+      "rank": 15,
+      "width": 1920,
+      "height": 1920,
+      "ratio": 1,
+      "orientation": "square",
+      "src": {
+        "480": "art/img/pills-480.webp",
+        "960": "art/img/pills-960.webp",
+        "1600": "art/img/pills-1600.webp"
+      },
+      "alt": "Glossy red, green and blue capsules on a mint background.",
+      "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBQCdASoYABgAPu1qr1CppaQiqAqpMB2JbAC2+zQ+ABTkFusG64qbmxoNU2vVrr0bLgAA/sONs2DCj709h7bNgGB3W+prpqxvuf4/dLmutO6cc9gBumAPeVk97urK4y6AurIzUhIOQudWrkc+3tKqPd63YGbK966UeJvvGmrtVobIArlutwyo631JkAltwyUFKdqB02PH9Ilfd8UPqGjcb4dNgAAA",
+      "palette": [
+        {
+          "hex": "#a3cec4",
+          "weight": 0.712
+        },
+        {
+          "hex": "#e5e2e4",
+          "weight": 0.139
+        },
+        {
+          "hex": "#36a081",
+          "weight": 0.068
+        },
+        {
+          "hex": "#d1ae91",
+          "weight": 0.044
+        },
+        {
+          "hex": "#d43b30",
+          "weight": 0.037
+        }
+      ],
+      "mean": "#a9c7bc",
+      "lightness": 0.559
+    },
+    {
+      "id": "syringe",
+      "project": "syringe",
+      "rank": 16,
+      "width": 1920,
+      "height": 1920,
+      "ratio": 1,
+      "orientation": "square",
+      "src": {
+        "480": "art/img/syringe-480.webp",
+        "960": "art/img/syringe-960.webp",
+        "1600": "art/img/syringe-1600.webp"
+      },
+      "alt": "Syringe with a red tip floating on a mint-green gradient.",
+      "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQBACdASoYABgAPuVgpk2pJaOiN/VYASAciWMAvkgQ7/E9AJzB2kvsPJgAAP7TDdTGTzlVxRtvMgIy/AZo8m8hf3N4OWDDzISpzrXYZMlJs1jG9Suvg9VwMXf3L7RmxIfLp34grSx5cAAA",
+      "palette": [
+        {
+          "hex": "#abd3cc",
+          "weight": 0.406
+        },
+        {
+          "hex": "#9cccc1",
+          "weight": 0.321
+        },
+        {
+          "hex": "#89bdae",
+          "weight": 0.195
+        },
+        {
+          "hex": "#59526b",
+          "weight": 0.05
+        },
+        {
+          "hex": "#e6e6e5",
+          "weight": 0.028
+        }
+      ],
+      "mean": "#9dc7be",
+      "lightness": 0.532
+    },
+    {
+      "id": "the-view",
+      "project": "the-view",
+      "rank": 17,
+      "width": 1080,
+      "height": 1080,
+      "ratio": 1,
+      "orientation": "square",
+      "src": {
+        "480": "art/img/the-view-480.webp",
+        "960": "art/img/the-view-960.webp"
+      },
+      "alt": "Living room with two paper lanterns and green armchairs looking out over the ocean at dusk.",
+      "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAAAQBQCdASoYABgAPu1eqE6ppKOiMBgMATAdiUAZZYIp1ZW8SwZ7PgkNbaBZH6jOkYUAAP7sVeSuohD0YSBj1Zzw0aKD8z4bJ8ZONcGprPl6NJed8lolPstWiT66wwAAQfizy9as6f+RxpRPU/+TOXq8G6DgaZvQxEvsFmQ93R4nd3pKMcUyF2w1OKa6x50aPcsHeN0esNYcCvnevFuXWoRrvOlbH35Q0Y0lN+olPNr/tbDqwJCB2Vn33NkoeiZx1j95mqgAAAA=",
+      "palette": [
+        {
+          "hex": "#15100a",
+          "weight": 0.466
+        },
+        {
+          "hex": "#313233",
+          "weight": 0.328
+        },
+        {
+          "hex": "#66655a",
+          "weight": 0.103
+        },
+        {
+          "hex": "#e3d087",
+          "weight": 0.053
+        },
+        {
+          "hex": "#ae8d40",
+          "weight": 0.05
+        }
+      ],
+      "mean": "#3a3529",
+      "lightness": 0.078
+    },
+    {
+      "id": "desk-setup",
+      "project": "desk-setup",
+      "rank": 19,
+      "width": 1920,
+      "height": 1400,
+      "ratio": 1.3714,
+      "orientation": "wide",
+      "src": {
+        "480": "art/img/desk-setup-480.webp",
+        "960": "art/img/desk-setup-960.webp",
+        "1600": "art/img/desk-setup-1600.webp"
+      },
+      "alt": "Gaming desk with pink triangular wall lights and a monitor in magenta light.",
+      "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAwBQCdASoYABIAPu1sqlEppaOiqAqpMB2JagCpLUAAdIsG4GQjkGoNufGhPjvPTqkSNAD8jhB0Fe4c/Nuz6UZva8yiMTc/gDHjUVuN57JAARMky/HiKizdv7oHQraikoR9lC0m4hp89S7gbfeZOj4WzB/3tsforvIrxgC03COE8OM4K8J9S98odndTczyV0jln4E8gUCqBA7hjINNc1torEcbH8onf9pwy8f0EGQAAAA==",
+      "palette": [
+        {
+          "hex": "#673436",
+          "weight": 0.352
+        },
+        {
+          "hex": "#855f6b",
+          "weight": 0.286
+        },
+        {
+          "hex": "#411818",
+          "weight": 0.163
+        },
+        {
+          "hex": "#e482d1",
+          "weight": 0.12
+        },
+        {
+          "hex": "#110808",
+          "weight": 0.079
+        }
+      ],
+      "mean": "#734351",
+      "lightness": 0.117
+    },
+    {
+      "id": "creature",
+      "project": "creature",
+      "rank": 20,
+      "width": 1920,
+      "height": 1920,
+      "ratio": 1,
+      "orientation": "square",
+      "src": {
+        "480": "art/img/creature-480.webp",
+        "960": "art/img/creature-960.webp",
+        "1600": "art/img/creature-1600.webp"
+      },
+      "alt": "Blue Indian mythological creature with a gold crown against a green and blue backdrop.",
+      "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADwBACdASoYABgAPu1mqk2ppaQiMAgBMB2JZACzgCHhh8UW1wCXuy9WRohuklsG2mgA/vDQd09rForr7OuR4ETizLp+n9mbUVGnXaZirBnbsj9+uRaVlVvIlux29Pxwl6KYU8M6MPWMSLxAAAA=",
+      "palette": [
+        {
+          "hex": "#1a253d",
+          "weight": 0.364
+        },
+        {
+          "hex": "#3c4b30",
+          "weight": 0.263
+        },
+        {
+          "hex": "#19241d",
+          "weight": 0.197
+        },
+        {
+          "hex": "#040810",
+          "weight": 0.104
+        },
+        {
+          "hex": "#1c2784",
+          "weight": 0.072
+        }
+      ],
+      "mean": "#212c33",
+      "lightness": 0.03
+    },
+    {
+      "id": "autoshop",
+      "project": "autoshop",
+      "rank": 21,
+      "width": 1920,
+      "height": 1600,
+      "ratio": 1.2,
+      "orientation": "square",
+      "src": {
+        "480": "art/img/autoshop-480.webp",
+        "960": "art/img/autoshop-960.webp",
+        "1600": "art/img/autoshop-1600.webp"
+      },
+      "alt": "Auto shop at night with two cars inside a brick interior under a lit sign.",
+      "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABQBACdASoYABQAPu1qsFAppaSiqAqpMB2JZQC90BDej2Lq3HCmGoo5EQ8AAP7y3BX9BJ3/Isfzz49f1atq6bZ0mZT9LYZn2HZJvjwQxgn5367icyEY7bmaUc7hafrWiBHvLcXPzbdrtQBhBDvVZktym+N6MJhAAAA=",
+      "palette": [
+        {
+          "hex": "#030201",
+          "weight": 0.458
+        },
+        {
+          "hex": "#171109",
+          "weight": 0.289
+        },
+        {
+          "hex": "#382915",
+          "weight": 0.113
+        },
+        {
+          "hex": "#684a31",
+          "weight": 0.092
+        },
+        {
+          "hex": "#9e8877",
+          "weight": 0.048
+        }
+      ],
+      "mean": "#201810",
+      "lightness": 0.027
+    },
+    {
+      "id": "ice-cream",
+      "project": "ice-cream",
+      "rank": 22,
+      "width": 1080,
+      "height": 1080,
+      "ratio": 1,
+      "orientation": "square",
+      "src": {
+        "480": "art/img/ice-cream-480.webp",
+        "960": "art/img/ice-cream-960.webp"
+      },
+      "alt": "Two fuzzy purple ice cream cones tilted on a cream surface against a dark wall.",
+      "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAAAwBQCdASoYABgAPu1mq0+ppSOiMBgIATAdiWQAsOwQ75J4cT3R4o/tuIKRdrGGQ1ZFoAD+8MY7i2rxfNR1BYMWaIpOcqhCGqo5mRzstXQi9UdpWXPQh965GC8kW3YVqQTQe7NUYjY1tl7weQTnYyOLGnLzJGlJo/tNLDupUqIvdczXKZm3/wEW+h1pvDeHPhOlns7olx+bAAAA",
+      "palette": [
+        {
+          "hex": "#1a160f",
+          "weight": 0.454
+        },
+        {
+          "hex": "#d6d4c4",
+          "weight": 0.174
+        },
+        {
+          "hex": "#c7c4a3",
+          "weight": 0.164
+        },
+        {
+          "hex": "#793e5b",
+          "weight": 0.127
+        },
+        {
+          "hex": "#b3a988",
+          "weight": 0.081
+        }
+      ],
+      "mean": "#70645a",
+      "lightness": 0.252
+    },
+    {
+      "id": "gwagon-tall",
+      "project": "g-wagon",
+      "rank": 23,
+      "width": 1080,
+      "height": 1920,
+      "ratio": 0.5625,
+      "orientation": "portrait",
+      "src": {
+        "480": "art/img/gwagon-tall-480.webp",
+        "960": "art/img/gwagon-tall-960.webp"
+      },
+      "alt": "Portrait view of a pearl white G-Wagon driving down a wet night street toward lit towers.",
+      "lqip": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAAAQBwCdASoYACsAPu10slOppqSipWgBMB2JZQDD7AgOWTPA1SHUeaGhyyBA/Me4JRpCZqgT2mdfN8gaGItQr9AFAAD++u7iMY7l9lGncqxcYNiKqzWmr2NnOsrpi/qQr4gvgxYcewMcdTXYjYU34g4fXdInsAxD+mXBb2hWG9qWLp8/3v2Kly2pt+f37SYTizL7JN4MkMnHi6JVEZZE2A2x9IiyKLiZUe6TSXbOpeIHHyB/YGjyus4QXPVbF2Mn6xi3yXqla7d/EY1PT1UeaYRB7VFUJ6P3Uh3HQZuXCJ2Sa59JoW+cx2rnigA=",
+      "palette": [
+        {
+          "hex": "#09070a",
+          "weight": 0.455
+        },
+        {
+          "hex": "#232016",
+          "weight": 0.275
+        },
+        {
+          "hex": "#3d3824",
+          "weight": 0.178
+        },
+        {
+          "hex": "#6c6543",
+          "weight": 0.08
+        },
+        {
+          "hex": "#c3bea1",
+          "weight": 0.012
+        }
+      ],
+      "mean": "#242018",
+      "lightness": 0.03
+    },
+    {
+      "id": "solar-jupiter",
+      "project": "solar-system",
+      "rank": 24,
+      "width": 1080,
+      "height": 1080,
+      "ratio": 1,
+      "orientation": "square",
+      "src": {
+        "480": "art/img/solar-jupiter-480.webp",
+        "960": "art/img/solar-jupiter-960.webp"
+      },
+      "alt": "Jupiter filling the frame with Earth, Mars and other planets in front of it.",
+      "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAAAwBgCdASoYABgAPu1kqE2ppaOiMAgBMB2JbACdMoR7T6t0Z/oAvVoeJ2MsEauR8dm0q+qPjf1fnHUAAP3VldWTQzbtH6pWIq7ZnVVL1cPuLoE4ptuULRymj+ajp+OHtRVhnTkX332dnzDgOfSE32i3+HozKBY9QfB7T/JfI5w1Hxsq1HUPY1S8MoclEkicXYeX5pasX4qLIOmGfCmCaT8FSZ7cfh4B6+enwDdgp27GotVz9R1ZnCzPl/TjFRtNKQsFBdWlDCzm8GsWpCU7gibOYAA=",
+      "palette": [
+        {
+          "hex": "#c3a48d",
+          "weight": 0.329
+        },
+        {
+          "hex": "#b47b4d",
+          "weight": 0.309
+        },
+        {
+          "hex": "#050302",
+          "weight": 0.201
+        },
+        {
+          "hex": "#924011",
+          "weight": 0.125
+        },
+        {
+          "hex": "#4b3e49",
+          "weight": 0.036
+        }
+      ],
+      "mean": "#8e674b",
+      "lightness": 0.225
+    },
+    {
+      "id": "controller",
+      "project": "controller",
+      "rank": 25,
+      "width": 1920,
+      "height": 1400,
+      "ratio": 1.3714,
+      "orientation": "wide",
+      "src": {
+        "480": "art/img/controller-480.webp",
+        "960": "art/img/controller-960.webp",
+        "1600": "art/img/controller-1600.webp"
+      },
+      "alt": "Red game controller on black, lit from the side.",
+      "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwBACdASoYABIAPu1kq06ppaQiKA1RMB2JaADLpBEh5g/3HQ16pIU1bwAA/vQhOul+4rfhyIQJcPmK3NQAW03VY1O5gnbdY5nOiioh7YvPC7bmBkWs7eH0W8EC3mNDzmJtgAAA",
+      "palette": [
+        {
+          "hex": "#0b0708",
+          "weight": 0.462
+        },
+        {
+          "hex": "#040202",
+          "weight": 0.25
+        },
+        {
+          "hex": "#221516",
+          "weight": 0.1
+        },
+        {
+          "hex": "#6d0506",
+          "weight": 0.096
+        },
+        {
+          "hex": "#af1216",
+          "weight": 0.092
+        }
+      ],
+      "mean": "#250809",
+      "lightness": 0.016
+    }
+  ],
+  "videos": [
+    {
+      "id": "boat-film",
+      "project": "boat-rockerz",
+      "src": "art/video/boat-film.mp4",
+      "poster": "art/video/boat-film-poster.webp",
+      "width": 1280,
+      "height": 720,
+      "duration": 8,
+      "bytes": 580378,
+      "description": "Boat Rockerz 460 film: macro passes ending on the three-colourway reveal."
+    },
+    {
+      "id": "boat-hero",
+      "project": "boat-rockerz",
+      "role": "hero-loop",
+      "src": "art/video/boat-hero.mp4",
+      "width": 720,
+      "height": 720,
+      "duration": 3.875,
+      "bytes": 396415,
+      "description": "The headphones turn once and return to the front view."
+    },
+    {
+      "id": "gwagon-reel",
+      "project": "g-wagon",
+      "src": "art/video/gwagon-reel.mp4",
+      "poster": "art/video/gwagon-reel-poster.webp",
+      "width": 720,
+      "height": 1280,
+      "duration": 8,
+      "bytes": 1970741,
+      "description": "Short portrait film of the pearl white G-Wagon on a night street."
+    },
+    {
+      "id": "wingman-film",
+      "project": "wingman",
+      "src": "art/video/wingman-film.mp4",
+      "poster": "art/video/wingman-film-poster.webp",
+      "width": 1280,
+      "height": 720,
+      "duration": 8,
+      "bytes": 561777,
+      "description": "Short film of the Wingman model."
+    },
+    {
+      "id": "solar-film",
+      "project": "solar-system",
+      "src": "art/video/solar-film.mp4",
+      "poster": "art/video/solar-film-poster.webp",
+      "width": 1280,
+      "height": 720,
+      "duration": 8,
+      "bytes": 1232573,
+      "description": "Short film of the solar system model."
+    }
+  ]
+}
