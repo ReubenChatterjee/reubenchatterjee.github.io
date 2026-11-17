@@ -1,0 +1,247 @@
+{
+  "bio": {
+    "name": "Reuben Chatterjee",
+    "role": "Data Scientist · Applied Materials",
+    "paragraphs": [
+      "I build end-to-end ML systems and scalable data pipelines that turn complex data into clear business impact.",
+      "Currently on the AI/ML team at Applied Materials, architecting solutions for Computer Vision problems, training custom object detection models (RT-DETR, YOLO etc.), and designing OCR pipelines with vision-language models (GLM, Qwen VL, Paddle, Gemini etc.).",
+      "Previously at Alcamo Marketing, where I cut infrastructure costs by 60%. I also built a churn model that identified $2.1M in at-risk revenue.",
+      "Master's in Data Science from UC San Diego."
+    ],
+    "headshot": {
+      "alt": "Reuben Chatterjee",
+      "src": "work/img/headshot-320.webp",
+      "srcset": "work/img/headshot-160.webp 160w, work/img/headshot-320.webp 320w",
+      "width": 320,
+      "height": 213,
+      "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYwDG9dwLhoHbO6en5PXFgbVIAPu7STfjnHHlfIZfWt5AHKXRRew2r6PK9J7A5t8kXF6U2vJT6BP4dxFlaM0N38TFO+MNHa5KDkryIxAxag6Q98vU8p/xDdolDDztv2tKhaAuiYZ3WoJRFt1H6W71TzP9T6vfX/EXdihaKbPYsYeet0KD2wwY4QQAAA=="
+    }
+  },
+  "stats": [
+    {
+      "end": 60,
+      "suffix": "%",
+      "label": "Cost Reduction",
+      "sub": "Infrastructure migration savings"
+    },
+    {
+      "end": 2.1,
+      "prefix": "$",
+      "suffix": "M+",
+      "decimals": 1,
+      "duration": 2.4,
+      "label": "Revenue Protected",
+      "sub": "At-risk revenue identified"
+    },
+    {
+      "end": 15,
+      "suffix": "+",
+      "label": "Production Pipelines",
+      "sub": "Processing 50GB+ daily"
+    },
+    {
+      "end": 800,
+      "suffix": "+",
+      "duration": 2.4,
+      "label": "Students Mentored",
+      "sub": "Lead TA at UCSD"
+    }
+  ],
+  "featured": {
+    "id": "ocr",
+    "eyebrow": "Featured · Applied Materials",
+    "title": "Multi-Model OCR Pipeline for Industrial Labels",
+    "description": "Production-grade OCR system combining vision-language models (Claude Sonnet 4.5, Qwen VL, PaddleOCR) with a custom RT-DETR detector — 85.7% precision across 500+ industrial labels, 3–5× faster inference via GPU optimization on Databricks.",
+    "image": {
+      "alt": "Multi-Model OCR Pipeline for Industrial Labels project image",
+      "src": "work/img/ocr-960.webp",
+      "srcset": "work/img/ocr-480.webp 480w, work/img/ocr-960.webp 960w",
+      "width": 960,
+      "height": 640,
+      "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JagCdMoADgj0U2Ch+u++XaHNAAP7pWKs1BtvJSlpQUJwi8478kMuTymCNVil5ZlRlZuNsY454G5wLN0v4XQ5hP6WRNG0KgFDFWzeueho5dVYDLqOt5YV1kGSAVZKjAGCXnI14ED+gVXgi8X63UABWQo0CAAAA"
+    },
+    "tags": [
+      "Qwen VL",
+      "RT-DETR",
+      "Databricks",
+      "Jenkins"
+    ],
+    "tint": "blue",
+    "proprietary": true
+  },
+  "projects": [
+    {
+      "id": "cert-recommender",
+      "eyebrow": "Applied Materials",
+      "title": "Technician Certification Route Recommender",
+      "description": "Databricks recommender that scores 433K candidate operations to rank the top 5 certification routes for ~2,000 technicians. Built as a weekly scheduled job that writes ~7,000 rows to SQL Server in under 5 minutes, with CI/CD through Jenkins and Databricks Asset Bundles.",
+      "image": {
+        "alt": "Technician Certification Route Recommender project image",
+        "src": "work/img/cert-recommender-960.webp",
+        "srcset": "work/img/cert-recommender-480.webp 480w, work/img/cert-recommender-960.webp 960w",
+        "width": 960,
+        "height": 541,
+        "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JbACdMoADUierUTl390rs8vAA/vF3FZ7EK6qnIWaBpzZj7hSUcgbPnJfZa9Is7dGlXVHbJjSi+dFP+gkoAH6D3mngHJutGBt2ucitbyJFHgRqKsDehq676ZmL7OOGYRMAAA=="
+      },
+      "tags": [
+        "Python",
+        "Databricks",
+        "Jenkins",
+        "CI/CD",
+        "Databricks Asset Bundles",
+        "SQL Server"
+      ],
+      "tint": "teal",
+      "proprietary": true
+    },
+    {
+      "id": "afterpay",
+      "eyebrow": "Alcamo Marketing",
+      "title": "Afterpay Retention Prediction",
+      "description": "Gradient boosting churn model — 89% accuracy, 0.92 ROC-AUC — identifying $2.1M in at-risk revenue across 4 risk tiers.",
+      "image": {
+        "alt": "Afterpay Retention Prediction project image",
+        "src": "work/img/afterpay-960.webp",
+        "srcset": "work/img/afterpay-480.webp 480w, work/img/afterpay-960.webp 960w",
+        "width": 960,
+        "height": 640,
+        "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JaACo9CHhjELkGmYKjaKbAAD+6xWLPr1eTTuQfZ4zqHJquEpJOJxTUxNG162Odl2t5TdPY+amQP9ItbeneZlWebeGi7B1AgI9erKgjT0ETfZVMGIhJeOno7s+aGC/Uy2l7ZrOK0v593Uz0761SmuFscsY+fS2wvLYkoCxIAAAAA=="
+      },
+      "tags": [
+        "XGBoost",
+        "Python",
+        "SHAP",
+        "Snowflake"
+      ],
+      "tint": "green",
+      "proprietary": true
+    },
+    {
+      "id": "gender",
+      "eyebrow": "UCSD · Ellis Lab",
+      "title": "Gender & Group Dynamics Study",
+      "description": "Statistical analysis of 500+ students examining gender composition effects on team dynamics using ANOVA and NLP.",
+      "image": {
+        "alt": "Gender & Group Dynamics Study project image",
+        "src": "work/img/gender-960.webp",
+        "srcset": "work/img/gender-480.webp 480w, work/img/gender-960.webp 960w",
+        "width": 960,
+        "height": 640,
+        "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdAywBlXobFShdKMsEkhhrR4AA/r/sH1ZwYO7NHcKYj12BK/gkCHGqRw/WbF2UCO94j4OWkt76LOiBUs5qPLGTZbohA4xuOBmMOgL5wJK1Zu2aEHhdjEYziUiWdvmIWVrIZxSISPw3BEvuHhD0YhaE6uK/lhHYV7gA0wMgIDZLr/W/KrgA"
+      },
+      "tags": [
+        "R-Studio",
+        "ANOVA",
+        "NLP",
+        "Statistics"
+      ],
+      "tint": "pink"
+    },
+    {
+      "id": "fraud",
+      "eyebrow": "Personal",
+      "title": "Credit Card Fraud Detection",
+      "description": "Ensemble fraud model trained on 97K+ transactions combining LightGBM, XGBoost, and a CNN classifier.",
+      "image": {
+        "alt": "Credit Card Fraud Detection project image",
+        "src": "work/img/fraud-960.webp",
+        "srcset": "work/img/fraud-480.webp 480w, work/img/fraud-960.webp 960w",
+        "width": 960,
+        "height": 960,
+        "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAACQBACdASoYABgAPu1crE2ppKSiMBgMATAdiWQAxNmMJm+1JHsQgcNaM94r+gAA/vNr/wggs3TjJ3xsBoxh/YPFVEeKDW2df0PAW49sYK8FSGEJGaEsZyeMHY6/dK+jvEgk9VegGqzLvCJyUySjNNIXxHMhPqk8E735nlpeY/Td8xUlCHQgsxYXWulMhQme6Lyl/I2rsZE8KEFMswAAAA=="
+      },
+      "tags": [
+        "LightGBM",
+        "XGBoost",
+        "CNN",
+        "Python"
+      ],
+      "tint": "amber",
+      "github": "https://github.com/ReubenChatterjee/credit-card-fraud-detection"
+    },
+    {
+      "id": "sas",
+      "eyebrow": "Mobile App",
+      "title": "Student Accommodation Service",
+      "description": "Roommate-matching mobile app pairing students via K-Means clustering on the OCEAN personality model.",
+      "image": {
+        "alt": "Student Accommodation Service project image",
+        "src": "work/img/sas-960.webp",
+        "srcset": "work/img/sas-480.webp 480w, work/img/sas-960.webp 960w",
+        "width": 960,
+        "height": 600,
+        "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBACdASoYAA8APu1iqU2ppaQiMAgBMB2JYgDE2BwyML86SqJevKuG+vAA/vHftWs+X4d/Kjk09888j26uQ83sZFHsnOukyHgOxI9tvqziJE7cU3pEfIshwNQmCpvh8Tv0Oi1bI24pmmhHv/h4xHvQ0lprR9lqGs9ZRa/88XAAAA=="
+      },
+      "tags": [
+        "K-Means",
+        "OCEAN",
+        "Mobile",
+        "Python"
+      ],
+      "tint": "purple",
+      "github": "https://github.com/ReubenChatterjee/student-accommodation-app"
+    }
+  ],
+  "experience": [
+    {
+      "id": "amat",
+      "date": "Dec 2025 — Present",
+      "company": "Applied Materials",
+      "role": "Data Scientist · AI/ML, Data Insights & Apps",
+      "bullets": [
+        "Architected multi-model OCR pipeline using vision-language models achieving 85.7% precision on 500+ industrial labels.",
+        "Trained RT-DETR object detection achieving 97.8% precision on printed labels.",
+        "Improved inference efficiency 3–5× through GPU optimization and NVMe caching on Databricks."
+      ],
+      "tint": "blue",
+      "current": true
+    },
+    {
+      "id": "alcamo",
+      "date": "Jul — Oct 2025",
+      "company": "Alcamo Marketing",
+      "role": "Data Scientist",
+      "bullets": [
+        "Built 15 production ETL pipelines processing 50GB+ daily data using SQL, Fivetran, Snowflake, Looker.",
+        "Reduced operational costs 60% through infrastructure migration from Adverity to Snowflake.",
+        "Developed XGBoost churn prediction model identifying $2.1M in at-risk revenue."
+      ],
+      "tint": "green"
+    },
+    {
+      "id": "ucsd",
+      "date": "Sep 2023 — Jun 2025",
+      "company": "UC San Diego",
+      "role": "Master's in Data Science · 3.82 GPA",
+      "bullets": [
+        "Lead TA for COGS 108, managing a team of 16 TAs across 800+ students (Jan — Jun 2025).",
+        "Research Lead at Ellis Lab — gender disparities in data science education (Sep 2024 — Jun 2025).",
+        "Data Science Intern at Datamatics Global Services, 92% prediction accuracy on demand forecasting (Jul — Sep 2024).",
+        "Coursework: Statistical Models, Causal Inference, Scalable Systems, Deep Learning."
+      ],
+      "tint": "purple"
+    },
+    {
+      "id": "tlb",
+      "date": "Mar — Jun 2022",
+      "company": "The Learning Buddy",
+      "role": "3D Design Lead",
+      "bullets": [
+        "Created AR/VR-ready 3D assets using Blender for an EdTech startup.",
+        "Helped shape the 3D animation team and visual language."
+      ],
+      "tint": "pink"
+    },
+    {
+      "id": "mumbai",
+      "date": "2019 — 2023",
+      "company": "University of Mumbai",
+      "role": "BE Computer Engineering",
+      "bullets": [
+        "Foundation in machine learning, statistical analysis, and scalable systems.",
+        "Found my path in data science in 2020 — Python, SQL, DBMS."
+      ],
+      "tint": "amber"
+    }
+  ]
+}
